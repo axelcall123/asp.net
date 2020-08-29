@@ -1,0 +1,17 @@
+﻿body {
+    background: rgb(189, 214, 142);
+}
+#juego div div {
+    width: 10%;
+    height: 10%;
+    border: solid red 0.05px;
+    float: left;
+}
+
+.fila {
+    display: table; /*PERMITE NO TRSASPASAR A OTRA FILA*/
+    clear: both;
+    width: 90%;
+    height: auto;
+    border: solid black 0.05px;
+}
