@@ -28,7 +28,7 @@ namespace GAME.Controllers
         }
         public ActionResult Othelo()
         {
-            ViewBag.Message = "Game start.";
+            ViewBag.Message = "Game Othelo.";
 
             return View();
         }

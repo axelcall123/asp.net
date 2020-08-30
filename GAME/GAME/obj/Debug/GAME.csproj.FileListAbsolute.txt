@@ -54,10 +54,7 @@ D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\Antlr3.Runtime.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\Microsoft.Web.Infrastructure.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\Newtonsoft.Json.dll
-D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Net.Http.Formatting.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Web.Helpers.dll
-D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Web.Http.dll
-D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Web.Http.WebHost.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Web.Mvc.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Web.Optimization.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Web.Razor.dll
@@ -74,9 +71,6 @@ D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Web.WebPages.Deployment
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Web.WebPages.Razor.xml
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\Newtonsoft.Json.xml
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\Antlr3.Runtime.pdb
-D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Net.Http.Formatting.xml
-D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Web.Http.xml
-D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\System.Web.Http.WebHost.xml
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\es\System.Web.Helpers.resources.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\es\System.Web.Mvc.resources.dll
@@ -85,9 +79,6 @@ D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\es\System.Web.Razor.resources.
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\es\System.Web.WebPages.resources.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\es\System.Web.WebPages.Razor.resources.dll
-D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\es\System.Net.Http.Formatting.resources.dll
-D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\es\System.Web.Http.resources.dll
-D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\es\System.Web.Http.WebHost.resources.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\obj\Debug\GAME.csprojAssemblyReference.cache
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\obj\Debug\GAME.csproj.CoreCompileInputs.cache
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\obj\Debug\GAME.csproj.CopyComplete

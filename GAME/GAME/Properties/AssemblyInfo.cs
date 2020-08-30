@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // La información general sobre un ensamblado se controla mediante lo siguiente
 // conjunto de atributos. Cambie los valores de estos atributos para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Othelo")]
-[assembly: AssemblyDescription("Apliacion,IPC2")]
+[assembly: AssemblyTitle("GAME")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Game_Othelo")]
-[assembly: AssemblyCopyright("Copyright ©  2020_201901458")]
+[assembly: AssemblyProduct("GAME")]
+[assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como ID de typelib si este proyecto se expone a COM
-[assembly: Guid("167ac873-6013-430e-a2f9-938b2e26c7b4")]
+[assembly: Guid("6269219d-de6a-4c62-a153-bb80029c93e2")]
 
 // La información de versión de un ensamblado consta de los siguientes cuatro valores:
 //
