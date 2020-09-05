@@ -27,6 +27,7 @@ namespace GAME
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap.min.css",
                       "~/Content/css.css",
+                      "~/Content/style.css",
                       "~/Content/site.css"));
         }
     }

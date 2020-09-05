@@ -14,28 +14,24 @@ namespace GAME.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Registrarse()
         {
-            ViewBag.Message = "Your application description page.";
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Regisrandose";
             return View();
         }
         public ActionResult Othelo()
         {
-            ViewBag.Message = "Your contact xd.";
+            ViewBag.Message = "Game";
             Pepe n = new Pepe();
             n.apellido = "jorge";
             n.edad = 5;
             n.nombre = "joder";
             return View();
         }
-
-
-        
+        public ActionResult Iniciar_Sesion()
+        {
+            ViewBag.Message = "Iniciando Sesion";
+            return View();
+        }
     }
 }
