@@ -37,8 +37,9 @@ namespace GAME.Controllers
         Image img = new Image();
         public ActionResult Othelo()
         {
-            img.ImageID = "images.png";
-            return View(img);
+            /*img.ImageID = "images.png";
+            return View(img);*/
+            return View();
         }
         public ActionResult Iniciar_Sesion()
         {

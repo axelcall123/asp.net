@@ -15,14 +15,18 @@
     height: 70px;
     border: solid black 0.05px;
 }
-
+.rigth-rodear {
+    float:right;
+}
 section { /*seccion donde guarda todo el contenido*/
     width: 80%;
     display: inline-block;
 }
 
-.adentro-cuadros { /*adentro de los cuadros*/
+adentro-cuadros { /*adentro de los cuadros*/
     background: rgba(205, 207, 191, 0.98);
+    width: 10%;
+    height: 100%;
 }
 
 .rodear { /**/
