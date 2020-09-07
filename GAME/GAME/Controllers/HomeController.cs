@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using GAME.Models;
 
 namespace GAME.Controllers
@@ -17,16 +18,28 @@ namespace GAME.Controllers
         public ActionResult Registrarse()
         {
             ViewBag.Message = "Regisrandose";
+            Persona people = new Persona();
+            people.Nombre = "hoa";
+            /*people.Nombre = Request.Form["nombre"].ToString();
+            /*people.Apellido = Request.Form["apellido"].ToString();
+            people.N_Usuario = Request.Form["usuairo"].ToString();
+            people.Contraseña = Request.Form["contraseña"].ToString();
+            people.Fecha_Nac = Request.Form["fecha"].ToString();
+            people.Pais = Request.Form["nombre"].ToString();
+            people.Correo = Request.Form["nombre"].ToString();*/
+            return View(people);
+        }
+        public ActionResult P()
+        {
             return View();
         }
         public ActionResult Othelo()
         {
+            
             ViewBag.Message = "Game";
-            Pepe n = new Pepe();
-            n.apellido = "jorge";
-            n.edad = 5;
-            n.nombre = "joder";
-            return View();
+            Persona ojb = new Persona();
+            ojb.Nombre = "<img></img>";
+            return View(ojb);
         }
         public ActionResult Iniciar_Sesion()
         {
@@ -34,4 +47,6 @@ namespace GAME.Controllers
             return View();
         }
     }
+    
+
 }

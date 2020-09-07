@@ -36,3 +36,6 @@ section { /*seccion donde guarda todo el contenido*/
 .jugar {
     background-color: rgb(7, 59, 6);
 }
+input {
+    margin-bottom:15px;
+}
