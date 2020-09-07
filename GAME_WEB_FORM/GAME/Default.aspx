@@ -8,7 +8,9 @@
     <div class="row">
         <h1>OTHELO</h1>
     </div>
-    <iframe width="480" height="360" src="https://www.youtube.com/embed/XHIDH0ojUtE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>
+    <iframe width="480" height="360" src="https://www.youtube.com/embed/XHIDH0ojUtE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-right: 0px"></iframe>
+        </p>
 </div>
     
 
