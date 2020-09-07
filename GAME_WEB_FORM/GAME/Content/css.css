@@ -1,0 +1,41 @@
+﻿body {
+    background: rgb(189, 214, 142);
+}
+#juego div div {
+    width: 10%;
+    height: 70px;
+    border: solid red 0.05px;
+    float: left;
+}
+
+.fila {
+    display: table; /*PERMITE NO TRSASPASAR A OTRA FILA*/
+    clear: both;
+    width: 100%;
+    height: 70px;
+    border: solid black 0.05px;
+}
+
+section { /*seccion donde guarda todo el contenido*/
+    width: 80%;
+    display: inline-block;
+}
+
+.adentro-cuadros { /*adentro de los cuadros*/
+    background: rgba(205, 207, 191, 0.98);
+}
+
+.rodear { /**/
+    padding-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: black;
+    background: rgba(11, 77, 3, 0.98);
+    background-image: url('http://paper-backgrounds.com/textureimages/2012/12/green-wood-texture-background-500x333.jpg');
+}
+.jugar {
+    background-color: rgb(7, 59, 6);
+}
+input {
+    margin-bottom:15px;
+}
