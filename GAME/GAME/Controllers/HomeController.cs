@@ -34,13 +34,11 @@ namespace GAME.Controllers
             
             return View(people);
         }
+        Image img = new Image();
         public ActionResult Othelo()
         {
-            
-            ViewBag.Message = "Game";
-            Persona ojb = new Persona();
-            ojb.Nombre = "<img></img>";
-            return View(ojb);
+            img.ImageID = "images.png";
+            return View(img);
         }
         public ActionResult Iniciar_Sesion()
         {

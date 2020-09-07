@@ -1,9 +1,8 @@
 ﻿@{
     ViewBag.Title = "Othelo";
 }
-@model GAME.Models.Persona
+@model GAME.Models.Image
 
-@Model.Nombre
 
 <div onclick=""></div>
 <section id="juego">
@@ -22,10 +21,7 @@
     <div class="fila">
         <div class="rodear">1</div>
         <div class="adentro-cuadros">
-            <a href="<%= Url.Action(" Search", new { searchText="txtSearch" }) %>">
-                <img alt="searchPage" style="vertical-align: middle;" height="17px"
-                     src="~/Img/images.png" title="search" />
-            </a>
+            @Html.TextBoxFor(model => model.Name, new { title = "Customer name" })
         </div>
         <div class="adentro-cuadros">.</div>
         <div class="adentro-cuadros">.</div>
