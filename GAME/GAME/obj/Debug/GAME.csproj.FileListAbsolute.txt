@@ -84,3 +84,7 @@ D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\obj\Debug\GAME.csproj.CoreCompileI
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\obj\Debug\GAME.csproj.CopyComplete
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\obj\Debug\GAME.dll
 D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\obj\Debug\GAME.pdb
+D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\EntityFramework.dll
+D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\EntityFramework.SqlServer.dll
+D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\EntityFramework.xml
+D:\AXEL\DOCUMENTOS\U\GITHUB\asp.net\GAME\GAME\bin\EntityFramework.SqlServer.xml
