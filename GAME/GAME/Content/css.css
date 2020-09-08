@@ -5,7 +5,7 @@
     width: 10%;
     height: 70px;
     border: solid red 0.05px;
-    float: left;
+    
 }
 
 .fila {
@@ -15,22 +15,29 @@
     height: 70px;
     border: solid black 0.05px;
 }
-.rigth-rodear {
-    float:right;
-}
+
 section { /*seccion donde guarda todo el contenido*/
     width: 80%;
     display: inline-block;
 }
 
-adentro-cuadros { /*adentro de los cuadros*/
+.adentro-cuadros { /*adentro de los cuadros*/
     background: rgba(205, 207, 191, 0.98);
     width: 10%;
     height: 100%;
 }
-
+.rodear-rigth {
+    float: right;
+    padding-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: black;
+    background: rgba(11, 77, 3, 0.98);
+    background-image: url('http://paper-backgrounds.com/textureimages/2012/12/green-wood-texture-background-500x333.jpg');
+}
 .rodear { /**/
     padding-top: 10px;
+    float: left;
     font-size: 25px;
     font-weight: bold;
     background-color: black;

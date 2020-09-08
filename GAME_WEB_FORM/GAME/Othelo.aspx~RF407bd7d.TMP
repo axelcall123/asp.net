@@ -1,0 +1,136 @@
+﻿<%@ Page Title="Othelo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Othelo.aspx.cs" Inherits="GAME.Contact" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<div onclick=""></div>
+<section id="juego">
+    <div class="fila">
+        <div class="rodear">*</div>
+        <div class="rodear">A</div>
+        <div class="rodear">B</div>
+        <div class="rodear">C</div>
+        <div class="rodear">D</div>
+        <div class="rodear">E</div>
+        <div class="rodear">F</div>
+        <div class="rodear">G</div>
+        <div class="rodear">H</div>
+        <div class="rodear">*</div>
+    </div>
+    <div class="fila">
+        <div class="rodear">1</div>
+            <asp:Button ID="BA1" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BB1" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BC1" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BD1" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BE1" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BF1" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BG1" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BH1" runat="server" Text="." CssClass="adentro-cuadros" />
+        <div class="rodear-rigth">1</div>
+    </div>
+
+    <div class="fila">
+        <div class="rodear">2</div>
+            <asp:Button ID="BA2" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BB2" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BC2" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BD2" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BE2" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BF2" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BG2" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BH2" runat="server" Text="." CssClass="adentro-cuadros" />
+        <div class="rodear-rigth">2</div>
+    </div>
+
+    <div class="fila">
+        <div class="rodear">3</div>
+            <asp:Button ID="BA3" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BB3" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BC3" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BD3" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BE3" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BF3" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BG3" runat="server" Text="." CssClass="adentro-cuadros" />
+            <asp:Button ID="BH3" runat="server" Text="." CssClass="adentro-cuadros" />
+        <div class="rodear-rigth">3</div>
+    </div>
+
+    <div class="fila">
+        <div class="rodear">4</div>
+        <asp:Button ID="BA3" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BB4" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BC4" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BD4" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BE4" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BF4" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BG4" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BH4" runat="server" Text="." CssClass="adentro-cuadros" />
+        <div class="rodear-rigth">4</div>
+    </div>
+
+    <div class="fila">
+        <div class="rodear">5</div>
+          <asp:Button ID="BA5" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BB5" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BC5" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BD5" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BE5" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BF5" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BG5" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BH5" runat="server" Text="." CssClass="adentro-cuadros" />
+        <div class="rodear-rigth">5</div>
+    </div>
+
+    <div class="fila">
+        <div class="rodear">6</div>
+          <asp:Button ID="BA6" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BB6" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BC6" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BD6" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BE6" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BF6" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BG6" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BH6" runat="server" Text="." CssClass="adentro-cuadros" />
+        <div class="rodear-rigth">6</div>
+    </div>
+
+    <div class="fila">
+        <div class="rodear">7</div>
+          <asp:Button ID="BA7" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BB7" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BC7" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BD7" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BE7" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BF7" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BG7" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BH7" runat="server" Text="." CssClass="adentro-cuadros" />
+        <div class="rodear-rigth">7</div>
+    </div>
+
+    <div class="fila">
+        <div class="rodear">8</div>
+          <asp:Button ID="BA8" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BB8" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BC8" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BD8" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BE8" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BF8" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BG8" runat="server" Text="." CssClass="adentro-cuadros" />
+          <asp:Button ID="BH8" runat="server" Text="." CssClass="adentro-cuadros" />
+        <div class="rodear-rigth">8</div>
+    </div>
+
+    <div class="fila">
+        <div class="rodear">*</div>
+        <div class="rodear">A</div>
+        <div class="rodear">B</div>
+        <div class="rodear">C</div>
+        <div class="rodear">D</div>
+        <div class="rodear">E</div>
+        <div class="rodear">F</div>
+        <div class="rodear">G</div>
+        <div class="rodear">H</div>
+        <div class="rodear">*</div>
+    </div>
+
+</section> 
+</asp:Content>

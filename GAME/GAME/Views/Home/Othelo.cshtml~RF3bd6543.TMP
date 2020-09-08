@@ -3,6 +3,8 @@
 }
 @model GAME.Models.Image
 
+
+<div onclick=""></div>
 <section id="juego">
     <div class="fila">
         <div class="rodear">*</div>
@@ -26,7 +28,7 @@
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
-        <div class="rodear-rigth">1</div>
+        <div class="rodear rigth-rodear">1</div>
     </div>
 
     <div class="fila">
@@ -39,7 +41,7 @@
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
-        <div class="rodear-rigth">2</div>
+        <div class="rodear rigth-rodear">2</div>
     </div>
 
     <div class="fila">
@@ -52,7 +54,7 @@
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
-        <div class="rodear-rigth">3</div>
+        <div class="rodear rigth-rodear">3</div>
     </div>
 
     <div class="fila">
@@ -65,7 +67,7 @@
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
-        <div class="rodear-rigth">4</div>
+        <div class="rodear rigth-rodear">4</div>
     </div>
 
     <div class="fila">
@@ -78,7 +80,7 @@
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
-        <div class="rodear-rigth">5</div>
+        <div class="rodear rigth-rodear">5</div>
     </div>
 
     <div class="fila">
@@ -91,7 +93,7 @@
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
-        <div class="rodear-rigth">6</div>
+        <div class="rodear rigth-rodear">6</div>
     </div>
 
     <div class="fila">
@@ -104,7 +106,7 @@
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
-        <div class="rodear-rigth">7</div>
+        <div class="rodear rigth-rodear">7</div>
     </div>
 
     <div class="fila">
@@ -117,7 +119,7 @@
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
         <button class="adentro-cuadros">.</button>
-        <div class="rodear-rigth">8</div>
+        <div class="rodear rigth-rodear">8</div>
     </div>
 
     <div class="fila">
