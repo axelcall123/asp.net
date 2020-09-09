@@ -219,6 +219,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\XML\" />
+    <Folder Include="Scripts\XML\" />
+    <Folder Include="XML\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

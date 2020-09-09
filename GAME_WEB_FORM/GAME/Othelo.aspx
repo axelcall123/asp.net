@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Othelo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Othelo.aspx.cs" Inherits="GAME.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-<div onclick=""></div>
+    <div onclick=""></div>
 <section id="juego">
     <div class="fila">
         <div class="rodear">*</div>
@@ -132,9 +132,21 @@
         <div class="rodear">*</div>
     </div>
         <br />
-    <br />
+        <br />
     <div class="col-md-1">
         <asp:Button ID="Guardar" runat="server" Text="Salvar" OnClick="Guardar_Click" />
+    </div>
+    <div class="col-md-1">
+        <asp:Label ID="mensaje" runat="server" Text=""></asp:Label>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-2">
+        <asp:Button ID="Cargar" runat="server" Text="Cargar" OnClick="Cargar_Click" />
+    </div>
+    <div class="col-md-4">
     </div>
     
 </section> 
