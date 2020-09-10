@@ -1240,14 +1240,14 @@ namespace GAME
               {BA4||BB4||BC4||BD4||BE4||BF4||BG4||BH4}
               {BA5||BB5||BC5||BD5||BE5||BF5||BG5||BH5}
               {BA6||BB6||BC6||BD6||BE6||BF6||BG6||BH6}
-              {BA7||BB7||BC7||BD7||BE7||BF7||BG7||BH7}
+              {BA7||BB7||BC7||BD    7||BE7||BF7||BG7||BH7}
               {BA8||BB8||BC8||BD8||BE8||BF8||BG8||BH8}
               xd*/
         }
 
         protected void Cargar_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -1,0 +1,58 @@
+﻿codigo muerto
+
+
+/*sSqlCommand cmd = new SqlCommand("Insert into Usuario('" + 0 + "','"
+            + nombre_r.Text + "','" + apellido_r.Text + "'+'" + usuario_r.Text +
+            "','" + contraseña_r.Text + "','" + fecha_r.Text + "')",sql);
+            cmd.ExecuteNonQuery();
+            ClearCachedClientID(); 
+            using (SqlConnection sql = new SqlConnection(connectionString)) {
+                sql.Open();
+                SqlCommand cmd = new SqlCommand("Insert into Usuario('" + 0 + "','"
+                + nombre_r.Text + "','" + apellido_r.Text + "'+'" + usuario_r.Text +
+                "','" + contraseña_r.Text + "','" + fecha_r.Text + "')",sql);
+                cmd.ExecuteNonQuery();
+                ClearCachedClientID();
+            String ins = "Insert into [Partida](Nombre, Apellido, Nombre_Usuario, Contraseña, Fehca_Nac, Pais, Correo) values('"+0+ "','" 
+                + nombre_r.Text + "','" + apellido_r.Text + "'+'" + usuario_r.Text +
+                "','" + contraseña_r.Text + "','" + fecha_r.Text + "')";*/
+
+
+    
+                /*SqlDataAdapter sqlDa = new SqlDataAdapter("Select=from Partida", sql );
+                DataTable dtb1 = new DataTable();
+                sqlDa.Fill(dtb1);*/
+
+
+            /*using (SqlConnection sql = new SqlConnection(connectionString))
+            {
+                sql.Open();
+                SqlCommand sqlcmd = new SqlCommand("SELECT OrderID, Id_persona FROM dbo.Persona;", sql);
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+                sqlcmd.Parameters.AddWithValue("@Id_Usuario", Convert.ToInt32(hfUserID.Value == "" ? "0" : hfUserID.Value));
+                sqlcmd.Parameters.AddWithValue("@Nombre", nombre_r.Text.Trim());
+                sqlcmd.Parameters.AddWithValue("@Apellido", nombre_r.Text.Trim());
+                sqlcmd.ExecuteNonQuery();
+                ClearCachedClientID();
+
+        }
+SqlConnection myconection = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlDataSource1"].ConnectionString);
+            protected void Enviar_r_Click(object sender, EventArgs e)
+            {                                  
+                string query = "Insert en [dbo].[Juego] (Nombre, Apellido, Nombre_Usuario, Contraseña, Fecha_Nac, Pais, Correo) Valores (@name,@lastname,@user,@pass,@date,@reg,@mail)";
+                SqlCommand instertar = new SqlCommand(query, myconection);
+                instertar.Parameters.AddWithValue("@name",nombre_r.Text);
+                instertar.Parameters.AddWithValue("@lastname", apellido_r.Text);
+                instertar.Parameters.AddWithValue("@user", usuario_r.Text);
+                instertar.Parameters.AddWithValue("@pass", contraseña_r.Text);
+                instertar.Parameters.AddWithValue("@date", fecha_r.Text);
+                instertar.Parameters.AddWithValue("@reg", pais_r.Text);
+                instertar.Parameters.AddWithValue(",@mail", email_r.Text);
+                instertar.ExecuteNonQuery();
+                myconection.Close();*/
+
+
+                 SqlConnection sqlConnection = new SqlConnection(connectionString);
+            string query = "INSERT INTO Usuario " +
+                     "(Id_Usuario, Nombre, Apellido, Nombre_Usuario, Contraseña, Fecha_Nac, Pais, Correo) " +
+                     "VALUES (@Id,  @Name, @IsActive, @IsActive) ";
