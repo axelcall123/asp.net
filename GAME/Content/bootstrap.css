@@ -131,7 +131,7 @@ select {
 button,
 html input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+/*input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
@@ -144,8 +144,9 @@ input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+*/
 input {
-  line-height: normal;
+    line-height: normal;
 }
 input[type="checkbox"],
 input[type="radio"] {

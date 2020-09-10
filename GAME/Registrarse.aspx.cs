@@ -17,7 +17,7 @@ namespace GAME
         protected void Enviar_r_Click(object sender, EventArgs e)
         {
             String connectionString = ConfigurationManager.ConnectionStrings["JuegoConnectionString"].ConnectionString;
-            String nombre = nombre_r.Text;
+            String nombre = nombre_r.Text;/*OBTNER TEXTO*/
             String apellido = apellido_r.Text;
             String usuario = usuario_r.Text;
             String contraseña = contraseña_r.Text;
@@ -29,7 +29,7 @@ namespace GAME
             {*/
          
                 SqlConnection sql = new SqlConnection(connectionString);
-                sql.Open();
+                sql.Open();/*ABRIENDO BASE DE DATOS*/
                 SqlCommand com = new SqlCommand();
                 com.Connection = sql;
                 com.CommandType = CommandType.StoredProcedure;
@@ -50,7 +50,7 @@ namespace GAME
 
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void nombre_r_TextChanged(object sender, EventArgs e)
         {
 
         }

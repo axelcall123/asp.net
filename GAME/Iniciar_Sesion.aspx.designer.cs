@@ -11,7 +11,7 @@ namespace GAME
 {
 
 
-    public partial class About
+    public partial class Iniciar_Sesion
     {
 
         /// <summary>

@@ -138,6 +138,7 @@
     <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
+    <Content Include="Iniciar_Sesion.aspx" />
     <Content Include="Models\TextFile1.txt" />
     <Content Include="Registrarse.aspx" />
     <Content Include="Othelo.aspx" />
@@ -158,7 +159,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Iniciar_Sesion.aspx" />
     <Content Include="Content\fonts\icomoon.eot" />
     <Content Include="Content\fonts\icomoon.ttf" />
     <Content Include="Content\fonts\icomoon.woff" />
@@ -361,6 +361,13 @@
     <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.designer.cs">
       <DependentUpon>Url_Edit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Iniciar_Sesion.aspx.cs">
+      <DependentUpon>Iniciar_Sesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Iniciar_Sesion.aspx.designer.cs">
+      <DependentUpon>Iniciar_Sesion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Juego.cs" />
     <Compile Include="Registrarse.aspx.cs">
       <DependentUpon>Registrarse.aspx</DependentUpon>
@@ -408,13 +415,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Iniciar_Sesion.aspx.cs">
-      <DependentUpon>Iniciar_Sesion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Iniciar_Sesion.aspx.designer.cs">
-      <DependentUpon>Iniciar_Sesion.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

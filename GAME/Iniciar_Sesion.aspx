@@ -1,11 +1,8 @@
-﻿<%@ Page Title="Iniciar Sesion" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="GAME.About" %>
-
+﻿<%@ Page EnableEventValidation="false" Title="Iniciar Sesion" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Iniciar_Sesion.aspx.cs" Inherits="GAME.Iniciar_Sesion" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>INICIANDO SESION</h1>
+<h1>INICIANDO SESION</h1>
 
-<div class="container">
-    <div class="row">
-        <form action="" method="post">
+        <form action="/" method="post">
             <div class="col-lg-12">
                 <span class="icon-user"></span>
                 <!--input type="text" placeholder="NOMBRE" required-->
@@ -14,16 +11,14 @@
             <div class="col-lg-12">
                 <span class="icon-key"></span>
                 <!--input type="password" placeholder="CONTRASEÑA" required-->
-                <asp:TextBox type="password" placeholder="USARIO" ID="contraseña_s" runat="server" required></asp:TextBox>
+                <asp:TextBox type="password" placeholder="CONTRASEÑA" ID="contraseña_s" runat="server" required></asp:TextBox>
             </div>
             <div class="col-lg-12">
-                <!--input type="password" placeholder="CONTRASEÑA" required-->
-                <asp:Button ID="Enviar_s" runat="server" Text="Enviar" />
+                <span class="icon-radio-checked"></span>
+                <asp:Button ID="Enviar_s" runat="server" Text="Enviar" OnClick="Enviar_s_Click"/>
             </div>
-            <div class="col-sm-8"></div>
-            <div class="col-sm-1"></div>
+            <div class="col-sm-4"><a runat="server" href="~/Registrarse">Registrarse</a></div>
+            <div class="col-sm-5"></div>
             <div class="col-sm-3"></div>
         </form>
-    </div>
-</div>
 </asp:Content>
