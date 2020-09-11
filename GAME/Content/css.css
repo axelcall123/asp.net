@@ -25,7 +25,7 @@ section { /*seccion donde guarda todo el contenido*/
     background: rgba(205, 207, 191, 0.98);
     width: 10%;
     height: 100%;
-    font-size: 1px;
+    font-size: 15px;
 }
 
 .rodear-rigth {

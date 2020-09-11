@@ -44,7 +44,7 @@ namespace GAME
                 com.Parameters.Add("@Pais", SqlDbType.VarChar).Value = pais;
                 com.Parameters.Add("@Correo", SqlDbType.VarChar).Value = correo;              
                 com.ExecuteNonQuery();
-                Response.Redirect("/");
+                Response.Redirect("Default.aspx");
             /*}*/
 
 

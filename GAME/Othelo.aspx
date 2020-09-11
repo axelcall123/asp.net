@@ -147,6 +147,7 @@
         <asp:Button ID="Cargar" runat="server" Text="Cargar" OnClick="Cargar_Click" />
     </div>
     <div class="col-md-4">
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </div>
     
 </section> 

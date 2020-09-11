@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
     <div class="row">
-        <button type="button" class="btn btn-primary btn-lg btn-block jugar"><a runat="server" href="~/Othelo">Othello</a></button>
+        <button type="button" class="btn btn-primary btn-lg btn-block jugar"><a runat="server" href="~/Iniciar_Sesion">Othello</a></button>
     </div>
     <div class="row">
         <h1>OTHELO</h1>
