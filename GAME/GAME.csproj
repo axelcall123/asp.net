@@ -138,6 +138,9 @@
     <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
+    <Content Include="IMG\1.png" />
+    <Content Include="IMG\2.png" />
+    <Content Include="IMG\3.jpg" />
     <Content Include="Iniciar_Sesion.aspx" />
     <Content Include="Models\TextFile1.txt" />
     <Content Include="Registrarse.aspx" />

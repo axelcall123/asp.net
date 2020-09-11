@@ -18,1173 +18,1173 @@ namespace GAME
 
         }
         static int player = 0;
-        protected void BA1_Click(object sender, EventArgs e)
+        protected void BA1_Click(object sender, ImageClickEventArgs e)
         {
-            Button button = (Button)sender;
+            ImageButton button = (ImageButton)sender;
 
 
-            if (button.Text.Equals(""))
+            if (button.ImageUrl == "")
             {
                 if (player % 2 == 0)
                 {
-                    button.Text = "x";
+                    button.ImageUrl = "~/IMG/1.png";
                     player++;
                 }
                 else
                 {
-                    button.Text = "0";
+                    button.ImageUrl = "~/IMG/2.png";
                     player++;
                 }
             }
         }
-        protected void BA2_Click(object sender, EventArgs e)
+        protected void BA2_Click(object sender, ImageClickEventArgs e)
         {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
             {
                 if (player % 2 == 0)
                 {
-                    button.Text = "x";
+                    button.ImageUrl = "~/IMG/1.png";
                     player++;
                 }
                 else
                 {
-                    button.Text = "0";
+                    button.ImageUrl = "~/IMG/2.png";
                     player++;
                 }
             }
         }
-        protected void BA3_Click(object sender, EventArgs e)
+        protected void BA3_Click(object sender, ImageClickEventArgs e)
         {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
             {
                 if (player % 2 == 0)
                 {
-                    button.Text = "x";
+                    button.ImageUrl = "~/IMG/1.png";
                     player++;
                 }
                 else
                 {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BA4_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-        }
-        protected void BA5_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-        }
-        protected void BA6_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
+                    button.ImageUrl = "~/IMG/2.png";
                     player++;
                 }
             }
 
         }
-        protected void BA7_Click(object sender, EventArgs e)
+        protected void BA4_Click(object sender, ImageClickEventArgs e)
         {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
             {
                 if (player % 2 == 0)
                 {
-                    button.Text = "x";
+                    button.ImageUrl = "~/IMG/1.png";
                     player++;
                 }
                 else
                 {
-                    button.Text = "0";
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+        }
+        protected void BA5_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+        }
+        protected void BA6_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
                     player++;
                 }
             }
 
         }
-        protected void BA8_Click(object sender, EventArgs e)
+        protected void BA7_Click(object sender, ImageClickEventArgs e)
         {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
             {
                 if (player % 2 == 0)
                 {
-                    button.Text = "x";
+                    button.ImageUrl = "~/IMG/1.png";
                     player++;
                 }
                 else
                 {
-                    button.Text = "0";
+                    button.ImageUrl = "~/IMG/2.png";
                     player++;
                 }
             }
 
         }
-        /*-------------------------------------------*/
-        protected void BB1_Click(object sender, EventArgs e)
+        protected void BA8_Click(object sender, ImageClickEventArgs e)
         {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
             {
                 if (player % 2 == 0)
                 {
-                    button.Text = "x";
+                    button.ImageUrl = "~/IMG/1.png";
                     player++;
                 }
                 else
                 {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BB2_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BB3_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BB4_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BB5_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BB6_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BB7_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BB8_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        /*--------------------------------*/
-        protected void BC1_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BC2_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BC3_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BC4_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BC5_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BC6_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BC7_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BC8_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        /*-----------------------------------------*/
-        protected void BD1_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BD2_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-        }
-        protected void BD3_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BD4_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BD5_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BD6_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BD7_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BD8_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-        }
-        /*--------------------------*/
-        protected void BE1_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BE2_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BE3_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BE4_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BE5_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BE6_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BE7_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BE8_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        /*---------------------------------*/
-        protected void BF1_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BF2_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BF3_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BF4_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BF5_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BF6_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-        }
-        protected void BF7_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BF8_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        /*---------------------------------*/
-        protected void BG1_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BG2_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BG3_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BG4_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-        }
-        protected void BG5_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BG6_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BG7_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BG8_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        /*---------------------------------------*/
-        protected void BH1_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BH2_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-        }
-        protected void BH3_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BH4_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BH5_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BH6_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
-                    player++;
-                }
-            }
-
-        }
-        protected void BH7_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
-            {
-                if (player % 2 == 0)
-                {
-                    button.Text = "x";
-                    player++;
-                }
-                else
-                {
-                    button.Text = "0";
+                    button.ImageUrl = "~/IMG/2.png";
                     player++;
                 }
             }
 
         }
 
-        protected void BH8_Click(object sender, EventArgs e)
+        protected void BB1_Click(object sender, ImageClickEventArgs e)
         {
-            Button button = (Button)sender;
-            if (button.Text.Equals(""))
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
             {
                 if (player % 2 == 0)
                 {
-                    button.Text = "x";
+                    button.ImageUrl = "~/IMG/1.png";
                     player++;
                 }
                 else
                 {
-                    button.Text = "0";
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BB2_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BB3_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BB4_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BB5_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BB6_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BB7_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BB8_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+
+        protected void BC1_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BC2_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BC3_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BC4_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BC5_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BC6_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BC7_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BC8_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+
+        protected void BD1_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BD2_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
                     player++;
                 }
             }
         }
-        /*LEER ARCHIVO XML*/
-        protected void Guardar_Click(object sender, EventArgs e)
+        protected void BD3_Click(object sender, ImageClickEventArgs e)
         {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BD4_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BD5_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BD6_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BD7_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BD8_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+        }
+
+        protected void BE1_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BE2_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BE3_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BE4_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BE5_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BE6_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BE7_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BE8_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+
+        protected void BF1_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BF2_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BF3_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BF4_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BF5_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BF6_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+        }
+        protected void BF7_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BF8_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+
+        protected void BG1_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BG2_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BG3_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BG4_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+        }
+        protected void BG5_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BG6_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BG7_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BG8_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+
+        protected void BH1_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BH2_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+        }
+        protected void BH3_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BH4_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BH5_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BH6_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+        protected void BH7_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+
+        }
+
+        protected void BH8_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl == "")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/2.png";
+                    player++;
+                }
+            }
+        }
+        String[] UrlB() {
             string[] BotonesTexto =/*TENER MATRIZ DE TODO EL TEXTO*/
             {
-                BA1.Text,   BB1.Text,   BC1.Text,   BD1.Text,   BE1.Text,   BF1.Text,   BG1.Text,   BH1.Text,
-                BA2.Text,   BB2.Text,   BC2.Text,   BD2.Text,   BE2.Text,   BF2.Text,   BG2.Text,   BH2.Text,
-                BA3.Text,   BB3.Text,   BC3.Text,   BD3.Text,   BE3.Text,   BF3.Text,   BG3.Text,   BH3.Text,
-                BA4.Text,   BB4.Text,   BC4.Text,   BD4.Text,   BE4.Text,   BF4.Text,   BG4.Text,   BH4.Text,
-                BA5.Text,   BB5.Text,   BC5.Text,   BD5.Text,   BE5.Text,   BF5.Text,   BG5.Text,   BH5.Text,
-                BA6.Text,   BB6.Text,   BC6.Text,   BD6.Text,   BE6.Text,   BF6.Text,   BG6.Text,   BH6.Text,
-                BA7.Text,   BB7.Text,   BC7.Text,   BD7.Text,   BE7.Text,   BF7.Text,   BG7.Text,   BH7.Text,
-                BA8.Text,   BB8.Text,   BC8.Text,   BD8.Text,   BE8.Text,   BF8.Text,   BG8.Text,   BH8.Text,
+                BA1.ImageUrl,   BB1.ImageUrl,   BC1.ImageUrl,   BD1.ImageUrl,   BE1.ImageUrl,   BF1.ImageUrl,   BG1.ImageUrl,   BH1.ImageUrl,
+                BA2.ImageUrl,   BB2.ImageUrl,   BC2.ImageUrl,   BD2.ImageUrl,   BE2.ImageUrl,   BF2.ImageUrl,   BG2.ImageUrl,   BH2.ImageUrl,
+                BA3.ImageUrl,   BB3.ImageUrl,   BC3.ImageUrl,   BD3.ImageUrl,   BE3.ImageUrl,   BF3.ImageUrl,   BG3.ImageUrl,   BH3.ImageUrl,
+                BA4.ImageUrl,   BB4.ImageUrl,   BC4.ImageUrl,   BD4.ImageUrl,   BE4.ImageUrl,   BF4.ImageUrl,   BG4.ImageUrl,   BH4.ImageUrl,
+                BA5.ImageUrl,   BB5.ImageUrl,   BC5.ImageUrl,   BD5.ImageUrl,   BE5.ImageUrl,   BF5.ImageUrl,   BG5.ImageUrl,   BH5.ImageUrl,
+                BA6.ImageUrl,   BB6.ImageUrl,   BC6.ImageUrl,   BD6.ImageUrl,   BE6.ImageUrl,   BF6.ImageUrl,   BG6.ImageUrl,   BH6.ImageUrl,
+                BA7.ImageUrl,   BB7.ImageUrl,   BC7.ImageUrl,   BD7.ImageUrl,   BE7.ImageUrl,   BF7.ImageUrl,   BG7.ImageUrl,   BH7.ImageUrl,
+                BA8.ImageUrl,   BB8.ImageUrl,   BC8.ImageUrl,   BD8.ImageUrl,   BE8.ImageUrl,   BF8.ImageUrl,   BG8.ImageUrl,   BH8.ImageUrl,
             };
-
+            return BotonesTexto;
+        }
+        String[] IdB() {
             string[] BotonesId =/*TENER MATRIZ DE TODO EL ID*/
             {
                 BA1.ID,   BB1.ID,   BC1.ID,   BD1.ID,   BE1.ID,   BF1.ID,   BG1.ID,   BH1.ID,
@@ -1196,15 +1196,24 @@ namespace GAME
                 BA7.ID,   BB7.ID,   BC7.ID,   BD7.ID,   BE7.ID,   BF7.ID,   BG7.ID,   BH7.ID,
                 BA8.ID,   BB8.ID,   BC8.ID,   BD8.ID,   BE8.ID,   BF8.ID,   BG8.ID,   BH8.ID,
             };
+            return BotonesId;
+        }
+
+        /*LEER ARCHIVO XML*/
+        protected void Guardar_Click(object sender, EventArgs e)
+        {
+            String[] BotonesTexto = UrlB();
+            String[] BotonesId = IdB();
+
             XDocument document = new XDocument(new XDeclaration("1.0", "utf-8", null));
             XElement nodoRaiz = new XElement("TABLERO");
             document.Add(nodoRaiz);
             for (int i = 0; i < 64; i++)/*PARA TODOA LA MATRIZ DE BOTONES*/
             {
-                if (BotonesTexto[i].Equals("x") || BotonesTexto[i].Equals("0"))
+                if (BotonesTexto[i].Equals("~/IMG/1.png") || BotonesTexto[i].Equals("~/IMG/2.png"))
                 {/*SI ES BLANCO O NEGRO*/
                     XElement color = new XElement("FICHA");
-                    if (BotonesTexto[i].Equals("x"))
+                    if (BotonesTexto[i].Equals("~/IMG/1.png"))
                     {
                         color.Add(new XElement("COLOR", "blanca"));
                     }
@@ -1212,20 +1221,17 @@ namespace GAME
                     {
                         color.Add(new XElement("COLOR", "negro"));
                     }
-                    char[] ayuda = BotonesId[i].ToCharArray();
-                    color.Add(new XElement("COLUMNA", ayuda[1]));
-                    color.Add(new XElement("FILA", ayuda[2]));
+                    char[] ayuda = BotonesId[i].ToCharArray();/*CONVIETER EL ID EN B A 2*/
+                    color.Add(new XElement("COLUMNA", ayuda[1]));/*A*/
+                    color.Add(new XElement("FILA", ayuda[2]));/*2*/
                     nodoRaiz.Add(color);
                 }
 
             }
-
             /*(@"C:\Demo\Demo\Data.xml"*/
             document.Save(HttpContext.Current.Server.MapPath("Data.xml"));
-
-            /*mlDocument.Save(@"C:\Demo\Demo\Data.xml");*/
-
-            /*{BA1||BB1||BC1||BD1||BE1||BF1||BG1||BH1}
+            /*mlDocument.Save(@"C:\Demo\Demo\Data.xml");
+              {BA1||BB1||BC1||BD1||BE1||BF1||BG1||BH1}
               {BA2||BB2||BC2||BD2||BE2||BF2||BG2||BH2}
               {BA3||BB3||BC3||BD3||BE3||BF3||BG3||BH3}
               {BA4||BB4||BC4||BD4||BE4||BF4||BG4||BH4}
@@ -1239,14 +1245,41 @@ namespace GAME
         protected void Cargar_Click(object sender, EventArgs e)
         {
             XDocument xml = XDocument.Load(HttpContext.Current.Server.MapPath("Data.xml"));
-            XElement root = xml.Root;
-            foreach (XElement d in root.Elements("COLOR"))
+            IEnumerable<XElement> employees = xml.Root.Elements();
+            foreach (var employee in employees)
             {
-                Console.WriteLine("Elements : " + d.Value);
+                Label1.Text= employee.Element("COLOR").Value;/*RECUPERA EL COLOR*/
             }
-            BA1.Text = "D";
-            BA2.Text = "E";
+                /*XElement root = xml.Root;
+                foreach (XElement d in root.Elements("FICHA"))
+                {
+                    Console.WriteLine("Elements : " + d.Value);
+                    ImageButton1.ImageUrl = d.Value;
+                }*/
 
+            }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = (ImageButton)sender;
+            if (button.ImageUrl=="")
+            {
+                if (player % 2 == 0)
+                {
+                    button.ImageUrl= "~/IMG/2.png";
+                    player++;
+                }
+                else
+                {
+                    button.ImageUrl = "~/IMG/1.png";
+                    player++;
+                }
+            }
         }
     }
 }

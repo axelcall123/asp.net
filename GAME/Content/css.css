@@ -25,7 +25,8 @@ section { /*seccion donde guarda todo el contenido*/
     background: rgba(205, 207, 191, 0.98);
     width: 10%;
     height: 100%;
-    font-size: 15px;
+    /*background: url(../IMG/3.jpg) no-repeat 0 -15px;
+    /*font-size: 45px;*/
 }
 
 .rodear-rigth {

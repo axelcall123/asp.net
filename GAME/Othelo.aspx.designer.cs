@@ -30,7 +30,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BA1;
+        protected global::System.Web.UI.WebControls.ImageButton BA1;
 
         /// <summary>
         /// Control BB1.
@@ -39,7 +39,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BB1;
+        protected global::System.Web.UI.WebControls.ImageButton BB1;
 
         /// <summary>
         /// Control BC1.
@@ -48,7 +48,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BC1;
+        protected global::System.Web.UI.WebControls.ImageButton BC1;
 
         /// <summary>
         /// Control BD1.
@@ -57,7 +57,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BD1;
+        protected global::System.Web.UI.WebControls.ImageButton BD1;
 
         /// <summary>
         /// Control BE1.
@@ -66,7 +66,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BE1;
+        protected global::System.Web.UI.WebControls.ImageButton BE1;
 
         /// <summary>
         /// Control BF1.
@@ -75,7 +75,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BF1;
+        protected global::System.Web.UI.WebControls.ImageButton BF1;
 
         /// <summary>
         /// Control BG1.
@@ -84,7 +84,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BG1;
+        protected global::System.Web.UI.WebControls.ImageButton BG1;
 
         /// <summary>
         /// Control BH1.
@@ -93,7 +93,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BH1;
+        protected global::System.Web.UI.WebControls.ImageButton BH1;
 
         /// <summary>
         /// Control f2.
@@ -111,7 +111,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BA2;
+        protected global::System.Web.UI.WebControls.ImageButton BA2;
 
         /// <summary>
         /// Control BB2.
@@ -120,7 +120,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BB2;
+        protected global::System.Web.UI.WebControls.ImageButton BB2;
 
         /// <summary>
         /// Control BC2.
@@ -129,7 +129,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BC2;
+        protected global::System.Web.UI.WebControls.ImageButton BC2;
 
         /// <summary>
         /// Control BD2.
@@ -138,7 +138,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BD2;
+        protected global::System.Web.UI.WebControls.ImageButton BD2;
 
         /// <summary>
         /// Control BE2.
@@ -147,7 +147,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BE2;
+        protected global::System.Web.UI.WebControls.ImageButton BE2;
 
         /// <summary>
         /// Control BF2.
@@ -156,7 +156,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BF2;
+        protected global::System.Web.UI.WebControls.ImageButton BF2;
 
         /// <summary>
         /// Control BG2.
@@ -165,7 +165,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BG2;
+        protected global::System.Web.UI.WebControls.ImageButton BG2;
 
         /// <summary>
         /// Control BH2.
@@ -174,7 +174,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BH2;
+        protected global::System.Web.UI.WebControls.ImageButton BH2;
 
         /// <summary>
         /// Control f3.
@@ -192,7 +192,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BA3;
+        protected global::System.Web.UI.WebControls.ImageButton BA3;
 
         /// <summary>
         /// Control BB3.
@@ -201,7 +201,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BB3;
+        protected global::System.Web.UI.WebControls.ImageButton BB3;
 
         /// <summary>
         /// Control BC3.
@@ -210,7 +210,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BC3;
+        protected global::System.Web.UI.WebControls.ImageButton BC3;
 
         /// <summary>
         /// Control BD3.
@@ -219,7 +219,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BD3;
+        protected global::System.Web.UI.WebControls.ImageButton BD3;
 
         /// <summary>
         /// Control BE3.
@@ -228,7 +228,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BE3;
+        protected global::System.Web.UI.WebControls.ImageButton BE3;
 
         /// <summary>
         /// Control BF3.
@@ -237,7 +237,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BF3;
+        protected global::System.Web.UI.WebControls.ImageButton BF3;
 
         /// <summary>
         /// Control BG3.
@@ -246,7 +246,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BG3;
+        protected global::System.Web.UI.WebControls.ImageButton BG3;
 
         /// <summary>
         /// Control BH3.
@@ -255,7 +255,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BH3;
+        protected global::System.Web.UI.WebControls.ImageButton BH3;
 
         /// <summary>
         /// Control f4.
@@ -273,7 +273,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BA4;
+        protected global::System.Web.UI.WebControls.ImageButton BA4;
 
         /// <summary>
         /// Control BB4.
@@ -282,7 +282,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BB4;
+        protected global::System.Web.UI.WebControls.ImageButton BB4;
 
         /// <summary>
         /// Control BC4.
@@ -291,7 +291,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BC4;
+        protected global::System.Web.UI.WebControls.ImageButton BC4;
 
         /// <summary>
         /// Control BD4.
@@ -300,7 +300,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BD4;
+        protected global::System.Web.UI.WebControls.ImageButton BD4;
 
         /// <summary>
         /// Control BE4.
@@ -309,7 +309,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BE4;
+        protected global::System.Web.UI.WebControls.ImageButton BE4;
 
         /// <summary>
         /// Control BF4.
@@ -318,7 +318,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BF4;
+        protected global::System.Web.UI.WebControls.ImageButton BF4;
 
         /// <summary>
         /// Control BG4.
@@ -327,7 +327,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BG4;
+        protected global::System.Web.UI.WebControls.ImageButton BG4;
 
         /// <summary>
         /// Control BH4.
@@ -336,7 +336,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BH4;
+        protected global::System.Web.UI.WebControls.ImageButton BH4;
 
         /// <summary>
         /// Control f5.
@@ -354,7 +354,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BA5;
+        protected global::System.Web.UI.WebControls.ImageButton BA5;
 
         /// <summary>
         /// Control BB5.
@@ -363,7 +363,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BB5;
+        protected global::System.Web.UI.WebControls.ImageButton BB5;
 
         /// <summary>
         /// Control BC5.
@@ -372,7 +372,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BC5;
+        protected global::System.Web.UI.WebControls.ImageButton BC5;
 
         /// <summary>
         /// Control BD5.
@@ -381,7 +381,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BD5;
+        protected global::System.Web.UI.WebControls.ImageButton BD5;
 
         /// <summary>
         /// Control BE5.
@@ -390,7 +390,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BE5;
+        protected global::System.Web.UI.WebControls.ImageButton BE5;
 
         /// <summary>
         /// Control BF5.
@@ -399,7 +399,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BF5;
+        protected global::System.Web.UI.WebControls.ImageButton BF5;
 
         /// <summary>
         /// Control BG5.
@@ -408,7 +408,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BG5;
+        protected global::System.Web.UI.WebControls.ImageButton BG5;
 
         /// <summary>
         /// Control BH5.
@@ -417,7 +417,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BH5;
+        protected global::System.Web.UI.WebControls.ImageButton BH5;
 
         /// <summary>
         /// Control f6.
@@ -435,7 +435,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BA6;
+        protected global::System.Web.UI.WebControls.ImageButton BA6;
 
         /// <summary>
         /// Control BB6.
@@ -444,7 +444,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BB6;
+        protected global::System.Web.UI.WebControls.ImageButton BB6;
 
         /// <summary>
         /// Control BC6.
@@ -453,7 +453,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BC6;
+        protected global::System.Web.UI.WebControls.ImageButton BC6;
 
         /// <summary>
         /// Control BD6.
@@ -462,7 +462,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BD6;
+        protected global::System.Web.UI.WebControls.ImageButton BD6;
 
         /// <summary>
         /// Control BE6.
@@ -471,7 +471,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BE6;
+        protected global::System.Web.UI.WebControls.ImageButton BE6;
 
         /// <summary>
         /// Control BF6.
@@ -480,7 +480,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BF6;
+        protected global::System.Web.UI.WebControls.ImageButton BF6;
 
         /// <summary>
         /// Control BG6.
@@ -489,7 +489,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BG6;
+        protected global::System.Web.UI.WebControls.ImageButton BG6;
 
         /// <summary>
         /// Control BH6.
@@ -498,7 +498,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BH6;
+        protected global::System.Web.UI.WebControls.ImageButton BH6;
 
         /// <summary>
         /// Control f7.
@@ -516,7 +516,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BA7;
+        protected global::System.Web.UI.WebControls.ImageButton BA7;
 
         /// <summary>
         /// Control BB7.
@@ -525,7 +525,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BB7;
+        protected global::System.Web.UI.WebControls.ImageButton BB7;
 
         /// <summary>
         /// Control BC7.
@@ -534,7 +534,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BC7;
+        protected global::System.Web.UI.WebControls.ImageButton BC7;
 
         /// <summary>
         /// Control BD7.
@@ -543,7 +543,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BD7;
+        protected global::System.Web.UI.WebControls.ImageButton BD7;
 
         /// <summary>
         /// Control BE7.
@@ -552,7 +552,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BE7;
+        protected global::System.Web.UI.WebControls.ImageButton BE7;
 
         /// <summary>
         /// Control BF7.
@@ -561,7 +561,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BF7;
+        protected global::System.Web.UI.WebControls.ImageButton BF7;
 
         /// <summary>
         /// Control BG7.
@@ -570,7 +570,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BG7;
+        protected global::System.Web.UI.WebControls.ImageButton BG7;
 
         /// <summary>
         /// Control BH7.
@@ -579,7 +579,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BH7;
+        protected global::System.Web.UI.WebControls.ImageButton BH7;
 
         /// <summary>
         /// Control f8.
@@ -597,7 +597,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BA8;
+        protected global::System.Web.UI.WebControls.ImageButton BA8;
 
         /// <summary>
         /// Control BB8.
@@ -606,7 +606,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BB8;
+        protected global::System.Web.UI.WebControls.ImageButton BB8;
 
         /// <summary>
         /// Control BC8.
@@ -615,7 +615,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BC8;
+        protected global::System.Web.UI.WebControls.ImageButton BC8;
 
         /// <summary>
         /// Control BD8.
@@ -624,7 +624,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BD8;
+        protected global::System.Web.UI.WebControls.ImageButton BD8;
 
         /// <summary>
         /// Control BE8.
@@ -633,7 +633,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BE8;
+        protected global::System.Web.UI.WebControls.ImageButton BE8;
 
         /// <summary>
         /// Control BF8.
@@ -642,7 +642,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BF8;
+        protected global::System.Web.UI.WebControls.ImageButton BF8;
 
         /// <summary>
         /// Control BG8.
@@ -651,7 +651,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BG8;
+        protected global::System.Web.UI.WebControls.ImageButton BG8;
 
         /// <summary>
         /// Control BH8.
@@ -660,7 +660,7 @@ namespace GAME
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BH8;
+        protected global::System.Web.UI.WebControls.ImageButton BH8;
 
         /// <summary>
         /// Control Guardar.
@@ -697,5 +697,14 @@ namespace GAME
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// Control ImageButton1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
     }
 }
