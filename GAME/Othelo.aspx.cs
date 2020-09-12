@@ -1170,8 +1170,8 @@ namespace GAME
                 }
             }
         }
-        String[] UrlB() {
-            string[] BotonesTexto =/*TENER MATRIZ DE TODO EL TEXTO*/
+        /*String[] UrlB() {
+            string[] BotonesTexto =TENER MATRIZ DE TODO EL TEXTO
             {
                 BA1.ImageUrl,   BB1.ImageUrl,   BC1.ImageUrl,   BD1.ImageUrl,   BE1.ImageUrl,   BF1.ImageUrl,   BG1.ImageUrl,   BH1.ImageUrl,
                 BA2.ImageUrl,   BB2.ImageUrl,   BC2.ImageUrl,   BD2.ImageUrl,   BE2.ImageUrl,   BF2.ImageUrl,   BG2.ImageUrl,   BH2.ImageUrl,
@@ -1185,7 +1185,7 @@ namespace GAME
             return BotonesTexto;
         }
         String[] IdB() {
-            string[] BotonesId =/*TENER MATRIZ DE TODO EL ID*/
+            string[] BotonesId =TENER MATRIZ DE TODO EL ID
             {
                 BA1.ID,   BB1.ID,   BC1.ID,   BD1.ID,   BE1.ID,   BF1.ID,   BG1.ID,   BH1.ID,
                 BA2.ID,   BB2.ID,   BC2.ID,   BD2.ID,   BE2.ID,   BF2.ID,   BG2.ID,   BH2.ID,
@@ -1197,23 +1197,37 @@ namespace GAME
                 BA8.ID,   BB8.ID,   BC8.ID,   BD8.ID,   BE8.ID,   BF8.ID,   BG8.ID,   BH8.ID,
             };
             return BotonesId;
+        }*/
+        ImageButton[] BotonPro() {
+            ImageButton[] boton ={/*ARREGLO DA IMAGEBUUTON*/
+              BA1,BB1,BC1,BD1,BE1,BF1,BG1,BH1,
+              BA2,BB2,BC2,BD2,BE2,BF2,BG2,BH2,
+              BA3,BB3,BC3,BD3,BE3,BF3,BG3,BH3,
+              BA4,BB4,BC4,BD4,BE4,BF4,BG4,BH4,
+              BA5,BB5,BC5,BD5,BE5,BF5,BG5,BH5,
+              BA6,BB6,BC6,BD6,BE6,BF6,BG6,BH6,
+              BA7,BB7,BC7,BD7,BE7,BF7,BG7,BH7,
+              BA8,BB8,BC8,BD8,BE8,BF8,BG8,BH8
+            };
+            return boton;
         }
 
         /*LEER ARCHIVO XML*/
         protected void Guardar_Click(object sender, EventArgs e)
         {
-            String[] BotonesTexto = UrlB();
-            String[] BotonesId = IdB();
+            /*String[] BotonesTexto = UrlB();
+            String[] BotonesId = IdB();*/
+            ImageButton[] boton = BotonPro();
 
             XDocument document = new XDocument(new XDeclaration("1.0", "utf-8", null));
             XElement nodoRaiz = new XElement("TABLERO");
             document.Add(nodoRaiz);
             for (int i = 0; i < 64; i++)/*PARA TODOA LA MATRIZ DE BOTONES*/
             {
-                if (BotonesTexto[i].Equals("~/IMG/1.png") || BotonesTexto[i].Equals("~/IMG/2.png"))
+                if (boton[i].ImageUrl.Equals("~/IMG/1.png") || boton[i].ImageUrl.Equals("~/IMG/2.png"))
                 {/*SI ES BLANCO O NEGRO*/
                     XElement color = new XElement("FICHA");
-                    if (BotonesTexto[i].Equals("~/IMG/1.png"))
+                    if (boton[i].ImageUrl.Equals("~/IMG/1.png"))
                     {
                         color.Add(new XElement("COLOR", "blanca"));
                     }
@@ -1221,7 +1235,7 @@ namespace GAME
                     {
                         color.Add(new XElement("COLOR", "negro"));
                     }
-                    char[] ayuda = BotonesId[i].ToCharArray();/*CONVIETER EL ID EN B A 2*/
+                    char[] ayuda = boton[i].ID.ToCharArray();/*CONVIETER EL ID EN B A 2*/
                     color.Add(new XElement("COLUMNA", ayuda[1]));/*A*/
                     color.Add(new XElement("FILA", ayuda[2]));/*2*/
                     nodoRaiz.Add(color);
@@ -1244,12 +1258,30 @@ namespace GAME
 
         protected void Cargar_Click(object sender, EventArgs e)
         {
+            
+
             XDocument xml = XDocument.Load(HttpContext.Current.Server.MapPath("Data.xml"));
             IEnumerable<XElement> employees = xml.Root.Elements();
             foreach (var employee in employees)
             {
-                Label1.Text= employee.Element("COLOR").Value;/*RECUPERA EL COLOR*/
+                ImageButton[] boton = BotonPro();
+                /*Label1.Text= employee.Element("COLOR").Value;/*RECUPERA EL COLOR*/
+                String ID = "B" + employee.Element("COLUMNA").Value+ employee.Element("FILA").Value;/*EL ID BA1*/
+                String Color = employee.Element("COLOR").Value;
+                Label1.Text = ID;
+                for (int i = 0; i < 64; i++) {
+                    if (ID.Equals(boton[i].ID)) {/*If ID ES IGUAL ID BOTON*/
+                        if (Color.Equals("negro"))
+                        {
+                            boton[i].ImageUrl = "~/IMG/2.png";
+                        }
+                        else {
+                            boton[i].ImageUrl = "~/IMG/1.png";
+                        };
+                    };
+                };
             }
+            
                 /*XElement root = xml.Root;
                 foreach (XElement d in root.Elements("FICHA"))
                 {
@@ -1259,11 +1291,6 @@ namespace GAME
 
             }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
-        {
-
-        }
-
         protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -1271,12 +1298,12 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl= "~/IMG/2.png";
+                    button.ImageUrl= "~/IMG/2.png";/*BLANCO*/
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";/*NEGRO*/
                     player++;
                 }
             }

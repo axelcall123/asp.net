@@ -7,43 +7,8 @@
   </FICHA>
   <FICHA>
     <COLOR>negro</COLOR>
-    <COLUMNA>B</COLUMNA>
-    <FILA>1</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>C</COLUMNA>
-    <FILA>1</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>D</COLUMNA>
-    <FILA>1</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>E</COLUMNA>
-    <FILA>1</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>F</COLUMNA>
-    <FILA>1</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>G</COLUMNA>
-    <FILA>1</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
     <COLUMNA>H</COLUMNA>
     <FILA>1</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>A</COLUMNA>
-    <FILA>2</FILA>
   </FICHA>
   <FICHA>
     <COLOR>negro</COLOR>
@@ -52,267 +17,62 @@
   </FICHA>
   <FICHA>
     <COLOR>blanca</COLOR>
-    <COLUMNA>C</COLUMNA>
-    <FILA>2</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>D</COLUMNA>
-    <FILA>2</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>E</COLUMNA>
-    <FILA>2</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>F</COLUMNA>
-    <FILA>2</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
     <COLUMNA>G</COLUMNA>
     <FILA>2</FILA>
   </FICHA>
   <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>H</COLUMNA>
-    <FILA>2</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>A</COLUMNA>
-    <FILA>3</FILA>
-  </FICHA>
-  <FICHA>
     <COLOR>blanca</COLOR>
-    <COLUMNA>B</COLUMNA>
-    <FILA>3</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
     <COLUMNA>C</COLUMNA>
     <FILA>3</FILA>
   </FICHA>
   <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>D</COLUMNA>
-    <FILA>3</FILA>
-  </FICHA>
-  <FICHA>
     <COLOR>negro</COLOR>
-    <COLUMNA>E</COLUMNA>
-    <FILA>3</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
     <COLUMNA>F</COLUMNA>
     <FILA>3</FILA>
   </FICHA>
   <FICHA>
     <COLOR>negro</COLOR>
-    <COLUMNA>G</COLUMNA>
-    <FILA>3</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>H</COLUMNA>
-    <FILA>3</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>A</COLUMNA>
-    <FILA>4</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>B</COLUMNA>
-    <FILA>4</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>C</COLUMNA>
-    <FILA>4</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
     <COLUMNA>D</COLUMNA>
     <FILA>4</FILA>
   </FICHA>
   <FICHA>
-    <COLOR>negro</COLOR>
+    <COLOR>blanca</COLOR>
     <COLUMNA>E</COLUMNA>
     <FILA>4</FILA>
   </FICHA>
   <FICHA>
     <COLOR>negro</COLOR>
-    <COLUMNA>F</COLUMNA>
-    <FILA>4</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>G</COLUMNA>
-    <FILA>4</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>H</COLUMNA>
-    <FILA>4</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>A</COLUMNA>
-    <FILA>5</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>B</COLUMNA>
-    <FILA>5</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>C</COLUMNA>
-    <FILA>5</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
     <COLUMNA>D</COLUMNA>
     <FILA>5</FILA>
   </FICHA>
   <FICHA>
-    <COLOR>negro</COLOR>
+    <COLOR>blanca</COLOR>
     <COLUMNA>E</COLUMNA>
     <FILA>5</FILA>
   </FICHA>
   <FICHA>
     <COLOR>blanca</COLOR>
-    <COLUMNA>F</COLUMNA>
-    <FILA>5</FILA>
+    <COLUMNA>C</COLUMNA>
+    <FILA>6</FILA>
   </FICHA>
   <FICHA>
     <COLOR>negro</COLOR>
-    <COLUMNA>G</COLUMNA>
-    <FILA>5</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>H</COLUMNA>
-    <FILA>5</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>A</COLUMNA>
+    <COLUMNA>F</COLUMNA>
     <FILA>6</FILA>
   </FICHA>
   <FICHA>
     <COLOR>negro</COLOR>
     <COLUMNA>B</COLUMNA>
-    <FILA>6</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>C</COLUMNA>
-    <FILA>6</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>D</COLUMNA>
-    <FILA>6</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>E</COLUMNA>
-    <FILA>6</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>F</COLUMNA>
-    <FILA>6</FILA>
+    <FILA>7</FILA>
   </FICHA>
   <FICHA>
     <COLOR>blanca</COLOR>
     <COLUMNA>G</COLUMNA>
-    <FILA>6</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>H</COLUMNA>
-    <FILA>6</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>A</COLUMNA>
-    <FILA>7</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>B</COLUMNA>
-    <FILA>7</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>C</COLUMNA>
-    <FILA>7</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>D</COLUMNA>
-    <FILA>7</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>E</COLUMNA>
-    <FILA>7</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>F</COLUMNA>
-    <FILA>7</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>G</COLUMNA>
-    <FILA>7</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>H</COLUMNA>
     <FILA>7</FILA>
   </FICHA>
   <FICHA>
     <COLOR>blanca</COLOR>
     <COLUMNA>A</COLUMNA>
-    <FILA>8</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>B</COLUMNA>
-    <FILA>8</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>C</COLUMNA>
-    <FILA>8</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>D</COLUMNA>
-    <FILA>8</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>E</COLUMNA>
-    <FILA>8</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>negro</COLOR>
-    <COLUMNA>F</COLUMNA>
-    <FILA>8</FILA>
-  </FICHA>
-  <FICHA>
-    <COLOR>blanca</COLOR>
-    <COLUMNA>G</COLUMNA>
     <FILA>8</FILA>
   </FICHA>
   <FICHA>
