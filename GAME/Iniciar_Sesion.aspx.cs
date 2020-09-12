@@ -29,9 +29,25 @@ namespace GAME
             com.Connection = sql;
             com.CommandType = CommandType.StoredProcedure;
             com.CommandText = "stpGetUserPass";
-            com.Parameters.AddWithValue("@Nombre_Usuario", SqlDbType.VarChar).Value = usuario;
-            com.Parameters.AddWithValue("@Contraseña", SqlDbType.VarChar).Value = contraseña;
-            int count = Convert.ToInt32(com.ExecuteScalar());
+            com.Parameters.AddWithValue("@Nombre_Usuario", usuario);
+            com.Parameters.AddWithValue("@Contraseña", contraseña);
+            SqlDataReader dr = com.ExecuteReader();
+            if (dr.Read())
+            {
+                int a = dr.GetInt32(0);
+                if (a== 1)
+                {
+                    Response.Redirect("Othelo.aspx");
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('SESION')", true);
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('NO SESION')", true);
+                }
+            }
+
+            dr.Close();
+            /*int count = Convert.ToInt32(com.ExecuteScalar());
             com.ExecuteNonQuery();
             if (count == 1)
             {
@@ -40,7 +56,8 @@ namespace GAME
             }
             else {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('NO SESION')", true);
-            }
+            }*/
+            
         }
     }
 }
