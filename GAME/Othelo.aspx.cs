@@ -1242,8 +1242,18 @@ namespace GAME
                 }
 
             }
+            String nombre = "";
+            nombre = NombreSalvar.Text;
+            if (NombreSalvar.Text.Equals(""))/*SI NO HA ESCRITO NADA DEFAULT*/
+            {
+                nombre = "XML/Data.xml";
+            }
+            else
+            {
+                nombre = "XML/"+nombre + ".xml";/*GUARDA EL ARCHIVO*/
+            }
             /*(@"C:\Demo\Demo\Data.xml"*/
-            document.Save(HttpContext.Current.Server.MapPath("Data.xml"));
+            document.Save(HttpContext.Current.Server.MapPath(nombre));
             /*mlDocument.Save(@"C:\Demo\Demo\Data.xml");
               {BA1||BB1||BC1||BD1||BE1||BF1||BG1||BH1}
               {BA2||BB2||BC2||BD2||BE2||BF2||BG2||BH2}
@@ -1258,29 +1268,41 @@ namespace GAME
 
         protected void Cargar_Click(object sender, EventArgs e)
         {
-            
+            if (FileUpload1.HasFile)
+            { /*VER ARHCIVO*/
+                /*ext = System.IO.Path.GetExtension(FileUpload1.FileName);/*URL*/
+                String dos = System.IO.Path.GetFileName(FileUpload1.FileName);
 
-            XDocument xml = XDocument.Load(HttpContext.Current.Server.MapPath("Data.xml"));
-            IEnumerable<XElement> employees = xml.Root.Elements();
-            foreach (var employee in employees)
-            {
-                ImageButton[] boton = BotonPro();
-                /*Label1.Text= employee.Element("COLOR").Value;/*RECUPERA EL COLOR*/
-                String ID = "B" + employee.Element("COLUMNA").Value+ employee.Element("FILA").Value;/*EL ID BA1*/
-                String Color = employee.Element("COLOR").Value;
-                Label1.Text = ID;
-                for (int i = 0; i < 64; i++) {
-                    if (ID.Equals(boton[i].ID)) {/*If ID ES IGUAL ID BOTON*/
-                        if (Color.Equals("negro"))
-                        {
-                            boton[i].ImageUrl = "~/IMG/2.png";
+                XDocument xml = XDocument.Load(HttpContext.Current.Server.MapPath("XML/"+dos));
+                IEnumerable<XElement> employees = xml.Root.Elements();
+                foreach (var employee in employees)
+                {
+                    ImageButton[] boton = BotonPro();
+                    /*Label1.Text= employee.Element("COLOR").Value;/*RECUPERA EL COLOR*/
+                    String ID = "B" + employee.Element("COLUMNA").Value + employee.Element("FILA").Value;/*EL ID BA1*/
+                    String Color = employee.Element("COLOR").Value;
+                    for (int i = 0; i < 64; i++)
+                    {
+                        if (ID.Equals(boton[i].ID))
+                        {/*If ID ES IGUAL ID BOTON*/
+                            if (Color.Equals("negro"))
+                            {
+                                boton[i].ImageUrl = "~/IMG/2.png";
+                            }
+                            else
+                            {
+                                boton[i].ImageUrl = "~/IMG/1.png";
+                            }
                         }
-                        else {
-                            boton[i].ImageUrl = "~/IMG/1.png";
-                        };
-                    };
-                };
+                    }
+                }
             }
+            else {
+                Response.Write("SELECCIONE ARCHIVO");
+            }
+
+
+            
             
                 /*XElement root = xml.Root;
                 foreach (XElement d in root.Elements("FICHA"))

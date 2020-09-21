@@ -133,23 +133,23 @@
     </div>
         <br />
         <br />
-    <div class="col-md-1">
-        <asp:Button ID="Guardar" runat="server" Text="Salvar" OnClick="Guardar_Click" />
+</section>
+    <div class="container">
+        <div class="row CarSal">
+            <div class="col-md-1">
+                <asp:Button ID="Guardar" runat="server" Text="Salvar" OnClick="Guardar_Click" />
+            </div>
+            <div class="col-md-5">
+                <asp:TextBox ID="NombreSalvar" runat="server" placeholder="INGRESE EL NOMBRE DEL ARCHIVO PARA SALVAR" Width="100%"></asp:TextBox>
+            </div>
+            <div class="col-md-1" >
+                <asp:Button ID="Cargar" runat="server" Text="Cargar" OnClick="Cargar_Click" />
+            </div>
+            <div class="col-md-5">
+                <asp:FileUpload ID="FileUpload1" runat="server" />
+            </div>
+        </div>
     </div>
-    <div class="col-md-1">
-        <asp:Label ID="mensaje" runat="server" Text=""></asp:Label>
-    </div>
-    <div class="col-md-2">
-    </div>
-    <div class="col-md-2">
-    </div>
-    <div class="col-md-2" >
-        <asp:Button ID="Cargar" runat="server" Text="Cargar" OnClick="Cargar_Click" />
-    </div>
-    <div class="col-md-4">
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-    </div>
-    <asp:ImageButton ID="ImageButton1" runat="server" />
-</section> 
+
 
 </asp:Content>
