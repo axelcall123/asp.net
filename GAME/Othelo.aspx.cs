@@ -12,22 +12,73 @@ namespace GAME
 {
     public partial class Contact : Page
     {
-
+        static int player = 0;
+        ImageButton[,] BotonMulti() {
+            ImageButton[,] boton = {
+                {BA1,BB1,BC1,BD1,BE1,BF1,BG1,BH1},
+                {BA2,BB2,BC2,BD2,BE2,BF2,BG2,BH2},
+                {BA3,BB3,BC3,BD3,BE3,BF3,BG3,BH3},
+                {BA4,BB4,BC4,BD4,BE4,BF4,BG4,BH4},
+                {BA5,BB5,BC5,BD5,BE5,BF5,BG5,BH5},
+                {BA6,BB6,BC6,BD6,BE6,BF6,BG6,BH6},
+                {BA7,BB7,BC7,BD7,BE7,BF7,BG7,BH7},
+                {BA8,BB8,BC8,BD8,BE8,BF8,BG8,BH8}
+            };
+            return boton;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
         }
-        static int player = 0;
+        
+        ImageButton[] BotonPro()
+        {
+            ImageButton[] boton ={/*ARREGLO DA IMAGEBUUTON*/
+              BA1,BB1,BC1,BD1,BE1,BF1,BG1,BH1,
+              BA2,BB2,BC2,BD2,BE2,BF2,BG2,BH2,
+              BA3,BB3,BC3,BD3,BE3,BF3,BG3,BH3,
+              BA4,BB4,BC4,BD4,BE4,BF4,BG4,BH4,
+              BA5,BB5,BC5,BD5,BE5,BF5,BG5,BH5,
+              BA6,BB6,BC6,BD6,BE6,BF6,BG6,BH6,
+              BA7,BB7,BC7,BD7,BE7,BF7,BG7,BH7,
+              BA8,BB8,BC8,BD8,BE8,BF8,BG8,BH8
+            };
+            return boton;
+        }
+
+
+        public void GAME()
+        {
+            ImageButton[,] Botones = BotonMulti();
+            for (int i = 0; i < 8; i++)
+            {
+                for (int a = 0; a < 8; a++)
+                {
+                    if (player % 2 == 0)/*NEGRO*/
+                    {
+                        if(Botones[i,a].ImageUrl.Equals("~/IMG/1.png")){
+                            
+                        }
+                    }
+                    else
+                    { /*BLANCO*/
+                        if (Botones[i, a].ImageUrl.Equals("~/IMG/2.png"))
+                        {
+
+                        }
+                    }
+                }
+            }
+        }
         protected void BA1_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
-
-
             if (button.ImageUrl == "")
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";/*NEGRO*/
                     player++;
                 }
                 else
@@ -1198,20 +1249,7 @@ namespace GAME
             };
             return BotonesId;
         }*/
-        ImageButton[] BotonPro() {
-            ImageButton[] boton ={/*ARREGLO DA IMAGEBUUTON*/
-              BA1,BB1,BC1,BD1,BE1,BF1,BG1,BH1,
-              BA2,BB2,BC2,BD2,BE2,BF2,BG2,BH2,
-              BA3,BB3,BC3,BD3,BE3,BF3,BG3,BH3,
-              BA4,BB4,BC4,BD4,BE4,BF4,BG4,BH4,
-              BA5,BB5,BC5,BD5,BE5,BF5,BG5,BH5,
-              BA6,BB6,BC6,BD6,BE6,BF6,BG6,BH6,
-              BA7,BB7,BC7,BD7,BE7,BF7,BG7,BH7,
-              BA8,BB8,BC8,BD8,BE8,BF8,BG8,BH8
-            };
-            return boton;
-        }
-
+        
         /*LEER ARCHIVO XML*/
         protected void Guardar_Click(object sender, EventArgs e)
         {
