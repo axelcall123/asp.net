@@ -47,7 +47,7 @@
             <asp:ImageButton ID="BB3" runat="server" CssClass="adentro-cuadros" OnClick="BB3_Click" Enabled="False" />
             <asp:ImageButton ID="BC3" runat="server" CssClass="adentro-cuadros" OnClick="BC3_Click" Enabled="False" />
             <asp:ImageButton ID="BD3" runat="server" CssClass="adentro-cuadros" OnClick="BD3_Click" Enabled="False" />
-            <asp:ImageButton ID="BE3" runat="server" CssClass="adentro-cuadros" OnClick="BE3_Click" Enabled="False" />
+            <asp:ImageButton ID="BE3" runat="server" CssClass="adentro-cuadros" OnClick="BE3_Click" />
             <asp:ImageButton ID="BF3" runat="server" CssClass="adentro-cuadros" OnClick="BF3_Click" Enabled="False" />
             <asp:ImageButton ID="BG3" runat="server" CssClass="adentro-cuadros" OnClick="BG3_Click" Enabled="False" />
             <asp:ImageButton ID="BH3" runat="server" CssClass="adentro-cuadros" OnClick="BH3_Click" Enabled="False" />
@@ -59,9 +59,9 @@
           <asp:ImageButton ID="BA4" runat="server" CssClass="adentro-cuadros" OnClick="BA4_Click" Enabled="False"  />
           <asp:ImageButton ID="BB4" runat="server" CssClass="adentro-cuadros" OnClick="BB4_Click" Enabled="False"  />
           <asp:ImageButton ID="BC4" runat="server" CssClass="adentro-cuadros" OnClick="BC4_Click" Enabled="False"  />
-          <asp:ImageButton ID="BD4" runat="server" CssClass="adentro-cuadros" OnClick="BD4_Click" Enabled="False" ImageUrl="~/IMG/2.png" />
-          <asp:ImageButton ID="BE4" runat="server" CssClass="adentro-cuadros" OnClick="BE4_Click" Enabled="False" ImageUrl="~/IMG/1.png" />
-          <asp:ImageButton ID="BF4" runat="server" CssClass="adentro-cuadros" OnClick="BF4_Click" Enabled="False" />
+          <asp:ImageButton ID="BD4" runat="server" CssClass="adentro-cuadros" OnClick="BD4_Click" Enabled="False" ImageUrl="~/IMG/1.png" />
+          <asp:ImageButton ID="BE4" runat="server" CssClass="adentro-cuadros" OnClick="BE4_Click" Enabled="False" ImageUrl="~/IMG/2.png" />
+          <asp:ImageButton ID="BF4" runat="server" CssClass="adentro-cuadros" OnClick="BF4_Click" />
           <asp:ImageButton ID="BG4" runat="server" CssClass="adentro-cuadros" OnClick="BG4_Click" Enabled="False" />
           <asp:ImageButton ID="BH4" runat="server" CssClass="adentro-cuadros" OnClick="BH4_Click" Enabled="False" />
         <div class="rodear-rigth">4</div>
@@ -71,9 +71,9 @@
         <div class="rodear">5</div>
           <asp:ImageButton ID="BA5" runat="server" CssClass="adentro-cuadros" OnClick="BA5_Click" Enabled="False" />
           <asp:ImageButton ID="BB5" runat="server" CssClass="adentro-cuadros" OnClick="BB5_Click" Enabled="False" />
-          <asp:ImageButton ID="BC5" runat="server" CssClass="adentro-cuadros" OnClick="BC5_Click" Enabled="False" />
-          <asp:ImageButton ID="BD5" runat="server" CssClass="adentro-cuadros" OnClick="BD5_Click" Enabled="False" ImageUrl="~/IMG/1.png" />
-          <asp:ImageButton ID="BE5" runat="server" CssClass="adentro-cuadros" OnClick="BE5_Click" Enabled="False" ImageUrl="~/IMG/2.png" />
+          <asp:ImageButton ID="BC5" runat="server" CssClass="adentro-cuadros" OnClick="BC5_Click" />
+          <asp:ImageButton ID="BD5" runat="server" CssClass="adentro-cuadros" OnClick="BD5_Click" Enabled="False" ImageUrl="~/IMG/2.png" />
+          <asp:ImageButton ID="BE5" runat="server" CssClass="adentro-cuadros" OnClick="BE5_Click" Enabled="False" ImageUrl="~/IMG/1.png" />
           <asp:ImageButton ID="BF5" runat="server" CssClass="adentro-cuadros" OnClick="BF5_Click" Enabled="False" />
           <asp:ImageButton ID="BG5" runat="server" CssClass="adentro-cuadros" OnClick="BG5_Click" Enabled="False" />
           <asp:ImageButton ID="BH5" runat="server" CssClass="adentro-cuadros" OnClick="BH5_Click" Enabled="False" />
@@ -85,7 +85,7 @@
           <asp:ImageButton ID="BA6" runat="server" CssClass="adentro-cuadros" OnClick="BA6_Click" Enabled="False" />
           <asp:ImageButton ID="BB6" runat="server" CssClass="adentro-cuadros" OnClick="BB6_Click" Enabled="False" />
           <asp:ImageButton ID="BC6" runat="server" CssClass="adentro-cuadros" OnClick="BC6_Click" Enabled="False" />
-          <asp:ImageButton ID="BD6" runat="server" CssClass="adentro-cuadros" OnClick="BD6_Click" Enabled="False" />
+          <asp:ImageButton ID="BD6" runat="server" CssClass="adentro-cuadros" OnClick="BD6_Click" />
           <asp:ImageButton ID="BE6" runat="server" CssClass="adentro-cuadros" OnClick="BE6_Click" Enabled="False" />
           <asp:ImageButton ID="BF6" runat="server" CssClass="adentro-cuadros" OnClick="BF6_Click" Enabled="False" />
           <asp:ImageButton ID="BG6" runat="server" CssClass="adentro-cuadros" OnClick="BG6_Click" Enabled="False" />

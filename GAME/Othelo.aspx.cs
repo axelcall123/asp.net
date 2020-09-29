@@ -46,33 +46,115 @@ namespace GAME
             };
             return boton;
         }
-
-
+        public void Xmen() { }/*1*/
+        public void YmasXmen() { }/*2*/
+        public void Ymas() { }/*3*/
+        public void XmasYmas() { }/*4*/
+        public void Xmas() { }/*5*/
+        public void YmenXmas() { }/*6*/
+        public void Ymen() { }/*7*/
+        public void YmenXmen() { }/*8*/
         public void GAME()
-        {
+        {/*            [Y,X]
+              1 Botones[i,a-1]*
+              2 Botones[i+1,a-1]*
+              3 Botones[i+1,a]*
+              4 Botones[i+1,a+1]*
+              5 Botones[i,a+1]*
+              6 Botones[i-1,a+1]*
+              7 Botones[i-1,a]
+              8 Botones[i-1,a-1]
+             i=y
+             a=x
+             
+        */
             ImageButton[,] Botones = BotonMulti();
+            Botones[0, 0].Enabled = true;
             for (int i = 0; i < 8; i++)
             {
                 for (int a = 0; a < 8; a++)
                 {
                     if (player % 2 == 0)/*NEGRO*/
                     {
-                        if(Botones[i,a].ImageUrl.Equals("~/IMG/1.png")){
-                            
+                        if (Botones[i, a].ImageUrl.Equals("~/IMG/1.png"))
+                        {
+                            if (Botones[i, a - 1].ImageUrl.Equals("~/IMG/2.png"))
+                            {
+                                Botones[i, a - 1].Enabled=true;
+                            }
+                            if (Botones[i + 1, a - 1].ImageUrl.Equals("~/IMG/2.png"))
+                            {
+                                Botones[i + 1, a - 1].Enabled=true;
+                            }
+                            if (Botones[i + 1, a].ImageUrl.Equals("~/IMG/2.png"))
+                            {
+                                Botones[i + 1, a].Enabled=true;
+                            }
+                            if (Botones[i + 1, a + 1].ImageUrl.Equals("~/IMG/2.png"))
+                            {
+                                Botones[i + 1, a + 1].Enabled=true;
+                            }
+                            if (Botones[i, a + 1].ImageUrl.Equals("~/IMG/2.png"))
+                            {
+                                Botones[i, a + 1].Enabled=true;
+                            }
+                            if (Botones[i - 1, a + 1].ImageUrl.Equals("~/IMG/2.png"))
+                            {
+                                Botones[i - 1, a + 1].Enabled=true;
+                            }
+                            if (Botones[i - 1, a].ImageUrl.Equals("~/IMG/2.png"))
+                            {
+                                Botones[i - 1, a].Enabled=true;
+                            }
+                            if (Botones[i - 1, a - 1].ImageUrl.Equals("~/IMG/2.png"))
+                            {
+                                Botones[i - 1, a - 1].Enabled=true;
+                            }
                         }
                     }
                     else
                     { /*BLANCO*/
                         if (Botones[i, a].ImageUrl.Equals("~/IMG/2.png"))
                         {
-
+                            if (Botones[i, a - 1].ImageUrl.Equals("~/IMG/1.png"))
+                            {
+                                Botones[i, a - 1].Enabled=true;
+                            }
+                            if (Botones[i + 1, a - 1].ImageUrl.Equals("~/IMG/1.png"))
+                            {
+                                Botones[i + 1, a - 1].Enabled=true;
+                            }
+                            if (Botones[i + 1, a].ImageUrl.Equals("~/IMG/1.png"))
+                            {
+                                Botones[i + 1, a].Enabled=true;
+                            }
+                            if (Botones[i + 1, a + 1].ImageUrl.Equals("~/IMG/1.png"))
+                            {
+                                Botones[i + 1, a + 1].Enabled=true;
+                            }
+                            if (Botones[i, a + 1].ImageUrl.Equals("~/IMG/1.png"))
+                            {
+                                Botones[i, a + 1].Enabled=true;
+                            }
+                            if (Botones[i - 1, a + 1].ImageUrl.Equals("~/IMG/1.png"))
+                            {
+                                Botones[i - 1, a + 1].Enabled=true;
+                            }
+                            if (Botones[i - 1, a].ImageUrl.Equals("~/IMG/1.png"))
+                            {
+                                Botones[i - 1, a].Enabled=true;
+                            }
+                            if (Botones[i - 1, a - 1].ImageUrl.Equals("~/IMG/1.png"))
+                            {
+                                Botones[i - 1, a - 1].Enabled=true;
+                            }
                         }
                     }
                 }
             }
         }
         protected void BA1_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -89,7 +171,7 @@ namespace GAME
             }
         }
         protected void BA2_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -106,7 +188,7 @@ namespace GAME
             }
         }
         protected void BA3_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -124,7 +206,7 @@ namespace GAME
 
         }
         protected void BA4_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -141,7 +223,7 @@ namespace GAME
             }
         }
         protected void BA5_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -158,7 +240,7 @@ namespace GAME
             }
         }
         protected void BA6_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -176,7 +258,7 @@ namespace GAME
 
         }
         protected void BA7_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -194,7 +276,7 @@ namespace GAME
 
         }
         protected void BA8_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -213,7 +295,7 @@ namespace GAME
         }
 
         protected void BB1_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -231,7 +313,7 @@ namespace GAME
 
         }
         protected void BB2_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -249,7 +331,7 @@ namespace GAME
 
         }
         protected void BB3_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -267,7 +349,7 @@ namespace GAME
 
         }
         protected void BB4_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -285,7 +367,7 @@ namespace GAME
 
         }
         protected void BB5_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -303,7 +385,7 @@ namespace GAME
 
         }
         protected void BB6_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -321,7 +403,7 @@ namespace GAME
 
         }
         protected void BB7_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -339,7 +421,7 @@ namespace GAME
 
         }
         protected void BB8_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -358,7 +440,7 @@ namespace GAME
         }
 
         protected void BC1_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -376,7 +458,7 @@ namespace GAME
 
         }
         protected void BC2_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -394,7 +476,7 @@ namespace GAME
 
         }
         protected void BC3_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -412,7 +494,7 @@ namespace GAME
 
         }
         protected void BC4_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -431,6 +513,7 @@ namespace GAME
         }
         protected void BC5_Click(object sender, ImageClickEventArgs e)
         {
+                GAME();GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -448,7 +531,7 @@ namespace GAME
 
         }
         protected void BC6_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -466,7 +549,7 @@ namespace GAME
 
         }
         protected void BC7_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -484,7 +567,7 @@ namespace GAME
 
         }
         protected void BC8_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -503,7 +586,7 @@ namespace GAME
         }
 
         protected void BD1_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -521,7 +604,7 @@ namespace GAME
 
         }
         protected void BD2_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -538,7 +621,7 @@ namespace GAME
             }
         }
         protected void BD3_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -556,7 +639,7 @@ namespace GAME
 
         }
         protected void BD4_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -574,7 +657,7 @@ namespace GAME
 
         }
         protected void BD5_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -592,7 +675,7 @@ namespace GAME
 
         }
         protected void BD6_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -610,7 +693,7 @@ namespace GAME
 
         }
         protected void BD7_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -628,7 +711,7 @@ namespace GAME
 
         }
         protected void BD8_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -646,7 +729,7 @@ namespace GAME
         }
 
         protected void BE1_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -664,7 +747,7 @@ namespace GAME
 
         }
         protected void BE2_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -682,7 +765,7 @@ namespace GAME
 
         }
         protected void BE3_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -700,7 +783,7 @@ namespace GAME
 
         }
         protected void BE4_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -718,7 +801,7 @@ namespace GAME
 
         }
         protected void BE5_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -736,7 +819,7 @@ namespace GAME
 
         }
         protected void BE6_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -754,7 +837,7 @@ namespace GAME
 
         }
         protected void BE7_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -772,7 +855,7 @@ namespace GAME
 
         }
         protected void BE8_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -791,7 +874,7 @@ namespace GAME
         }
 
         protected void BF1_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -809,7 +892,7 @@ namespace GAME
 
         }
         protected void BF2_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -827,7 +910,7 @@ namespace GAME
 
         }
         protected void BF3_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -845,7 +928,7 @@ namespace GAME
 
         }
         protected void BF4_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -863,7 +946,7 @@ namespace GAME
 
         }
         protected void BF5_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -881,7 +964,7 @@ namespace GAME
 
         }
         protected void BF6_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -898,7 +981,7 @@ namespace GAME
             }
         }
         protected void BF7_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -916,7 +999,7 @@ namespace GAME
 
         }
         protected void BF8_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -935,7 +1018,7 @@ namespace GAME
         }
 
         protected void BG1_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -953,7 +1036,7 @@ namespace GAME
 
         }
         protected void BG2_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -971,7 +1054,7 @@ namespace GAME
 
         }
         protected void BG3_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -989,7 +1072,7 @@ namespace GAME
 
         }
         protected void BG4_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1006,7 +1089,7 @@ namespace GAME
             }
         }
         protected void BG5_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1024,7 +1107,7 @@ namespace GAME
 
         }
         protected void BG6_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1042,7 +1125,7 @@ namespace GAME
 
         }
         protected void BG7_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1060,7 +1143,7 @@ namespace GAME
 
         }
         protected void BG8_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1079,7 +1162,7 @@ namespace GAME
         }
 
         protected void BH1_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1097,7 +1180,7 @@ namespace GAME
 
         }
         protected void BH2_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1114,7 +1197,7 @@ namespace GAME
             }
         }
         protected void BH3_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1132,7 +1215,7 @@ namespace GAME
 
         }
         protected void BH4_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1150,7 +1233,7 @@ namespace GAME
 
         }
         protected void BH5_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1168,7 +1251,7 @@ namespace GAME
 
         }
         protected void BH6_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1186,7 +1269,7 @@ namespace GAME
 
         }
         protected void BH7_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1205,7 +1288,7 @@ namespace GAME
         }
 
         protected void BH8_Click(object sender, ImageClickEventArgs e)
-        {
+        {   GAME();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1352,7 +1435,7 @@ namespace GAME
             }
 
         protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
-        {
+        {   
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl=="")
             {
