@@ -46,156 +46,9 @@ namespace GAME
             return boton;
         }
         public void Ymen(int y, int x, String url) {
-            ImageButton[,] Botones = BotonMulti();
-            if (y > 0) {
-                if (Botones[y, x].ImageUrl.Equals(url)){
-                    int yy = y - 1;
-                    if (yy > 0){
-                        if (Botones[yy, x].ImageUrl == "") {
-                            Botones[yy, x].Enabled = true;
-                        }
-                    }
-                    else if (yy > 0){
-                        if (Botones[yy, x].ImageUrl.Equals(url)) {
-                            Ymen(y - 1, x, url);
-                        }
-                    }
-                }
-            }
+
         }/*1*/
-        public void YmasXmen(int y, int x, String url) {
-            /*ImageButton[,] Botones = BotonMulti();
-            if (y < 8 && x>0)
-            {    
-                if (Botones[y, x].ImageUrl.Equals(url))
-                {
-                    int yy=y+1;
-                    int xx=x-1;
-                    if((y < 8 && x>0) && Botones[y, x].ImageUrl == ""){
-                        Botones[yy, x].Enabled = true;
-                    }
-                    else if((y < 8 && x>0) && ){
-                        
-                    }
-                    YmasXmen(y + 1, x - 1, url, url2);
-                    
-                }
-            }*/
-        }
-        public void Ymas(int y, int x, String url, String url2) {
-           /*ImageButton[,] Botones = BotonMulti();
-            if (y < 8)
-            {
-                if (Botones[y, x].ImageUrl.Equals(url))
-                {
-                    Ymas(y + 1, x, url, url2);
-                }
-                else if (Botones[y, x].ImageUrl.Equals(url2))
-                {
-                    Botones[y, x].Enabled = true;
-                    y = 8;
-                }
-                else if (Botones[y, x].ImageUrl.Equals(""))
-                {
-                    y = 8;
-                }
-            }*/
-        }/*3*/
-        public void XmasYmas(int y, int x, String url, String url2) {
-            /*ImageButton[,] Botones = BotonMulti();
-            if (y < 8 && x<8)
-            {
-                if (Botones[y, x].ImageUrl.Equals(url))
-                {
-                    XmasYmas(y + 1, x+1, url, url2);
-                }
-                else if (Botones[y, x].ImageUrl.Equals(url2))
-                {
-                    Botones[y, x].Enabled = true;
-                    y = 8;
-                }
-                else if (Botones[y, x].ImageUrl.Equals(""))
-                {
-                    y = 8;
-                }
-            }*/
-        }/*4*/
-        public void Xmas(int y, int x, String url, String url2) {
-            /*ImageButton[,] Botones = BotonMulti();
-            if (x < 8)
-            {
-                if (Botones[y, x].ImageUrl.Equals(url))
-                {
-                    Xmas(y, x + 1, url, url2);
-                }
-                else if (Botones[y, x].ImageUrl.Equals(url2))
-                {
-                    Botones[y, x].Enabled = true;
-                    x = 8;
-                }
-                else if (Botones[y, x].ImageUrl.Equals(""))
-                {
-                    x = 8;
-                }
-            }*/
-        }/*5*/
-        public void YmenXmas(int y, int x, String url, String url2) {
-            /*ImageButton[,] Botones = BotonMulti();
-            if (y>0 && x < 8)
-            {
-                if (Botones[y, x].ImageUrl.Equals(url))
-                {
-                    YmenXmas(y-1, x + 1, url, url2);
-                }
-                else if (Botones[y, x].ImageUrl.Equals(url2))
-                {
-                    Botones[y, x].Enabled = true;
-                    y = 0;
-                }
-                else if (Botones[y, x].ImageUrl.Equals(""))
-                {
-                    y = 0;
-                }
-            }*/
-        }/*6*/
-        public void Xmen(int y, int x, String url, String url2) {
-            /*ImageButton[,] Botones = BotonMulti();
-            if (x> 0)
-            {
-                if (Botones[y, x].ImageUrl.Equals(url))
-                {
-                    Xmen(y, x - 1, url, url2);
-                }
-                else if (Botones[y, x].ImageUrl.Equals(url2))
-                {
-                    Botones[y, x].Enabled = true;
-                    x = 0;
-                }
-                else if (Botones[y, x].ImageUrl.Equals(""))
-                {
-                    x = 0;
-                }
-            }*/
-        }/*7*/
-        public void YmenXmen(int y, int x, String url, String url2) {
-            /*ImageButton[,] Botones = BotonMulti();
-            if (x > 0 && x>0)
-            {
-                if (Botones[y, x].ImageUrl.Equals(url))
-                {
-                    Xmen(y-1, x - 1, url, url2);
-                }
-                else if (Botones[y, x].ImageUrl.Equals(url2))
-                {
-                    Botones[y, x].Enabled = true;
-                    x = 0;
-                }
-                else if (Botones[y, x].ImageUrl.Equals(""))
-                {
-                    x = 0;
-                }
-            }*/
-        }/*8*/
+        
         public void GAME()
         {/*            [Y,X]
               1 Botones[i,a-1]*
@@ -209,51 +62,35 @@ namespace GAME
              i=y
              a=x
         */
-            /*ImageButton[,] Botones = BotonMulti();
-            for (int i = 0; i < 8; i++)
+            ImageButton[,] Botones = BotonMulti();
+            /*for (int i = 0; i < 8; i++)
             {
                 for (int a = 0; a < 8; a++)
                 {
                     Botones[i, a].Enabled = false;
                 }
-            }
+            }*/
 
-                    for (int i = 0; i < 8; i++)
+        for (int x = 0; x < 8; x++)
             {
-                for (int a = 0; a < 8; a++)
+                for (int y = 0; y < 8; y++)
                 {
                     if (player % 2 == 0)//NEGRO
                     {
-                        //[Y,X]
-                        if (Botones[i, a].ImageUrl.Equals("~/IMG/1.png"))
+                        //[X,Y]
+                        if (Botones[x, y].ImageUrl.Equals("~/IMG/1.png"))
                         {
-                            Ymen(i - 1, a, "~/IMG/2.png");//
-                            YmasXmen(i + 1, a - 1, "~/IMG/2.png", "~/IMG/1.png");//
-                            YmasXmen(i + 1, a - 1, "~/IMG/2.png", "~/IMG/1.png");//
-                            Ymas(i + 1, a, "~/IMG/2.png", "~/IMG/1.png");//
-                            XmasYmas(i + 1, a + 1, "~/IMG/2.png", "~/IMG/1.png");//
-                            Xmas(i + 1, a, "~/IMG/2.png", "~/IMG/1.png");//
-                            YmenXmas(i - 1, a + 1, "~/IMG/2.png", "~/IMG/1.png");//
-                            Xmen(i, a - 1, "~/IMG/2.png", "~/IMG/1.png");//
-                            YmenXmen(i - 1, a - 1, "~/IMG/2.png", "~/IMG/1.png");//
+                            
                         }
                     }
                     else {
-                        if (Botones[i,a].ImageUrl.Equals("~/IMG/2.png")) {
-                            Ymen(i - 1, a,"~/IMG/1.png", "~/IMG/2.png");//
-                            YmasXmen(i + 1, a - 1, "~/IMG/1.png", "~/IMG/2.png");//
-                            YmasXmen(i + 1, a - 1, "~/IMG/1.png", "~/IMG/2.png");//
-                            Ymas(i + 1, a, "~/IMG/1.png", "~/IMG/2.png");//
-                            XmasYmas(i + 1, a + 1, "~/IMG/1.png", "~/IMG/2.png");//
-                            Xmas(i + 1, a, "~/IMG/1.png", "~/IMG/2.png");//
-                            YmenXmas(i - 1, a + 1, "~/IMG/1.png", "~/IMG/2.png");//
-                            Xmen(i, a - 1, "~/IMG/1.png", "~/IMG/2.png");//
-                            YmenXmen(i - 1, a - 1, "~/IMG/1.png", "~/IMG/2.png");//
+                        if (Botones[x,y].ImageUrl.Equals("~/IMG/2.png")) {
+                            
                         }
                     
                     }
                 }
-            }*/
+            }
         }
         protected void BA1_Click(object sender, ImageClickEventArgs e)
         {   GAME();
