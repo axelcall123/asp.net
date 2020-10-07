@@ -384,8 +384,13 @@ namespace GAME
                                 Xmen(x-1, y, "~/IMG/2.png");
                                 Ymas(x, y+1, "~/IMG/2.png");
                                 Ymen(x, y-1, "~/IMG/2.png");
+
+                                YmasXmen(x-1,y+1, "~/IMG/2.png");
+                                YmenXmen(x-1, y-1, "~/IMG/2.png");
+                                YmenXmas(x+1, y-1, "~/IMG/2.png");
+                                YmasXmas(x+1, y+1, "~/IMG/2.png");
                                 //GUARDO MATRIZ DE MATRIZ POS
-                            }
+                        }
                         }
                         else {
                             if (Botones[x,y].ImageUrl.Equals("~/IMG/2.png")) {
@@ -393,8 +398,13 @@ namespace GAME
                                 Xmen(x - 1, y, "~/IMG/1.png");
                                 Ymas(x, y + 1, "~/IMG/1.png");
                                 Ymen(x, y - 1, "~/IMG/1.png");
+
+                                YmasXmen(x - 1, y + 1, "~/IMG/1.png");
+                                YmenXmen(x - 1, y - 1, "~/IMG/1.png");
+                                YmenXmas(x + 1, y - 1, "~/IMG/1.png");
+                                YmasXmas(x + 1, y + 1, "~/IMG/1.png");
                                 //GUARDO MATRIZ DE MATRIZ POS
-                            }
+                        }
 
                         }
                     }
