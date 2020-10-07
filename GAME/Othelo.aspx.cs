@@ -20,6 +20,11 @@ namespace GAME
         static char[,] XmenM= new char[8,8]; //X-
         static char[,] YmasM= new char[8,8]; //Y+
         static char[,] YmenM= new char[8,8]; //Y-
+        ///////
+        static char[,] YmasXmenM= new char[8,8];//Y+X-
+        static char[,] YmenXmenM = new char[8,8];//Y-X-
+        static char[,] YmenXmasM = new char[8,8];//Y-X+
+        static char[,] YmasXmasM = new char[8,8];//Y+X+
         ImageButton[,] BotonMulti() {
             ImageButton[,] boton = {
                //0   1   2   3   4   4   6   7
@@ -109,7 +114,7 @@ namespace GAME
                         if (Botones[x, y+1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x,y+1].Enabled = true;
-                            YmasM[x , y+1] = 'N';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                            YmasM[x , y+1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x, y+1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
@@ -158,10 +163,12 @@ namespace GAME
                         if (Botones[x-1, y + 1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x-1, y + 1].Enabled = true;
-
+                            YmasM[x-1, y + 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x-1, y + 1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            YmasM[x, y] = 'N';//GUARDAR LAS
+                            YmasM[x-1, y + 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             YmasXmen(x-1, y + 1, url);//INTERCALAR FICHAS
 
                         }
@@ -181,10 +188,12 @@ namespace GAME
                         if (Botones[x-1, y - 1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x-1, y - 1].Enabled = true;
-
+                            YmasM[x-1, y - 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x-1, y - 1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            YmasM[x, y] = 'N';//GUARDAR LAS
+                            YmasM[x-1, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             YmenXmen(x-1, y - 1, url);//INTERCALAR FICHAS
 
                         }
@@ -204,10 +213,12 @@ namespace GAME
                         if (Botones[x+1, y - 1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x+1, y - 1].Enabled = true;
-
+                            YmasM[x+1, y - 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x+1, y - 1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            YmasM[x, y] = 'N';//GUARDAR LAS
+                            YmasM[x+1, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             YmenXmas(x+1, y - 1, url);//INTERCALAR FICHAS
 
                         }
@@ -227,10 +238,12 @@ namespace GAME
                         if (Botones[x+1, y + 1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x+1, y + 1].Enabled = true;
-
+                            YmasM[x+1, y + 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x+1, y + 1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            YmasM[x, y] = 'N';//GUARDAR LAS
+                            YmasM[x+1, y + 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             YmasXmas(x+1, y + 1, url);//INTERCALAR FICHAS
 
                         }
@@ -238,10 +251,114 @@ namespace GAME
                 }
             }
         }//8
-
-
-
-            public void GAME()
+        public void SearchSus(int posx, int posy, String url) {
+            ImageButton[,] Botones = BotonMulti();
+            if (XmasM[posx,posy] == 'T')
+            {
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (XmasM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (XmenM[posx,posy] == 'T')
+            {
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (XmenM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmasM[posx,posy] == 'T')
+            {
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmasM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmenM[posx,posy] == 'T')
+            {
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmenM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmasXmenM[posx,posy] == 'T')
+            {
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmasXmenM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmenXmenM[posx,posy] == 'T')
+            {
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmenXmenM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmenXmasM[posx,posy] == 'T')
+            {
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmenXmasM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmasXmasM[posx,posy] == 'T')
+            {
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmasXmasM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+        }
+        public void GAME()
         {
             //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('SESION')", true);
             ImageButton[,] Botones = BotonMulti();
@@ -290,17 +407,24 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";/*NEGRO*/
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(0,0, "~/IMG/2.png");
+            }
+            else {
+                SearchSus(0,0, "~/IMG/1.png");
+            }
+        }//[0,0]
         protected void BA2_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -308,17 +432,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(1, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(1, 0, "~/IMG/1.png");
+            }
+        }//[1,0]
         protected void BA3_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -326,18 +458,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(2, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(2, 0, "~/IMG/1.png");
+            }
+        }//[2,0]
         protected void BA4_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -345,17 +484,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(3, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(3, 0, "~/IMG/1.png");
+            }
+        }//[3,0]
         protected void BA5_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -363,17 +510,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(4, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(4, 0, "~/IMG/1.png");
+            }
+        }//[4,0]
         protected void BA6_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -381,18 +536,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(5, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(5, 0, "~/IMG/1.png");
+            }
+        }//[5,0]
         protected void BA7_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -400,18 +562,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(6, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(6, 0, "~/IMG/1.png");
+            }
+        }//[6,0]
         protected void BA8_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -419,18 +588,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(7, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(7, 0, "~/IMG/1.png");
+            }
+        }//[7,0]
 
 
         protected void BB1_Click(object sender, ImageClickEventArgs e)
@@ -440,18 +616,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(0, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(0, 1, "~/IMG/1.png");
+            }
+        }//[0,1]
         protected void BB2_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -459,18 +642,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(1, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(1, 1, "~/IMG/1.png");
+            }
+        }//[1,1]
         protected void BB3_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -478,18 +668,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(2, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(2, 1, "~/IMG/1.png");
+            }
+        }//[2,1]
         protected void BB4_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -497,18 +694,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(3, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(3, 1, "~/IMG/1.png");
+            }
+        }//[3,1]
         protected void BB5_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -516,18 +720,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(4, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(4, 1, "~/IMG/1.png");
+            }
+        }//[4,1]
         protected void BB6_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -535,18 +746,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(5, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(5, 1, "~/IMG/1.png");
+            }
+        }//[5,1]
         protected void BB7_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -554,18 +772,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(6, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(6, 1, "~/IMG/1.png");
+            }
+        }//[6,1]
         protected void BB8_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -573,18 +798,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(7, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(7, 1, "~/IMG/1.png");
+            }
+        }//[7,1]
 
 
         protected void BC1_Click(object sender, ImageClickEventArgs e)
@@ -594,18 +826,25 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(0, 2, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(0, 2, "~/IMG/1.png");
+            }
+        }//[0,2]
         protected void BC2_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -613,70 +852,91 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(1, 2, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(1, 2, "~/IMG/1.png");
+            }
+        }//[1,2]
         protected void BC3_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(2, 2, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(2, 2, "~/IMG/1.png");
+          }
+        }//[2,2]
         protected void BC4_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
 
-        }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(3, 2, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(3, 2, "~/IMG/1.png");
+          }
+        }//[3,2]
         protected void BC5_Click(object sender, ImageClickEventArgs e)
         {
-
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
@@ -685,168 +945,233 @@ namespace GAME
                 ImageButton[,] Botones = BotonMulti();
                 Botones[4, 3].ImageUrl = "~/IMG/1.png";
             }
-            UnaVez = false;
+            
             GAME();
-        }
+            if (UnaVez == false)
+            {
+                if (player % 2 == 0)
+                {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                    SearchSus(4, 2, "~/IMG/2.png");
+                }
+                else
+                {
+                    SearchSus(4, 2, "~/IMG/1.png");
+                }
+            }
+            UnaVez = false;
+
+        }//[4,2] BOTON 1
         protected void BC6_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(5, 2, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(5, 2, "~/IMG/1.png");
+          }
 
-        }
+        }//[5,2]
         protected void BC7_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 2, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 2, "~/IMG/1.png");
+          }
+        }//[6,2]
         protected void BC8_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 2, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 2, "~/IMG/1.png");
+          }
+        }//[7,2]
 
 
         protected void BD1_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(0, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(0, 3, "~/IMG/1.png");
+          }
+        }//[0,3]
         protected void BD2_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(1, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(1, 3, "~/IMG/1.png");
+          }
+        }//[1,3]
         protected void BD3_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(2, 3, "~/IMG/1.png");
+          }
+          else
+          {
+              SearchSus(2, 3, "~/IMG/2.png");
+          }
+        }//[2,3]
         protected void BD4_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton[,] Botones = BotonMulti();
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            /*if (Botones[3,5].ImageUrl== "~/IMG/1.png") {
-                Botones[3, 4].ImageUrl = "~/IMG/1.png";
-            } else if (Botones[5, 3].ImageUrl == "~/IMG/1.png") {
-                Botones[4, 3].ImageUrl = "~/IMG/1.png";
-            }*/
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(3, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(3, 3, "~/IMG/1.png");
+          }
+        }//[3,3]
         protected void BD5_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(4, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(4, 3, "~/IMG/1.png");
+          }
+        }//[4,3]
         protected void BD6_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -868,87 +1193,127 @@ namespace GAME
                 ImageButton[,] Botones = BotonMulti();
                 Botones[4, 3].ImageUrl = "~/IMG/1.png";
             }
-            UnaVez = false;
-            GAME();
 
-        }
+            GAME();
+            if (UnaVez == false)
+            {
+                if (player % 2 == 0)
+                {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                    SearchSus(5, 3, "~/IMG/2.png");
+                }
+                else
+                {
+                    SearchSus(5, 3, "~/IMG/1.png");
+                }
+            }
+            UnaVez = false;
+        }//[5,3] BOTON 2
         protected void BD7_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 3, "~/IMG/1.png");
+          }
+        }//[6,3]
         protected void BD8_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 3, "~/IMG/1.png");
+          }
+        }//[7,3]
 
 
         protected void BE1_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(0, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(0, 4, "~/IMG/1.png");
+          }
+        }//[0,4]
         protected void BE2_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(1, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(1, 4, "~/IMG/1.png");
+          }
+        }//[1,4]
         protected void BE3_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -970,154 +1335,205 @@ namespace GAME
                 ImageButton[,] Botones = BotonMulti();
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
             }
-            UnaVez = false;
-            GAME();
 
-        }
+            GAME();
+            if (UnaVez == false)
+            {
+                if (player % 2 == 0)
+                {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                    SearchSus(2, 4, "~/IMG/2.png");
+                }
+                else
+                {
+                    SearchSus(2, 4, "~/IMG/1.png");
+                }
+            }
+            UnaVez = false;
+        }//[2,4] BOTON 3
         protected void BE4_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(3, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(3, 4, "~/IMG/1.png");
+          }
+        }//[3,4]
         protected void BE5_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton[,] Botones = BotonMulti();
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            /*if (Botones[2, 4].ImageUrl == "~/IMG/1.png")
-            {
-                Botones[3, 4].ImageUrl = "~/IMG/1.png";
-            }
-            else if (Botones[4, 2].ImageUrl == "~/IMG/1.png")
-            {
-                Botones[4, 3].ImageUrl = "~/IMG/1.png";
-            }*/
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(4, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(4, 4, "~/IMG/1.png");
+          }
+        }//[4,4]
         protected void BE6_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(5, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(5, 4, "~/IMG/1.png");
+          }
+        }//[5,4]
         protected void BE7_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 4, "~/IMG/1.png");
+          }
+        }//[6,4]
         protected void BE8_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 4, "~/IMG/1.png");
+          }
+        }//[7,4]
 
 
         protected void BF1_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(0, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(0, 5, "~/IMG/1.png");
+          }
+        }//[0,5]
         protected void BF2_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(1, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(1, 5, "~/IMG/1.png");
+          }
+        }//[1,5]
         protected void BF3_Click(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -1125,21 +1541,28 @@ namespace GAME
             {
                 if (player % 2 == 0)
                 {
-                    button.ImageUrl = "~/IMG/1.png";
+                    button.ImageUrl = "~/IMG/1.png";//NEGRO
                     player++;
                 }
                 else
                 {
-                    button.ImageUrl = "~/IMG/2.png";
+                    button.ImageUrl = "~/IMG/2.png";//BLANCO
                     player++;
                 }
             }
             GAME();
-
-        }
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(2, 5, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(2, 5, "~/IMG/1.png");
+            }
+        }//[2,5]
         protected void BF4_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
+          ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
                 if (player % 2 == 0)
@@ -1158,390 +1581,545 @@ namespace GAME
                 ImageButton[,] Botones = BotonMulti();
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
             }
-            UnaVez = false;
-            GAME();
 
-        }
+            GAME();
+            if (UnaVez == false)
+            {
+                if (player % 2 == 0)
+                {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                    SearchSus(4, 2, "~/IMG/2.png");
+                }
+                else
+                {
+                    SearchSus(4, 2, "~/IMG/1.png");
+                }
+            }
+            UnaVez = false;
+        }//[3,5] BOTON 4
         protected void BF5_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(4, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(4, 5, "~/IMG/1.png");
+          }
+        }//[4,5]
         protected void BF6_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(5, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(5, 5, "~/IMG/1.png");
+          }
+        }//[5,5]
         protected void BF7_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 5, "~/IMG/1.png");
+          }
+        }//[6,5]
         protected void BF8_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 5, "~/IMG/1.png");
+          }
+        }//[7,5]
 
 
         protected void BG1_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(0, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(0, 6, "~/IMG/1.png");
+          }
+        }//[0,6]
         protected void BG2_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(1, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(1, 6, "~/IMG/1.png");
+          }
+        }//[1,6]
         protected void BG3_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(2, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(2, 6, "~/IMG/1.png");
+          }
+        }//[2,6]
         protected void BG4_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(3, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(3, 6, "~/IMG/1.png");
+          }
+        }//[3,6]
         protected void BG5_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(4, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(4, 6, "~/IMG/1.png");
+          }
+        }//[4,6]
         protected void BG6_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(5, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(5, 6, "~/IMG/1.png");
+          }
+        }//[5,6]
         protected void BG7_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 6, "~/IMG/1.png");
+          }
+        }//[6,6]
         protected void BG8_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 6, "~/IMG/1.png");
+          }
+        }//[7,6]
 
 
         protected void BH1_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(0, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(0, 7, "~/IMG/1.png");
+          }
+        }//[0,7]
         protected void BH2_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(1, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(1, 7, "~/IMG/1.png");
+          }
+        }//[1,7]
         protected void BH3_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(2, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(2, 7, "~/IMG/1.png");
+          }
+        }//[2,7]
         protected void BH4_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(3, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(3, 7, "~/IMG/1.png");
+          }
+        }//[3,7]
         protected void BH5_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(4, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(4, 7, "~/IMG/1.png");
+          }
+        }//[4,7]
         protected void BH6_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(5, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(5, 7, "~/IMG/1.png");
+          }
+        }//[5,7]
         protected void BH7_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 7, "~/IMG/1.png");
+          }
+        }//[6,7]
         protected void BH8_Click(object sender, ImageClickEventArgs e)
         {
-            ImageButton button = (ImageButton)sender;
-            if (button.ImageUrl == "")
-            {
-                if (player % 2 == 0)
-                {
-                    button.ImageUrl = "~/IMG/1.png";
-                    player++;
-                }
-                else
-                {
-                    button.ImageUrl = "~/IMG/2.png";
-                    player++;
-                }
-            }
-            GAME();
-        }
+          ImageButton button = (ImageButton)sender;
+          if (button.ImageUrl == "")
+          {
+              if (player % 2 == 0)
+              {
+                  button.ImageUrl = "~/IMG/1.png";//NEGRO
+                  player++;
+              }
+              else
+              {
+                  button.ImageUrl = "~/IMG/2.png";//BLANCO
+                  player++;
+              }
+          }
+          GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 7, "~/IMG/1.png");
+          }
+        }//[7,7]
         /*String[] UrlB() {
             string[] BotonesTexto =TENER MATRIZ DE TODO EL TEXTO
             {
