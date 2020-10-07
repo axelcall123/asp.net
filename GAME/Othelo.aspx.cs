@@ -14,23 +14,30 @@ namespace GAME
     public partial class Contact : Page
     {
         static int player = 0;
+        static Boolean UnaVez=true;
+
+        static char[,] XmasM= new char[8,8]; //X+
+        static char[,] XmenM= new char[8,8]; //X-
+        static char[,] YmasM= new char[8,8]; //Y+
+        static char[,] YmenM= new char[8,8]; //Y-
         ImageButton[,] BotonMulti() {
             ImageButton[,] boton = {
-                {BA1,BB1,BC1,BD1,BE1,BF1,BG1,BH1},
-                {BA2,BB2,BC2,BD2,BE2,BF2,BG2,BH2},
-                {BA3,BB3,BC3,BD3,BE3,BF3,BG3,BH3},
-                {BA4,BB4,BC4,BD4,BE4,BF4,BG4,BH4},
-                {BA5,BB5,BC5,BD5,BE5,BF5,BG5,BH5},
-                {BA6,BB6,BC6,BD6,BE6,BF6,BG6,BH6},
-                {BA7,BB7,BC7,BD7,BE7,BF7,BG7,BH7},
-                {BA8,BB8,BC8,BD8,BE8,BF8,BG8,BH8}
+               //0   1   2   3   4   4   6   7
+                {BA1,BB1,BC1,BD1,BE1,BF1,BG1,BH1},//0
+                {BA2,BB2,BC2,BD2,BE2,BF2,BG2,BH2},//1
+                {BA3,BB3,BC3,BD3,BE3,BF3,BG3,BH3},//2
+                {BA4,BB4,BC4,BD4,BE4,BF4,BG4,BH4},//3
+                {BA5,BB5,BC5,BD5,BE5,BF5,BG5,BH5},//4
+                {BA6,BB6,BC6,BD6,BE6,BF6,BG6,BH6},//5
+                {BA7,BB7,BC7,BD7,BE7,BF7,BG7,BH7},//6
+                {BA8,BB8,BC8,BD8,BE8,BF8,BG8,BH8}//7
+                //A   B   C   D   E   F   G   H
             };
             return boton;
         }
         protected void Page_Load(object sender, EventArgs e)
         {
         }
-        
         ImageButton[] BotonPro()
         {
             ImageButton[] boton ={/*ARREGLO DA IMAGEBUUTON*/
@@ -45,55 +52,239 @@ namespace GAME
             };
             return boton;
         }
-        public void Ymen(int y, int x, String url) {
-
-        }/*1*/
-        
-        public void GAME()
-        {/*            [Y,X]
-              1 Botones[i,a-1]*
-              2 Botones[i+1,a-1]*
-              3 Botones[i+1,a]*
-              4 Botones[i+1,a+1]*
-              5 Botones[i,a+1]*
-              6 Botones[i-1,a+1]*
-              7 Botones[i-1,a]
-              8 Botones[i-1,a-1]
-             i=y
-             a=x
-        */
+        //POS X, POS Y, BLANCO|NEGRO
+        //"~/IMG/1.png"; NEGRO
+        //"~/IMG/2.png"; BLANCO
+        public void Xmas(int x, int y, String url) {//COLOR NEGREO
             ImageButton[,] Botones = BotonMulti();
-            /*for (int i = 0; i < 8; i++)
-            {
-                for (int a = 0; a < 8; a++)
-                {
-                    Botones[i, a].Enabled = false;
-                }
-            }*/
-
-        for (int x = 0; x < 8; x++)
-            {
-                for (int y = 0; y < 8; y++)
-                {
-                    if (player % 2 == 0)//NEGRO
-                    {
-                        //[X,Y]
-                        if (Botones[x, y].ImageUrl.Equals("~/IMG/1.png"))
-                        {
-                            
+            if (x < 8) {//CAUSE ERROR POSICON
+                if (Botones[x, y].ImageUrl.Equals(url)) {//SIG POS ES BLANCO
+                    if (x+1 < 8) {//NO ERROR
+                        if (Botones[x+1, y].ImageUrl.Equals("")) {//SIG + SIG POS ES NULO ACTIVAR
+                            Botones[x+1, y].Enabled = true;
+                            XmasM[x + 1, y] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
-                    }
-                    else {
-                        if (Botones[x,y].ImageUrl.Equals("~/IMG/2.png")) {
-                            
+                        else if(Botones[x+1, y].ImageUrl.Equals(url)) {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            XmasM[x, y] = 'N';//GUARDAR LAS
+                            XmasM[x + 1, y] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            Xmas(x + 1, y, url);//INTERCALAR FICHAS
                         }
-                    
                     }
                 }
             }
+        }/*1*/
+        public void Xmen(int x, int y, String url)
+        {
+            ImageButton[,] Botones = BotonMulti();
+            if (x >= 0)
+            {//CAUSE ERROR POSICON
+                if (Botones[x, y].ImageUrl.Equals(url))
+                {//SIG POS ES BLANCO
+                    if (x - 1 >= 0)
+                    {//NO ERROR
+                        if (Botones[x-1, y].ImageUrl.Equals(""))
+                        {//SIG + SIG POS ES NULO ACTIVAR
+                            Botones[x - 1, y].Enabled = true;
+                            XmenM[x - 1, y] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                        }
+                        else if (Botones[x-1, y].ImageUrl.Equals(url))
+                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            XmenM[x, y] = 'N';//GUARDAR LAS
+                            XmenM[x - 1, y] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            Xmen(x - 1, y, url);//INTERCALAR FICHAS
+                        }
+                    }
+                }
+            }
+        }/*2*/
+        public void Ymas(int x, int y, String url)
+        {
+            ImageButton[,] Botones = BotonMulti();
+            if (y < 8)
+            {//CAUSE ERROR POSICON
+                if (Botones[x, y].ImageUrl.Equals(url))
+                {//SIG POS ES BLANCO
+                    if (y + 1 < 8)
+                    {//NO ERROR
+                        if (Botones[x, y+1].ImageUrl.Equals(""))
+                        {//SIG + SIG POS ES NULO ACTIVAR
+                            Botones[x,y+1].Enabled = true;
+                            YmasM[x , y+1] = 'N';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                        }
+                        else if (Botones[x, y+1].ImageUrl.Equals(url))
+                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            YmasM[x, y] = 'N';//GUARDAR LAS
+                            YmasM[x, y+1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            Ymas(x, y+1, url);//INTERCALAR FICHAS
+                        }
+                    }
+                }
+            }
+        }/*3*/
+        public void Ymen(int x, int y, String url)
+        {
+            ImageButton[,] Botones = BotonMulti();
+            if (y >= 0)
+            {//CAUSE ERROR POSICON
+                if (Botones[x, y].ImageUrl.Equals(url))
+                {//SIG POS ES BLANCO
+                    if (y - 1 >= 0)
+                    {//NO ERROR
+                        if (Botones[x, y-1].ImageUrl.Equals(""))
+                        {//SIG + SIG POS ES NULO ACTIVAR
+                            Botones[x, y-1].Enabled = true;
+                            YmenM[x , y-1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                        }
+                        else if (Botones[x, y-1].ImageUrl.Equals(url))
+                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            YmenM[x, y] = 'N';//GUARDAR LAS
+                            YmenM[x, y-1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            Ymen(x, y-1, url);//INTERCALAR FICHAS
+                        }
+                    }
+                }
+            }
+        }/*4*/
+        ///
+        public void YmasXmen(int x, int y, String url)
+        {
+            ImageButton[,] Botones = BotonMulti();
+            if (y < 8 && x>=0)
+            {//CAUSE ERROR POSICON
+                if (Botones[x, y].ImageUrl.Equals(url))
+                {//SIG POS ES BLANCO
+                    if (y + 1 < 8 && x-1>=0)
+                    {//NO ERROR
+                        if (Botones[x-1, y + 1].ImageUrl.Equals(""))
+                        {//SIG + SIG POS ES NULO ACTIVAR
+                            Botones[x-1, y + 1].Enabled = true;
+
+                        }
+                        else if (Botones[x-1, y + 1].ImageUrl.Equals(url))
+                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            YmasXmen(x-1, y + 1, url);//INTERCALAR FICHAS
+
+                        }
+                    }
+                }
+            }
+        }//5
+        public void YmenXmen(int x, int y, String url)
+        {
+            ImageButton[,] Botones = BotonMulti();
+            if (y >= 0 && x>=0)
+            {//CAUSE ERROR POSICON
+                if (Botones[x, y].ImageUrl.Equals(url))
+                {//SIG POS ES BLANCO
+                    if (y - 1 >= 0 && x-1 >= 0)
+                    {//NO ERROR
+                        if (Botones[x-1, y - 1].ImageUrl.Equals(""))
+                        {//SIG + SIG POS ES NULO ACTIVAR
+                            Botones[x-1, y - 1].Enabled = true;
+
+                        }
+                        else if (Botones[x-1, y - 1].ImageUrl.Equals(url))
+                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            YmenXmen(x-1, y - 1, url);//INTERCALAR FICHAS
+
+                        }
+                    }
+                }
+            }
+        }//6
+        public void YmenXmas(int x, int y, String url)
+        {
+            ImageButton[,] Botones = BotonMulti();
+            if (y >= 0 && x<8)
+            {//CAUSE ERROR POSICON
+                if (Botones[x, y].ImageUrl.Equals(url))
+                {//SIG POS ES BLANCO
+                    if (y - 1 >= 0 && x+1<8)
+                    {//NO ERROR
+                        if (Botones[x+1, y - 1].ImageUrl.Equals(""))
+                        {//SIG + SIG POS ES NULO ACTIVAR
+                            Botones[x+1, y - 1].Enabled = true;
+
+                        }
+                        else if (Botones[x+1, y - 1].ImageUrl.Equals(url))
+                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            YmenXmas(x+1, y - 1, url);//INTERCALAR FICHAS
+
+                        }
+                    }
+                }
+            }
+        }//7
+        public void YmasXmas(int x, int y, String url)
+        {
+            ImageButton[,] Botones = BotonMulti();
+            if (y < 8 && x<8)
+            {//CAUSE ERROR POSICON
+                if (Botones[x, y].ImageUrl.Equals(url))
+                {//SIG POS ES BLANCO
+                    if (y + 1 < 8 && x+1<8)
+                    {//NO ERROR
+                        if (Botones[x+1, y + 1].ImageUrl.Equals(""))
+                        {//SIG + SIG POS ES NULO ACTIVAR
+                            Botones[x+1, y + 1].Enabled = true;
+
+                        }
+                        else if (Botones[x+1, y + 1].ImageUrl.Equals(url))
+                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
+                            YmasXmas(x+1, y + 1, url);//INTERCALAR FICHAS
+
+                        }
+                    }
+                }
+            }
+        }//8
+
+
+
+            public void GAME()
+        {
+            //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('SESION')", true);
+            ImageButton[,] Botones = BotonMulti();
+            for (int x = 0; x < 8; x++)
+            {
+                for (int y = 0; y < 8; y++)
+                {
+                    Botones[x, y].Enabled = false;
+                }
+            }
+
+            for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        Console.WriteLine("siguiente");
+                    if (player % 2 == 0)//NEGRO
+                        {
+                            //[X,Y]
+                            if (Botones[x, y].ImageUrl.Equals("~/IMG/1.png"))
+                            {
+                                Xmas(x+1,y, "~/IMG/2.png");
+                                Xmen(x-1, y, "~/IMG/2.png");
+                                Ymas(x, y+1, "~/IMG/2.png");
+                                Ymen(x, y-1, "~/IMG/2.png");
+                                //GUARDO MATRIZ DE MATRIZ POS
+                            }
+                        }
+                        else {
+                            if (Botones[x,y].ImageUrl.Equals("~/IMG/2.png")) {
+                                Xmas(x + 1, y, "~/IMG/1.png");
+                                Xmen(x - 1, y, "~/IMG/1.png");
+                                Ymas(x, y + 1, "~/IMG/1.png");
+                                Ymen(x, y - 1, "~/IMG/1.png");
+                                //GUARDO MATRIZ DE MATRIZ POS
+                            }
+
+                        }
+                    }
+                }
         }
         protected void BA1_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -108,9 +299,10 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
         }
         protected void BA2_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -125,9 +317,10 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
         }
         protected void BA3_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -142,10 +335,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BA4_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -160,9 +354,10 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
         }
         protected void BA5_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -177,9 +372,10 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
         }
         protected void BA6_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -194,10 +390,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BA7_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -212,10 +409,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BA8_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -230,11 +428,13 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
 
+
         protected void BB1_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -249,10 +449,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BB2_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -267,10 +468,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BB3_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -285,10 +487,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BB4_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -303,10 +506,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BB5_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -321,10 +525,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BB6_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -339,10 +544,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BB7_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -357,10 +563,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BB8_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -375,11 +582,13 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
 
+
         protected void BC1_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -394,10 +603,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BC2_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -412,10 +622,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BC3_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -430,10 +641,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BC4_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -448,11 +660,12 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BC5_Click(object sender, ImageClickEventArgs e)
         {
-                GAME();GAME();
+
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -467,10 +680,16 @@ namespace GAME
                     player++;
                 }
             }
-
+            if (UnaVez == true)
+            {
+                ImageButton[,] Botones = BotonMulti();
+                Botones[4, 3].ImageUrl = "~/IMG/1.png";
+            }
+            UnaVez = false;
+            GAME();
         }
         protected void BC6_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -485,10 +704,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BC7_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -503,10 +723,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BC8_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -521,11 +742,13 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
 
+
         protected void BD1_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -540,10 +763,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BD2_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -558,9 +782,10 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
         }
         protected void BD3_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -575,10 +800,12 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BD4_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
+            ImageButton[,] Botones = BotonMulti();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -593,10 +820,16 @@ namespace GAME
                     player++;
                 }
             }
+            /*if (Botones[3,5].ImageUrl== "~/IMG/1.png") {
+                Botones[3, 4].ImageUrl = "~/IMG/1.png";
+            } else if (Botones[5, 3].ImageUrl == "~/IMG/1.png") {
+                Botones[4, 3].ImageUrl = "~/IMG/1.png";
+            }*/
+            GAME();
 
         }
         protected void BD5_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -611,10 +844,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BD6_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -629,10 +863,17 @@ namespace GAME
                     player++;
                 }
             }
+            if (UnaVez == true)
+            {
+                ImageButton[,] Botones = BotonMulti();
+                Botones[4, 3].ImageUrl = "~/IMG/1.png";
+            }
+            UnaVez = false;
+            GAME();
 
         }
         protected void BD7_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -647,10 +888,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BD8_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -665,10 +907,12 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
         }
 
+
         protected void BE1_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -683,10 +927,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BE2_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -701,10 +946,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BE3_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -719,10 +965,17 @@ namespace GAME
                     player++;
                 }
             }
+            if (UnaVez == true)
+            {
+                ImageButton[,] Botones = BotonMulti();
+                Botones[3, 4].ImageUrl = "~/IMG/1.png";
+            }
+            UnaVez = false;
+            GAME();
 
         }
         protected void BE4_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -737,10 +990,12 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BE5_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
+            ImageButton[,] Botones = BotonMulti();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -755,10 +1010,19 @@ namespace GAME
                     player++;
                 }
             }
+            /*if (Botones[2, 4].ImageUrl == "~/IMG/1.png")
+            {
+                Botones[3, 4].ImageUrl = "~/IMG/1.png";
+            }
+            else if (Botones[4, 2].ImageUrl == "~/IMG/1.png")
+            {
+                Botones[4, 3].ImageUrl = "~/IMG/1.png";
+            }*/
+            GAME();
 
         }
         protected void BE6_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -773,10 +1037,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BE7_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -791,10 +1056,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BE8_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -809,11 +1075,13 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
 
+
         protected void BF1_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -828,10 +1096,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BF2_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -846,10 +1115,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BF3_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -864,10 +1134,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BF4_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -882,10 +1153,17 @@ namespace GAME
                     player++;
                 }
             }
+            if (UnaVez == true)
+            {
+                ImageButton[,] Botones = BotonMulti();
+                Botones[3, 4].ImageUrl = "~/IMG/1.png";
+            }
+            UnaVez = false;
+            GAME();
 
         }
         protected void BF5_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -900,10 +1178,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BF6_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -918,9 +1197,10 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
         }
         protected void BF7_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -935,10 +1215,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BF8_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -953,11 +1234,13 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
 
+
         protected void BG1_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -972,10 +1255,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BG2_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -990,10 +1274,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BG3_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1008,10 +1293,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BG4_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1026,9 +1312,10 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
         }
         protected void BG5_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1043,10 +1330,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BG6_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1061,10 +1349,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BG7_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1079,10 +1368,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BG8_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1097,11 +1387,13 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
 
+
         protected void BH1_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1116,10 +1408,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BH2_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1134,9 +1427,10 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
         }
         protected void BH3_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1151,10 +1445,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BH4_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1169,10 +1464,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BH5_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1187,10 +1483,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BH6_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1205,10 +1502,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
         protected void BH7_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1223,11 +1521,11 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
 
         }
-
         protected void BH8_Click(object sender, ImageClickEventArgs e)
-        {   GAME();
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1242,6 +1540,7 @@ namespace GAME
                     player++;
                 }
             }
+            GAME();
         }
         /*String[] UrlB() {
             string[] BotonesTexto =TENER MATRIZ DE TODO EL TEXTO
@@ -1271,7 +1570,7 @@ namespace GAME
             };
             return BotonesId;
         }*/
-        
+
         /*LEER ARCHIVO XML*/
         protected void Guardar_Click(object sender, EventArgs e)
         {
@@ -1362,8 +1661,8 @@ namespace GAME
             }
 
 
-            
-            
+
+
                 /*XElement root = xml.Root;
                 foreach (XElement d in root.Elements("FICHA"))
                 {
@@ -1374,7 +1673,7 @@ namespace GAME
             }
 
         protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
-        {   
+        {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl=="")
             {
