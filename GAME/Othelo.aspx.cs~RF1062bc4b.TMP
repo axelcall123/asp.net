@@ -16,16 +16,7 @@ namespace GAME
         static int player = 0;
         static Boolean UnaVez=true;
         static string tt = "";//TEXTO AYUDA PARA LOS LABEL
-        static string TT = "";//TEXTO AYUDA PARA LOS LABEL
-        static char[,] XmasM= new char[8,8]; //X+
-        static char[,] XmenM= new char[8,8]; //X-
-        static char[,] YmasM= new char[8,8]; //Y+
-        static char[,] YmenM= new char[8,8]; //Y-
         ///////
-        static char[,] YmasXmenM= new char[8,8];//Y+X-
-        static char[,] YmenXmenM = new char[8,8];//Y-X-
-        static char[,] YmenXmasM = new char[8,8];//Y-X+
-        static char[,] YmasXmasM = new char[8,8];//Y+X+
         ImageButton[,] BotonMulti() {
             ImageButton[,] boton = {
                //0   1   2   3   4   4   6   7
@@ -61,40 +52,29 @@ namespace GAME
         //POS X, POS Y, BLANCO|NEGRO
         //"~/IMG/1.png"; NEGRO
         //"~/IMG/2.png"; BLANCO
-        public void delete() {
-            for (int x=0; x < 8; x++) {
-                for (int y = 0; y < 8; y++) {
-                    XmasM[x, y] = ' ';
-                    XmenM[x, y] = ' ';
-                    YmasM[x, y] = ' ';
-                    YmenM[x, y] = ' ';
-                    YmasXmenM[x, y] = ' ';
-                    YmenXmenM[x, y] = ' ';
-                    YmenXmasM[x, y] = ' ';
-                    YmasXmasM[x, y] = ' ';
-                }
-            }
-        }
-        public void Xmas(int x, int y, String url) {//COLOR NEGREO
+        public char[,] Xmas(int x, int y, String url) {//COLOR NEGREO
+            char[,] XmasM = new char[8, 8]; //X+
             ImageButton[,] Botones = BotonMulti();
             if (x < 8) {//CAUSE ERROR POSICON
                 if (Botones[x, y].ImageUrl.Equals(url)) {//SIG POS ES BLANCO
                     if (x+1 < 8) {//NO ERROR
                         if (Botones[x+1, y].ImageUrl.Equals("")) {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x+1, y].Enabled = true;
-                            //XmasM[x + 1, y] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                            XmasM[x + 1, y] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if(Botones[x+1, y].ImageUrl.Equals(url)) {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            //XmasM[x, y] = 'N';//GUARDAR LAS
-                            //XmasM[x + 1, y] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            XmasM[x, y] = 'N';//GUARDAR LAS
+                            XmasM[x + 1, y] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             Xmas(x + 1, y, url);//INTERCALAR FICHAS
                         }
                     }
                 }
             }
+            return XmasM;
         }/*1*/
-        public void Xmen(int x, int y, String url)
+        public char[,] Xmen(int x, int y, String url)
         {
+            char[,] XmenM = new char[8, 8]; //X-
             ImageButton[,] Botones = BotonMulti();
             if (x >= 0)
             {//CAUSE ERROR POSICON
@@ -105,20 +85,22 @@ namespace GAME
                         if (Botones[x-1, y].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x - 1, y].Enabled = true;
-                            //XmenM[x - 1, y] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                            XmenM[x - 1, y] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x-1, y].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            //XmenM[x, y] = 'N';//GUARDAR LAS
-                            //XmenM[x - 1, y] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            XmenM[x, y] = 'N';//GUARDAR LAS
+                            XmenM[x - 1, y] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             Xmen(x - 1, y, url);//INTERCALAR FICHAS
                         }
                     }
                 }
             }
+            return XmenM;
         }/*2*/
-        public void Ymas(int x, int y, String url)
+        public char[,] Ymas(int x, int y, String url)
         {
+            char[,] YmasM = new char[8, 8]; //Y+
             ImageButton[,] Botones = BotonMulti();
             if (y < 8)
             {//CAUSE ERROR POSICON
@@ -129,20 +111,22 @@ namespace GAME
                         if (Botones[x, y+1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x,y+1].Enabled = true;
-                            //YmasM[x , y+1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                            YmasM[x , y+1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x, y+1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            //YmasM[x, y] = 'N';//GUARDAR LAS
-                            //YmasM[x, y+1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            YmasM[x, y] = 'N';//GUARDAR LAS
+                            YmasM[x, y+1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             Ymas(x, y+1, url);//INTERCALAR FICHAS
                         }
                     }
                 }
             }
+            return YmasM;
         }/*3*/
-        public void Ymen(int x, int y, String url)
+        public char[,] Ymen(int x, int y, String url)
         {
+            char[,] YmenM = new char[8, 8]; //Y-
             ImageButton[,] Botones = BotonMulti();
             if (y >= 0)
             {//CAUSE ERROR POSICON
@@ -153,21 +137,23 @@ namespace GAME
                         if (Botones[x, y-1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x, y-1].Enabled = true;
-                            //YmenM[x , y-1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                            YmenM[x , y-1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x, y-1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            //YmenM[x, y] = 'N';//GUARDAR LAS
-                            //YmenM[x, y-1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            YmenM[x, y] = 'N';//GUARDAR LAS
+                            YmenM[x, y-1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             Ymen(x, y-1, url);//INTERCALAR FICHAS
                         }
                     }
                 }
             }
+            return YmenM;
         }/*4*/
-        //--\\
-        public void YmasXmen(int x, int y, String url)
+        ///
+        public char[,] YmasXmen(int x, int y, String url)
         {
+            char[,] YmasXmenM = new char[8, 8];//Y+X-
             ImageButton[,] Botones = BotonMulti();
             if (y < 8 && x>=0)
             {//CAUSE ERROR POSICON
@@ -178,21 +164,23 @@ namespace GAME
                         if (Botones[x-1, y + 1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x-1, y + 1].Enabled = true;
-                            //YmasXmenM[x-1, y + 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                            YmasXmenM[x-1, y + 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x-1, y + 1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            //YmasXmenM[x, y] = 'N';//GUARDAR LAS
-                            //YmasXmenM[x-1, y + 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            YmasXmenM[x, y] = 'N';//GUARDAR LAS
+                            YmasXmenM[x-1, y + 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             YmasXmen(x-1, y + 1, url);//INTERCALAR FICHAS
 
                         }
                     }
                 }
             }
+            return YmasXmenM;
         }//5
-        public void YmenXmen(int x, int y, String url)
+        public char[,] YmenXmen(int x, int y, String url)
         {
+            char[,] YmenXmenM = new char[8, 8];//Y-X-
             ImageButton[,] Botones = BotonMulti();
             if (y >= 0 && x>=0)
             {//CAUSE ERROR POSICON
@@ -203,21 +191,23 @@ namespace GAME
                         if (Botones[x-1, y - 1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x-1, y - 1].Enabled = true;
-                            //YmasXmensM[x-1, y - 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                            YmenXmenM[x-1, y - 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x-1, y - 1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            //YmasXmenM[x, y] = 'N';//GUARDAR LAS
-                            //YmasXmenM[x-1, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            YmenXmenM[x, y] = 'N';//GUARDAR LAS
+                            YmenXmenM[x-1, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             YmenXmen(x-1, y - 1, url);//INTERCALAR FICHAS
 
                         }
                     }
                 }
             }
+            return YmenXmenM;
         }//6
-        public void YmenXmas(int x, int y, String url)
+        public char[,] YmenXmas(int x, int y, String url)
         {
+            char[,] YmenXmasM = new char[8, 8];//Y-X+
             ImageButton[,] Botones = BotonMulti();
             if (y >= 0 && x<8)
             {//CAUSE ERROR POSICON
@@ -228,21 +218,23 @@ namespace GAME
                         if (Botones[x+1, y - 1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x+1, y - 1].Enabled = true;
-                            //YmenXmasM[x+1, y - 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                            YmenXmasM[x+1, y - 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x+1, y - 1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            //YmenXmasM[x, y] = 'N';//GUARDAR LAS
-                            //YmenXmasM[x+1, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            YmenXmasM[x, y] = 'N';//GUARDAR LAS
+                            YmenXmasM[x+1, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             YmenXmas(x+1, y - 1, url);//INTERCALAR FICHAS
 
                         }
                     }
                 }
             }
+            return YmenXmasM;
         }//7
-        public void YmasXmas(int x, int y, String url)
+        public char[,] YmasXmas(int x, int y, String url)
         {
+            char[,] YmasXmasM = new char[8, 8];//Y+X+
             ImageButton[,] Botones = BotonMulti();
             if (y < 8 && x<8)
             {//CAUSE ERROR POSICON
@@ -253,313 +245,140 @@ namespace GAME
                         if (Botones[x+1, y + 1].ImageUrl.Equals(""))
                         {//SIG + SIG POS ES NULO ACTIVAR
                             Botones[x+1, y + 1].Enabled = true;
-                            //YmasXmasM[x+1, y + 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
+                            YmasXmasM[x+1, y + 1] = 'S';//GUARDAR EL BOTON QUE SE PUEDE ACTIVAR
                         }
                         else if (Botones[x+1, y + 1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            //YmasXmasM[x, y] = 'N';//GUARDAR LAS
-                            //YmasXmasM[x+1, y + 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
+                            YmasXmasM[x, y] = 'N';//GUARDAR LAS
+                            YmasXmasM[x+1, y + 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             YmasXmas(x+1, y + 1, url);//INTERCALAR FICHAS
 
                         }
                     }
                 }
             }
+            return YmasXmasM;
         }//8
-        //PARA CONVERTIR A OTRO COLOR
-        //            POS     X      Y      BLANCO       NEGRO
-        public void XmasR(int x, int y, String url,String url2)//POSICION ACTUAL DE BOTON
-        {//COLOR NEGREO
-            delete();//DELETE
+        public void SearchSus(int posx, int posy, String url) {
             ImageButton[,] Botones = BotonMulti();
-            if (x < 8)
-            {//CAUSE ERROR POSICON
-                XmasM[x, y] = 'N';
-                if (Botones[x, y].ImageUrl.Equals(url))
-                {//SIG POS ES BLANCO
-                    if (x + 1 < 8)
-                    {//NO ERROR
-                        if (Botones[x + 1, y].ImageUrl.Equals(url2))//NEGRO
-                        {//SIG + SIG POS ES NEGRO
-                            for (int a = 0; a < 8; a++)
-                            {
-                                for (int b = 0; b < 8; b++)
-                                {
-                                    if (XmasM[a, b] == 'N')
-                                    {
-                                        Botones[a, b].ImageUrl = url2;
-                                    }
-                                }
-                            }
-                        }
-                        else if (Botones[x + 1, y].ImageUrl.Equals(url))//BLANCO
-                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            XmasM[x + 1, y] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
-                            XmasR(x + 1, y, url, url2);//INTERCALAR FICHAS
-                        }
-                    }
-                }
-            }
-        }/*1*/
-        public void XmenR(int x, int y, String url,String url2)
-        {
-            delete();//DELETE
-            ImageButton[,] Botones = BotonMulti();
-            if (x >= 0)
-            {//CAUSE ERROR POSICON
-                XmenM[x, y] = 'N';
-                if (Botones[x, y].ImageUrl.Equals(url))
-                {//SIG POS ES BLANCO
-                    if (x - 1 >= 0)
-                    {//NO ERROR
-                        if (Botones[x - 1, y].ImageUrl.Equals(url2))
-                        {//SIG + SIG POS ES NEGRO
-                            for (int a = 0; a < 8; a++)
-                            {
-                                for (int b = 0; b < 8; b++)
-                                {
-                                    if (XmenM[a, b] == 'N')
-                                    {
-                                        Botones[a, b].ImageUrl = url2;
-                                    }
-                                }
-                            }
-                        }
-                        else if (Botones[x - 1, y].ImageUrl.Equals(url))
-                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            XmenM[x - 1, y] = 'N';
-                            XmenR(x - 1, y, url, url2);//INTERCALAR FICHAS
-                        }
-                    }
-                }
-            }
-        }/*2*/
-        public void YmasR(int x, int y, String url,String url2)
-        {
-            delete();//DELETE
-            ImageButton[,] Botones = BotonMulti();
-            if (y < 8)
-            {//CAUSE ERROR POSICON
-                YmasM[x, y] = 'N';
-                if (Botones[x, y].ImageUrl.Equals(url))
-                {//SIG POS ES BLANCO 
-                    if (y + 1 < 8)
-                    {//NO ERROR
-                        if (Botones[x, y + 1].ImageUrl.Equals(url2))
-                        {//SIG + SIG POS ES NEGRO
-                            for (int a = 0; a < 8; a++)
-                            {
-                                for (int b = 0; b < 8; b++)
-                                {
-                                    if (YmasM[a, b] == 'N')
-                                    {
-                                        Botones[a, b].ImageUrl = url2;
-                                    }
-                                }
-                            }
-                        }
-                        else if (Botones[x, y + 1].ImageUrl.Equals(url))
-                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            //YmasM[x, y] = 'N';//GUARDAR LAS
-                            YmasM[x, y + 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
-                            YmasR(x, y + 1, url, url2);//INTERCALAR FICHAS
-                        }
-                    }
-                }
-            }
-        }/*3*/
-        public void YmenR(int x, int y, String url,String url2)
-        {
-            delete();//DELETE
-            ImageButton[,] Botones = BotonMulti();
-            if (y >= 0)
-            {//CAUSE ERROR POSICON
-                YmenM[x, y] = 'N';
-                if (Botones[x, y].ImageUrl.Equals(url))
-                {//SIG POS ES BLANCO
-                    if (y - 1 >= 0)
-                    {//NO ERROR
-                        if (Botones[x, y - 1].ImageUrl.Equals(url2))
-                        {//SIG + SIG POS ES NEGRO
-                            for (int a = 0; a < 8; a++)
-                            {
-                                for (int b = 0; b < 8; b++)
-                                {
-                                    if (YmenM[a, b] == 'N')
-                                    {
-                                        Botones[a, b].ImageUrl = url2;
-                                    }
-                                }
-                            }
-                        }
-                        else if (Botones[x, y - 1].ImageUrl.Equals(url))
-                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            YmenM[x, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
-                            YmenR(x, y - 1, url, url2);//INTERCALAR FICHAS
-                        }
-                    }
-                }
-            }
-        }/*4*/
-        ////
-        public void YmasXmenR(int x, int y, String url,String url2)
-        {
-            delete();//DELETE
-            ImageButton[,] Botones = BotonMulti();
-            if (y < 8 && x >= 0)
-            {//CAUSE ERROR POSICON
-                YmasXmenM[x, y] = 'N';
-                if (Botones[x, y].ImageUrl.Equals(url))
-                {//SIG POS ES BLANCO
-                    if (y + 1 < 8 && x - 1 >= 0)
-                    {//NO ERROR
-                        if (Botones[x - 1, y + 1].ImageUrl.Equals(url2))
-                        {//SIG + SIG POS ES NEGRO
-                            for (int a = 0; a < 8; a++)
-                            {
-                                for (int b = 0; b < 8; b++)
-                                {
-                                    if (YmasXmenM[a, b] == 'N')
-                                    {
-                                        Botones[a, b].ImageUrl = url2;
-                                    }
-                                }
-                            }
-                        }
-                        else if (Botones[x - 1, y + 1].ImageUrl.Equals(url))
-                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            YmasXmenM[x - 1, y + 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
-                            YmasXmenR(x - 1, y + 1, url, url2);//INTERCALAR FICHAS
-                        }
-                    }
-                }
-            }
-        }//5
-        public void YmenXmenR(int x, int y, String url, String url2)
-        {
-            delete();//DELETE
-            ImageButton[,] Botones = BotonMulti();
-            if (y >= 0 && x >= 0)
-            {//CAUSE ERROR POSICON
-                YmenXmenM[x, y] = 'N';
-                if (Botones[x, y].ImageUrl.Equals(url))
-                {//SIG POS ES BLANCO
-                    if (y - 1 >= 0 && x - 1 >= 0)
-                    {//NO ERROR
-                        if (Botones[x - 1, y - 1].ImageUrl.Equals(url2))
-                        {//SIG + SIG POS ES NEGRO
-                            for (int a = 0; a < 8; a++)
-                            {
-                                for (int b = 0; b < 8; b++)
-                                {
-                                    if (YmenXmenM[a, b] == 'N')
-                                    {
-                                        Botones[a, b].ImageUrl = url2;
-                                    }
-                                }
-                            }
-                        }
-                        else if (Botones[x - 1, y - 1].ImageUrl.Equals(url))
-                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            YmenXmenM[x - 1, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE 
-                            YmenXmenR(x - 1, y - 1, url, url2);//INTERCALAR FICHAS
-                        }
-                    }
-                }
-            }
-        }//6
-        public void YmenXmasR(int x, int y, String url,String url2)
-        {
-            delete();//DELETE
-            ImageButton[,] Botones = BotonMulti();
-            if (y >= 0 && x < 8)
-            {//CAUSE ERROR POSICON
-                YmenXmasM[x, y] = 'N';
-                if (Botones[x, y].ImageUrl.Equals(url))
-                {//SIG POS ES BLANCO
-                    if (y - 1 >= 0 && x + 1 < 8)
-                    {//NO ERROR
-                        if (Botones[x + 1, y - 1].ImageUrl.Equals(url2))
-                        {//SIG + SIG POS ES NULO NEGRO
-                            for (int a = 0; a < 8; a++)
-                            {
-                                for (int b = 0; b < 8; b++)
-                                {
-                                    if (YmenXmasM[a, b] == 'N')
-                                    {
-                                        Botones[a, b].ImageUrl = url2;
-                                    }
-                                }
-                            }
-                        }
-                        else if (Botones[x + 1, y - 1].ImageUrl.Equals(url))
-                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            YmenXmasM[x + 1, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
-                            YmenXmasR(x + 1, y - 1, url, url2);//INTERCALAR FICHAS
-                        }
-                    }
-                }
-            }
-        }//7
-        public void YmasXmasR(int x, int y, String url,String url2)
-        {
-            delete();//DELETE
-            ImageButton[,] Botones = BotonMulti();
-            if (y < 8 && x < 8)
-            {//CAUSE ERROR POSICON
-                YmasXmasM[x, y] = 'N';
-                if (Botones[x, y].ImageUrl.Equals(url))
-                {//SIG POS ES BLANCO
-                    if (y + 1 < 8 && x + 1 < 8)
-                    {//NO ERROR
-                        if (Botones[x + 1, y + 1].ImageUrl.Equals(url2))
-                        {//SIG + SIG POS ES NULO NEGRO
-                            for (int a = 0; a < 8; a++)
-                            {
-                                for (int b = 0; b < 8; b++)
-                                {
-                                    if (YmasXmasM[a, b] == 'N')
-                                    {
-                                        Botones[a, b].ImageUrl = url2;
-                                    }
-                                }
-                            }
-                        }
-                        else if (Botones[x + 1, y + 1].ImageUrl.Equals(url))
-                        {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            YmasXmasM[x + 1, y + 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
-                            YmasXmasR(x + 1, y + 1, url, url2);//INTERCALAR FICHAS
-
-                        }
-                    }
-                }
-            }
-        }//8
-        public void SearchSus(int posx, int posy) {
-            TEXTO.Text = "PP " + player;
-            if (player % 2 == 0)
+            if (XmasM[posx,posy] == 'T')
             {
-                Convetir(posx,posy,"~/IMG/1.png","~/IMG/2.png");
+                //tt = tt + "x+";
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (XmasM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
             }
-            else {
-                Convetir(posx,posy,"~/IMG/2.png","~/IMG/1.png");
+            else if (XmenM[posx,posy] == 'T')
+            {
+                //tt = tt + "x-";
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (XmenM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
             }
-        }
-        public void Convetir(int a,int b,String cambio,String aceptar) {
-            XmasR(a+1,b,cambio,aceptar);
-            XmenR(a-1, b, cambio, aceptar);
-            YmasR(a, b+1, cambio, aceptar);
-            YmenR(a, b-1, cambio, aceptar);
-
-            YmasXmenR(a-1, b+1, cambio, aceptar);
-            YmenXmenR(a-1, b-1, cambio, aceptar);
-            YmenXmasR(a+1, b-1, cambio, aceptar);
-            YmasXmasR(a+1, b+1, cambio, aceptar);
+            else if (YmasM[posx,posy] == 'T')
+            {
+                //tt = tt + "y+";
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmasM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmenM[posx,posy] == 'T')
+            {
+                //tt = tt + "y-";
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmenM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmasXmenM[posx,posy] == 'T')
+            {
+                //tt = tt + "y+x-";
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmasXmenM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmenXmenM[posx,posy] == 'T')
+            {
+                //tt = tt + "y-x-";
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmenXmenM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmenXmasM[posx,posy] == 'T')
+            {
+                //tt = tt + "y-x+";
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmenXmasM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
+            else if (YmasXmasM[posx,posy] == 'T')
+            {
+                //tt = tt + "y+x+";
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (YmasXmasM[x, y] == 'N')
+                        {
+                            Botones[x, y].ImageUrl = url;
+                        }
+                    }
+                }
+            }
         }
         public void GAME()
         {
             //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('SESION')", true);
             ImageButton[,] Botones = BotonMulti();
+            Object[] Ochoejes = new object[8];
             for (int x = 0; x < 8; x++)
             {
                 for (int y = 0; y < 8; y++)
@@ -578,29 +397,29 @@ namespace GAME
                             //[X,Y]
                             if (Botones[x, y].ImageUrl.Equals("~/IMG/1.png"))
                             {
-                                Xmas(x+1,y, "~/IMG/2.png");
-                                Xmen(x-1, y, "~/IMG/2.png");
-                                Ymas(x, y+1, "~/IMG/2.png");
-                                Ymen(x, y-1, "~/IMG/2.png");
+                                Ochoejes[]=Xmas(x+1,y, "~/IMG/2.png");
+                                Ochoejes[]=Xmen(x-1, y, "~/IMG/2.png");
+                                Ochoejes[]=Ymas(x, y+1, "~/IMG/2.png");
+                                Ochoejes[]=Ymen(x, y-1, "~/IMG/2.png");
 
-                                YmasXmen(x-1,y+1, "~/IMG/2.png");
-                                YmenXmen(x-1, y-1, "~/IMG/2.png");
-                                YmenXmas(x+1, y-1, "~/IMG/2.png");
-                                YmasXmas(x+1, y+1, "~/IMG/2.png");
+                                Ochoejes[]=YmasXmen(x-1,y+1, "~/IMG/2.png");
+                                Ochoejes[]=YmenXmen(x-1, y-1, "~/IMG/2.png");
+                                Ochoejes[]=YmenXmas(x+1, y-1, "~/IMG/2.png");
+                                Ochoejes[]=YmasXmas(x+1, y+1, "~/IMG/2.png");
                                 //GUARDO MATRIZ DE MATRIZ POS
                         }
                         }
                         else {
                             if (Botones[x,y].ImageUrl.Equals("~/IMG/2.png")) {
-                                Xmas(x + 1, y, "~/IMG/1.png");
-                                Xmen(x - 1, y, "~/IMG/1.png");
-                                Ymas(x, y + 1, "~/IMG/1.png");
-                                Ymen(x, y - 1, "~/IMG/1.png");
+                                Ochoejes[]=Xmas(x + 1, y, "~/IMG/1.png");
+                                Ochoejes[]=Xmen(x - 1, y, "~/IMG/1.png");
+                                Ochoejes[]=Ymas(x, y + 1, "~/IMG/1.png");
+                                Ochoejes[]=Ymen(x, y - 1, "~/IMG/1.png");
 
-                                YmasXmen(x - 1, y + 1, "~/IMG/1.png");
-                                YmenXmen(x - 1, y - 1, "~/IMG/1.png");
-                                YmenXmas(x + 1, y - 1, "~/IMG/1.png");
-                                YmasXmas(x + 1, y + 1, "~/IMG/1.png");
+                                Ochoejes[]=YmasXmen(x - 1, y + 1, "~/IMG/1.png");
+                                Ochoejes[]=YmenXmen(x - 1, y - 1, "~/IMG/1.png");
+                                Ochoejes[]=YmenXmas(x + 1, y - 1, "~/IMG/1.png");
+                                Ochoejes[]=YmasXmas(x + 1, y + 1, "~/IMG/1.png");
                                 //GUARDO MATRIZ DE MATRIZ POS
                         }
 
@@ -613,14 +432,11 @@ namespace GAME
             {
                 for (int y = 0; y < 8; y++)
                 {
-                    TT = TT + x + " || " + y + " x+"+ String.Join(" ", XmasM[x, y]) + " x-" + String.Join(" ", XmenM[x, y]) + " y+" + String.Join(" 3:", YmasM[x, y]) + " x-" + String.Join(" ", YmenM[x, y]) + "<br>";
-                    tt=tt + x + " || " + y + " Y+X-" + String.Join(" ", YmasXmenM[x, y]) + " Y-X-" + String.Join(" ", YmenXmenM[x, y]) + " Y-X+" + String.Join(" 3:", YmenXmasM[x, y]) + " Y+X+" + String.Join(" ", YmasXmasM[x, y]) + "<br>";
+                    tt = tt + x + " ; " + y + String.Join(" ", XmasM[x, y]) + "<br>";
                 }
             }
-            TEXTO.Text = TT +"<br>" + player+" ;; "+UnaVez;
-            textos.Text = tt + "<br>" + player + " ;; " + UnaVez;
+            TEXTO.Text = tt;
         }
-
 
         protected void BA1_Click(object sender, ImageClickEventArgs e)
         {
@@ -638,8 +454,14 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(0, 0);
-            GAME();   
+            GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(0,0, "~/IMG/2.png");
+            }
+            else {
+                SearchSus(0,0, "~/IMG/1.png");
+            }
         }//[0,0]
         protected void BA2_Click(object sender, ImageClickEventArgs e)
         {
@@ -657,8 +479,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(1, 0);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(1, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(1, 0, "~/IMG/1.png");
+            }
         }//[1,0]
         protected void BA3_Click(object sender, ImageClickEventArgs e)
         {
@@ -676,8 +505,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(2, 0);
-            GAME();  
+            GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(2, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(2, 0, "~/IMG/1.png");
+            }
         }//[2,0]
         protected void BA4_Click(object sender, ImageClickEventArgs e)
         {
@@ -695,8 +531,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(3, 0);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(3, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(3, 0, "~/IMG/1.png");
+            }
         }//[3,0]
         protected void BA5_Click(object sender, ImageClickEventArgs e)
         {
@@ -714,8 +557,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(4, 0);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(4, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(4, 0, "~/IMG/1.png");
+            }
         }//[4,0]
         protected void BA6_Click(object sender, ImageClickEventArgs e)
         {
@@ -733,8 +583,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(5, 0);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(5, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(5, 0, "~/IMG/1.png");
+            }
         }//[5,0]
         protected void BA7_Click(object sender, ImageClickEventArgs e)
         {
@@ -752,8 +609,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(6, 0);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(6, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(6, 0, "~/IMG/1.png");
+            }
         }//[6,0]
         protected void BA8_Click(object sender, ImageClickEventArgs e)
         {
@@ -771,8 +635,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(7, 0);
-            GAME();  
+            GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(7, 0, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(7, 0, "~/IMG/1.png");
+            }
         }//[7,0]
 
 
@@ -792,8 +663,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(0, 1);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(0, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(0, 1, "~/IMG/1.png");
+            }
         }//[0,1]
         protected void BB2_Click(object sender, ImageClickEventArgs e)
         {
@@ -811,8 +689,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(1, 1);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(1, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(1, 1, "~/IMG/1.png");
+            }
         }//[1,1]
         protected void BB3_Click(object sender, ImageClickEventArgs e)
         {
@@ -830,8 +715,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(2, 1);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(2, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(2, 1, "~/IMG/1.png");
+            }
         }//[2,1]
         protected void BB4_Click(object sender, ImageClickEventArgs e)
         {
@@ -849,8 +741,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(3, 1);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(3, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(3, 1, "~/IMG/1.png");
+            }
         }//[3,1]
         protected void BB5_Click(object sender, ImageClickEventArgs e)
         {
@@ -868,8 +767,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(4, 1);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(4, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(4, 1, "~/IMG/1.png");
+            }
         }//[4,1]
         protected void BB6_Click(object sender, ImageClickEventArgs e)
         {
@@ -887,8 +793,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(5, 1);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(5, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(5, 1, "~/IMG/1.png");
+            }
         }//[5,1]
         protected void BB7_Click(object sender, ImageClickEventArgs e)
         {
@@ -906,8 +819,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(6, 1);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(6, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(6, 1, "~/IMG/1.png");
+            }
         }//[6,1]
         protected void BB8_Click(object sender, ImageClickEventArgs e)
         {
@@ -925,8 +845,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(7, 1);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(7, 1, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(7, 1, "~/IMG/1.png");
+            }
         }//[7,1]
 
 
@@ -946,9 +873,15 @@ namespace GAME
                     player++;
                 }
             }
-              SearchSus(0, 2);
             GAME();
-            
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(0, 2, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(0, 2, "~/IMG/1.png");
+            }
         }//[0,2]
         protected void BC2_Click(object sender, ImageClickEventArgs e)
         {
@@ -966,9 +899,15 @@ namespace GAME
                     player++;
                 }
             }
-              SearchSus(1, 2);
             GAME();
-            
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(1, 2, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(1, 2, "~/IMG/1.png");
+            }
         }//[1,2]
         protected void BC3_Click(object sender, ImageClickEventArgs e)
         {
@@ -986,9 +925,15 @@ namespace GAME
                   player++;
               }
           }
-            SearchSus(2, 2);
           GAME();
-          
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(2, 2, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(2, 2, "~/IMG/1.png");
+          }
         }//[2,2]
         protected void BC4_Click(object sender, ImageClickEventArgs e)
         {
@@ -1006,9 +951,16 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(3, 2);
+
           GAME();
-          
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(3, 2, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(3, 2, "~/IMG/1.png");
+          }
         }//[3,2]
         protected void BC5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1030,12 +982,21 @@ namespace GAME
             {
                 ImageButton[,] Botones = BotonMulti();
                 Botones[4, 3].ImageUrl = "~/IMG/1.png";
-            }            
+            }
+
+            GAME();
             if (UnaVez == false)
             {
-                SearchSus(4, 2);
+
+                if (player % 2 == 0)
+                {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                    SearchSus(4, 2, "~/IMG/2.png");
+                }
+                else
+                {
+                    SearchSus(4, 2, "~/IMG/1.png");
+                }
             }
-            GAME();
             UnaVez = false;
 
         }//[4,2] BOTON 1
@@ -1055,8 +1016,16 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(5, 2);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(5, 2, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(5, 2, "~/IMG/1.png");
+          }
+
         }//[5,2]
         protected void BC7_Click(object sender, ImageClickEventArgs e)
         {
@@ -1074,8 +1043,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(6, 2);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 2, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 2, "~/IMG/1.png");
+          }
         }//[6,2]
         protected void BC8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1093,8 +1069,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(7, 2);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 2, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 2, "~/IMG/1.png");
+          }
         }//[7,2]
 
 
@@ -1114,8 +1097,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(0, 3);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(0, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(0, 3, "~/IMG/1.png");
+          }
         }//[0,3]
         protected void BD2_Click(object sender, ImageClickEventArgs e)
         {
@@ -1133,8 +1123,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(1, 3);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(1, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(1, 3, "~/IMG/1.png");
+          }
         }//[1,3]
         protected void BD3_Click(object sender, ImageClickEventArgs e)
         {
@@ -1152,8 +1149,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(2, 3);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(2, 3, "~/IMG/1.png");
+          }
+          else
+          {
+              SearchSus(2, 3, "~/IMG/2.png");
+          }
         }//[2,3]
         protected void BD4_Click(object sender, ImageClickEventArgs e)
         {
@@ -1171,8 +1175,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(3, 3);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(3, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(3, 3, "~/IMG/1.png");
+          }
         }//[3,3]
         protected void BD5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1190,8 +1201,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(4, 3);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(4, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(4, 3, "~/IMG/1.png");
+          }
         }//[4,3]
         protected void BD6_Click(object sender, ImageClickEventArgs e)
         {
@@ -1214,11 +1232,19 @@ namespace GAME
                 ImageButton[,] Botones = BotonMulti();
                 Botones[4, 3].ImageUrl = "~/IMG/1.png";
             }
+
+            GAME();
             if (UnaVez == false)
             {
-                SearchSus(5, 3);
+                if (player % 2 == 0)
+                {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                    SearchSus(5, 3, "~/IMG/2.png");
+                }
+                else
+                {
+                    SearchSus(5, 3, "~/IMG/1.png");
+                }
             }
-            GAME();
             UnaVez = false;
         }//[5,3] BOTON 2
         protected void BD7_Click(object sender, ImageClickEventArgs e)
@@ -1237,8 +1263,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(6, 3);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 3, "~/IMG/1.png");
+          }
         }//[6,3]
         protected void BD8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1256,9 +1289,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(7, 3);
           GAME();
-          
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 3, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 3, "~/IMG/1.png");
+          }
         }//[7,3]
 
 
@@ -1278,8 +1317,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(0, 4);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(0, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(0, 4, "~/IMG/1.png");
+          }
         }//[0,4]
         protected void BE2_Click(object sender, ImageClickEventArgs e)
         {
@@ -1297,8 +1343,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(1, 4);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(1, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(1, 4, "~/IMG/1.png");
+          }
         }//[1,4]
         protected void BE3_Click(object sender, ImageClickEventArgs e)
         {
@@ -1321,11 +1374,19 @@ namespace GAME
                 ImageButton[,] Botones = BotonMulti();
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
             }
+
+            GAME();
             if (UnaVez == false)
             {
-                SearchSus(2, 4);
+                if (player % 2 == 0)
+                {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                    SearchSus(2, 4, "~/IMG/2.png");
+                }
+                else
+                {
+                    SearchSus(2, 4, "~/IMG/1.png");
+                }
             }
-            GAME();
             UnaVez = false;
         }//[2,4] BOTON 3
         protected void BE4_Click(object sender, ImageClickEventArgs e)
@@ -1344,8 +1405,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(3, 4);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(3, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(3, 4, "~/IMG/1.png");
+          }
         }//[3,4]
         protected void BE5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1363,8 +1431,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(4, 4);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(4, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(4, 4, "~/IMG/1.png");
+          }
         }//[4,4]
         protected void BE6_Click(object sender, ImageClickEventArgs e)
         {
@@ -1382,24 +1457,19 @@ namespace GAME
                   player++;
               }
           }
-            /*if (button.ImageUrl == "~/IMG/1.png")
-            {
-                TEXTO.Text = "NEGRO "+player;
-            }
-            else if (button.ImageUrl == "~/IMG/2.png")
-            {
-                TEXTO.Text = "BLANCO " + player;
-            }
-            else
-            {
-                TEXTO.Text = "NINGUNO " + player;
-            }*/
-            SearchSus(5, 4);
-            GAME();
-            //ImageButton[,] Botones = BotonMulti();
-            //TEXTO.Text = Botones[5,4].ID;
-            
-            //Consola();
+          GAME();
+        //ImageButton[,] Botones = BotonMulti();
+        //TEXTO.Text = Botones[5,4].ID;
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(5, 4, "~/IMG/1.png");
+
+          }
+          else
+          {
+              SearchSus(5, 4, "~/IMG/2.png");
+          }
+            Consola();
         }//[5,4]
         protected void BE7_Click(object sender, ImageClickEventArgs e)
         {
@@ -1417,8 +1487,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(6, 4);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 4, "~/IMG/1.png");
+          }
         }//[6,4]
         protected void BE8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1436,8 +1513,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(7, 4);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 4, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 4, "~/IMG/1.png");
+          }
         }//[7,4]
 
 
@@ -1457,8 +1541,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(0, 5);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(0, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(0, 5, "~/IMG/1.png");
+          }
         }//[0,5]
         protected void BF2_Click(object sender, ImageClickEventArgs e)
         {
@@ -1476,8 +1567,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(1, 5);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(1, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(1, 5, "~/IMG/1.png");
+          }
         }//[1,5]
         protected void BF3_Click(object sender, ImageClickEventArgs e)
         {
@@ -1495,8 +1593,15 @@ namespace GAME
                     player++;
                 }
             }
-            SearchSus(2, 5);
             GAME();
+            if (player % 2 == 0)
+            {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                SearchSus(2, 5, "~/IMG/2.png");
+            }
+            else
+            {
+                SearchSus(2, 5, "~/IMG/1.png");
+            }
         }//[2,5]
         protected void BF4_Click(object sender, ImageClickEventArgs e)
         {
@@ -1514,20 +1619,25 @@ namespace GAME
                     player++;
                 }
             }
-            ImageButton[,] Botones = BotonMulti();
             if (UnaVez == true)
             {
-                
+                ImageButton[,] Botones = BotonMulti();
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
-            }
-            else if (UnaVez == false)
-            {
-                SearchSus(4, 2);
             }
 
             GAME();
+            if (UnaVez == false)
+            {
+                if (player % 2 == 0)
+                {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+                    SearchSus(4, 2, "~/IMG/2.png");
+                }
+                else
+                {
+                    SearchSus(4, 2, "~/IMG/1.png");
+                }
+            }
             UnaVez = false;
-            Consola();
         }//[3,5] BOTON 4
         protected void BF5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1545,8 +1655,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(4, 5);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(4, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(4, 5, "~/IMG/1.png");
+          }
         }//[4,5]
         protected void BF6_Click(object sender, ImageClickEventArgs e)
         {
@@ -1564,8 +1681,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(5, 5);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(5, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(5, 5, "~/IMG/1.png");
+          }
         }//[5,5]
         protected void BF7_Click(object sender, ImageClickEventArgs e)
         {
@@ -1583,8 +1707,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(6, 5);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 5, "~/IMG/1.png");
+          }
         }//[6,5]
         protected void BF8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1602,8 +1733,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(7, 5);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 5, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 5, "~/IMG/1.png");
+          }
         }//[7,5]
 
 
@@ -1623,8 +1761,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(0, 6);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(0, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(0, 6, "~/IMG/1.png");
+          }
         }//[0,6]
         protected void BG2_Click(object sender, ImageClickEventArgs e)
         {
@@ -1642,8 +1787,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(1, 6);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(1, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(1, 6, "~/IMG/1.png");
+          }
         }//[1,6]
         protected void BG3_Click(object sender, ImageClickEventArgs e)
         {
@@ -1661,8 +1813,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(2, 6);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(2, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(2, 6, "~/IMG/1.png");
+          }
         }//[2,6]
         protected void BG4_Click(object sender, ImageClickEventArgs e)
         {
@@ -1680,8 +1839,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(3, 6);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(3, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(3, 6, "~/IMG/1.png");
+          }
         }//[3,6]
         protected void BG5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1699,8 +1865,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(4, 6);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(4, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(4, 6, "~/IMG/1.png");
+          }
         }//[4,6]
         protected void BG6_Click(object sender, ImageClickEventArgs e)
         {
@@ -1718,8 +1891,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(5, 6);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(5, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(5, 6, "~/IMG/1.png");
+          }
         }//[5,6]
         protected void BG7_Click(object sender, ImageClickEventArgs e)
         {
@@ -1737,8 +1917,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(6, 6);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 6, "~/IMG/1.png");
+          }
         }//[6,6]
         protected void BG8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1756,8 +1943,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(7, 6);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 6, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 6, "~/IMG/1.png");
+          }
         }//[7,6]
 
 
@@ -1777,8 +1971,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(0, 7);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(0, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(0, 7, "~/IMG/1.png");
+          }
         }//[0,7]
         protected void BH2_Click(object sender, ImageClickEventArgs e)
         {
@@ -1796,8 +1997,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(1, 7);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(1, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(1, 7, "~/IMG/1.png");
+          }
         }//[1,7]
         protected void BH3_Click(object sender, ImageClickEventArgs e)
         {
@@ -1815,8 +2023,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(2, 7);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(2, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(2, 7, "~/IMG/1.png");
+          }
         }//[2,7]
         protected void BH4_Click(object sender, ImageClickEventArgs e)
         {
@@ -1834,8 +2049,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(3, 7);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(3, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(3, 7, "~/IMG/1.png");
+          }
         }//[3,7]
         protected void BH5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1853,8 +2075,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(4, 7);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(4, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(4, 7, "~/IMG/1.png");
+          }
         }//[4,7]
         protected void BH6_Click(object sender, ImageClickEventArgs e)
         {
@@ -1872,8 +2101,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(5, 7);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(5, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(5, 7, "~/IMG/1.png");
+          }
         }//[5,7]
         protected void BH7_Click(object sender, ImageClickEventArgs e)
         {
@@ -1891,8 +2127,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(6, 7);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(6, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(6, 7, "~/IMG/1.png");
+          }
         }//[6,7]
         protected void BH8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1910,8 +2153,15 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(7, 7);
           GAME();
+          if (player % 2 == 0)
+          {//YA AUMENTO PERO NECEISTO QUE LO QUE LE DE CLICK SE QUEDE EN EL ANTERIOR COLOR
+              SearchSus(7, 7, "~/IMG/2.png");
+          }
+          else
+          {
+              SearchSus(7, 7, "~/IMG/1.png");
+          }
         }//[7,7]
         /*String[] UrlB() {
             string[] BotonesTexto =TENER MATRIZ DE TODO EL TEXTO
