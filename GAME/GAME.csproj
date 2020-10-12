@@ -22,7 +22,8 @@
     <AssemblyName>GAME</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress>true</Use64BitIISExpress>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
     <IISExpressSSLPort>44339</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -45,7 +46,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -138,13 +139,14 @@
     <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
+    <Content Include="Get.aspx" />
     <Content Include="IMG\2.png" />
     <Content Include="IMG\1.png" />
     <Content Include="IMG\3.jpg" />
     <Content Include="Iniciar_Sesion.aspx" />
     <Content Include="Models\TextFile1.txt" />
+    <Content Include="Ocpu.aspx" />
     <Content Include="Registrarse.aspx" />
-    <Content Include="Othelo.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -364,6 +366,13 @@
     <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.designer.cs">
       <DependentUpon>Url_Edit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Get.aspx.cs">
+      <DependentUpon>Get.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Get.aspx.designer.cs">
+      <DependentUpon>Get.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Iniciar_Sesion.aspx.cs">
       <DependentUpon>Iniciar_Sesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -372,6 +381,13 @@
       <DependentUpon>Iniciar_Sesion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Juego.cs" />
+    <Compile Include="Ocpu.aspx.cs">
+      <DependentUpon>Ocpu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ocpu.aspx.designer.cs">
+      <DependentUpon>Ocpu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registrarse.aspx.cs">
       <DependentUpon>Registrarse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -380,13 +396,6 @@
       <DependentUpon>Registrarse.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Othelo.aspx.cs">
-      <DependentUpon>Othelo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Othelo.aspx.designer.cs">
-      <DependentUpon>Othelo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

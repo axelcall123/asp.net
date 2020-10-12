@@ -14,7 +14,7 @@ namespace GAME
     public partial class Contact : Page
     {
         static int player = 0;
-        static Boolean UnaVez=true;
+        static Boolean UnaVez=true; 
         static string tt = "";//TEXTO AYUDA PARA LOS LABEL
         static string TT = "";//TEXTO AYUDA PARA LOS LABEL
         static char[,] XmasM= new char[8,8]; //X+
@@ -270,13 +270,12 @@ namespace GAME
         //            POS     X      Y      BLANCO       NEGRO
         public void XmasR(int x, int y, String url,String url2)//POSICION ACTUAL DE BOTON
         {//COLOR NEGREO
-            delete();//DELETE
             ImageButton[,] Botones = BotonMulti();
             if (x < 8)
             {//CAUSE ERROR POSICON
-                XmasM[x, y] = 'N';
                 if (Botones[x, y].ImageUrl.Equals(url))
                 {//SIG POS ES BLANCO
+                    XmasM[x, y] = 'N';
                     if (x + 1 < 8)
                     {//NO ERROR
                         if (Botones[x + 1, y].ImageUrl.Equals(url2))//NEGRO
@@ -303,13 +302,12 @@ namespace GAME
         }/*1*/
         public void XmenR(int x, int y, String url,String url2)
         {
-            delete();//DELETE
             ImageButton[,] Botones = BotonMulti();
             if (x >= 0)
             {//CAUSE ERROR POSICON
-                XmenM[x, y] = 'N';
                 if (Botones[x, y].ImageUrl.Equals(url))
                 {//SIG POS ES BLANCO
+                    XmenM[x, y] = 'N';
                     if (x - 1 >= 0)
                     {//NO ERROR
                         if (Botones[x - 1, y].ImageUrl.Equals(url2))
@@ -334,15 +332,15 @@ namespace GAME
                 }
             }
         }/*2*/
+        
         public void YmasR(int x, int y, String url,String url2)
         {
-            delete();//DELETE
             ImageButton[,] Botones = BotonMulti();
             if (y < 8)
             {//CAUSE ERROR POSICON
-                YmasM[x, y] = 'N';
                 if (Botones[x, y].ImageUrl.Equals(url))
-                {//SIG POS ES BLANCO 
+                {//SIG POS ES BLANCO
+                    YmasM[x, y] = 'N';
                     if (y + 1 < 8)
                     {//NO ERROR
                         if (Botones[x, y + 1].ImageUrl.Equals(url2))
@@ -370,15 +368,14 @@ namespace GAME
         }/*3*/
         public void YmenR(int x, int y, String url,String url2)
         {
-            delete();//DELETE
             ImageButton[,] Botones = BotonMulti();
             if (y >= 0)
             {//CAUSE ERROR POSICON
-                YmenM[x, y] = 'N';
                 if (Botones[x, y].ImageUrl.Equals(url))
                 {//SIG POS ES BLANCO
                     if (y - 1 >= 0)
                     {//NO ERROR
+                        YmenM[x, y] = 'N';
                         if (Botones[x, y - 1].ImageUrl.Equals(url2))
                         {//SIG + SIG POS ES NEGRO
                             for (int a = 0; a < 8; a++)
@@ -404,13 +401,12 @@ namespace GAME
         ////
         public void YmasXmenR(int x, int y, String url,String url2)
         {
-            delete();//DELETE
             ImageButton[,] Botones = BotonMulti();
             if (y < 8 && x >= 0)
             {//CAUSE ERROR POSICON
-                YmasXmenM[x, y] = 'N';
                 if (Botones[x, y].ImageUrl.Equals(url))
                 {//SIG POS ES BLANCO
+                    YmasXmenM[x, y] = 'N';
                     if (y + 1 < 8 && x - 1 >= 0)
                     {//NO ERROR
                         if (Botones[x - 1, y + 1].ImageUrl.Equals(url2))
@@ -437,13 +433,12 @@ namespace GAME
         }//5
         public void YmenXmenR(int x, int y, String url, String url2)
         {
-            delete();//DELETE
             ImageButton[,] Botones = BotonMulti();
             if (y >= 0 && x >= 0)
             {//CAUSE ERROR POSICON
-                YmenXmenM[x, y] = 'N';
                 if (Botones[x, y].ImageUrl.Equals(url))
                 {//SIG POS ES BLANCO
+                    YmenXmenM[x, y] = 'N';
                     if (y - 1 >= 0 && x - 1 >= 0)
                     {//NO ERROR
                         if (Botones[x - 1, y - 1].ImageUrl.Equals(url2))
@@ -461,7 +456,7 @@ namespace GAME
                         }
                         else if (Botones[x - 1, y - 1].ImageUrl.Equals(url))
                         {//SIG + SIG POS ES BLANCO SEGUIR SIGUIENTE POS
-                            YmenXmenM[x - 1, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE 
+                            YmenXmenM[x - 1, y - 1] = 'N';//POSICIONES QUE SE SALTO ANTERIORMENTE
                             YmenXmenR(x - 1, y - 1, url, url2);//INTERCALAR FICHAS
                         }
                     }
@@ -470,13 +465,12 @@ namespace GAME
         }//6
         public void YmenXmasR(int x, int y, String url,String url2)
         {
-            delete();//DELETE
             ImageButton[,] Botones = BotonMulti();
             if (y >= 0 && x < 8)
             {//CAUSE ERROR POSICON
-                YmenXmasM[x, y] = 'N';
                 if (Botones[x, y].ImageUrl.Equals(url))
                 {//SIG POS ES BLANCO
+                    YmenXmasM[x, y] = 'N';
                     if (y - 1 >= 0 && x + 1 < 8)
                     {//NO ERROR
                         if (Botones[x + 1, y - 1].ImageUrl.Equals(url2))
@@ -503,13 +497,12 @@ namespace GAME
         }//7
         public void YmasXmasR(int x, int y, String url,String url2)
         {
-            delete();//DELETE
             ImageButton[,] Botones = BotonMulti();
             if (y < 8 && x < 8)
             {//CAUSE ERROR POSICON
-                YmasXmasM[x, y] = 'N';
                 if (Botones[x, y].ImageUrl.Equals(url))
                 {//SIG POS ES BLANCO
+                    YmasXmasM[x, y] = 'N';
                     if (y + 1 < 8 && x + 1 < 8)
                     {//NO ERROR
                         if (Botones[x + 1, y + 1].ImageUrl.Equals(url2))
@@ -536,7 +529,6 @@ namespace GAME
             }
         }//8
         public void SearchSus(int posx, int posy) {
-            TEXTO.Text = "PP " + player;
             if (player % 2 == 0)
             {
                 Convetir(posx,posy,"~/IMG/1.png","~/IMG/2.png");
@@ -544,6 +536,7 @@ namespace GAME
             else {
                 Convetir(posx,posy,"~/IMG/2.png","~/IMG/1.png");
             }
+
         }
         public void Convetir(int a,int b,String cambio,String aceptar) {
             XmasR(a+1,b,cambio,aceptar);
@@ -555,6 +548,7 @@ namespace GAME
             YmenXmenR(a-1, b-1, cambio, aceptar);
             YmenXmasR(a+1, b-1, cambio, aceptar);
             YmasXmasR(a+1, b+1, cambio, aceptar);
+            delete();
         }
         public void GAME()
         {
@@ -609,6 +603,8 @@ namespace GAME
                 }
         }
         public void Consola() {
+            /*TT = "";
+             tt = "";
             for (int x = 0; x < 8; x++)
             {
                 for (int y = 0; y < 8; y++)
@@ -618,9 +614,58 @@ namespace GAME
                 }
             }
             TEXTO.Text = TT +"<br>" + player+" ;; "+UnaVez;
-            textos.Text = tt + "<br>" + player + " ;; " + UnaVez;
+            textos.Text = tt + "<br>" + player + " ;; " + UnaVez;*/
         }
 
+        public void random() {
+        
+            int bb = 0;
+            ImageButton[,] Botones = BotonMulti();
+            for (int x = 0; x < 8; x++)
+            {
+                for (int y = 0; y < 8; y++)
+                {
+                    if (Botones[x, y].Enabled == true)
+                    {
+                        bb = bb + 1;
+                    }
+                }
+            }
+            if (bb == 0)
+            {
+                textos.Text = "C ACABO";
+            }
+            else
+            {
+
+                Random rnd = new Random();
+                int opcion = rnd.Next(1, bb);
+                int aa = 1;
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (Botones[x, y].Enabled == true)
+                        {
+                            if (opcion == aa)
+                            {
+                                Botones[x, y].ImageUrl = "~/IMG/2.png";//BLANCO
+                                player++;
+                                SearchSus(x, y);
+                                GAME();
+                                x = 9;
+                                break;
+                            }
+                            else
+                            {
+                                aa += 1;
+                            }
+                        }
+                    }
+                }
+            }
+        
+        }
 
         protected void BA1_Click(object sender, ImageClickEventArgs e)
         {
@@ -639,7 +684,8 @@ namespace GAME
                 }
             }
             SearchSus(0, 0);
-            GAME();   
+            GAME();
+            random();
         }//[0,0]
         protected void BA2_Click(object sender, ImageClickEventArgs e)
         {
@@ -659,6 +705,7 @@ namespace GAME
             }
             SearchSus(1, 0);
             GAME();
+            random();
         }//[1,0]
         protected void BA3_Click(object sender, ImageClickEventArgs e)
         {
@@ -677,7 +724,8 @@ namespace GAME
                 }
             }
             SearchSus(2, 0);
-            GAME();  
+            GAME();
+            random();
         }//[2,0]
         protected void BA4_Click(object sender, ImageClickEventArgs e)
         {
@@ -697,6 +745,7 @@ namespace GAME
             }
             SearchSus(3, 0);
             GAME();
+            random();
         }//[3,0]
         protected void BA5_Click(object sender, ImageClickEventArgs e)
         {
@@ -716,6 +765,7 @@ namespace GAME
             }
             SearchSus(4, 0);
             GAME();
+            random();
         }//[4,0]
         protected void BA6_Click(object sender, ImageClickEventArgs e)
         {
@@ -735,6 +785,7 @@ namespace GAME
             }
             SearchSus(5, 0);
             GAME();
+            random();
         }//[5,0]
         protected void BA7_Click(object sender, ImageClickEventArgs e)
         {
@@ -754,6 +805,7 @@ namespace GAME
             }
             SearchSus(6, 0);
             GAME();
+            random();
         }//[6,0]
         protected void BA8_Click(object sender, ImageClickEventArgs e)
         {
@@ -772,7 +824,8 @@ namespace GAME
                 }
             }
             SearchSus(7, 0);
-            GAME();  
+            GAME();
+            random();
         }//[7,0]
 
 
@@ -794,6 +847,7 @@ namespace GAME
             }
             SearchSus(0, 1);
             GAME();
+            random();
         }//[0,1]
         protected void BB2_Click(object sender, ImageClickEventArgs e)
         {
@@ -813,6 +867,7 @@ namespace GAME
             }
             SearchSus(1, 1);
             GAME();
+            random();
         }//[1,1]
         protected void BB3_Click(object sender, ImageClickEventArgs e)
         {
@@ -832,6 +887,7 @@ namespace GAME
             }
             SearchSus(2, 1);
             GAME();
+            random();
         }//[2,1]
         protected void BB4_Click(object sender, ImageClickEventArgs e)
         {
@@ -851,6 +907,7 @@ namespace GAME
             }
             SearchSus(3, 1);
             GAME();
+            random();
         }//[3,1]
         protected void BB5_Click(object sender, ImageClickEventArgs e)
         {
@@ -870,6 +927,7 @@ namespace GAME
             }
             SearchSus(4, 1);
             GAME();
+            random();
         }//[4,1]
         protected void BB6_Click(object sender, ImageClickEventArgs e)
         {
@@ -889,6 +947,7 @@ namespace GAME
             }
             SearchSus(5, 1);
             GAME();
+            random();
         }//[5,1]
         protected void BB7_Click(object sender, ImageClickEventArgs e)
         {
@@ -908,6 +967,7 @@ namespace GAME
             }
             SearchSus(6, 1);
             GAME();
+            random();
         }//[6,1]
         protected void BB8_Click(object sender, ImageClickEventArgs e)
         {
@@ -927,6 +987,7 @@ namespace GAME
             }
             SearchSus(7, 1);
             GAME();
+            random();
         }//[7,1]
 
 
@@ -948,7 +1009,8 @@ namespace GAME
             }
               SearchSus(0, 2);
             GAME();
-            
+            random();
+
         }//[0,2]
         protected void BC2_Click(object sender, ImageClickEventArgs e)
         {
@@ -968,7 +1030,8 @@ namespace GAME
             }
               SearchSus(1, 2);
             GAME();
-            
+            random();
+
         }//[1,2]
         protected void BC3_Click(object sender, ImageClickEventArgs e)
         {
@@ -988,7 +1051,8 @@ namespace GAME
           }
             SearchSus(2, 2);
           GAME();
-          
+          random();
+
         }//[2,2]
         protected void BC4_Click(object sender, ImageClickEventArgs e)
         {
@@ -1008,7 +1072,8 @@ namespace GAME
           }
           SearchSus(3, 2);
           GAME();
-          
+          random();
+
         }//[3,2]
         protected void BC5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1030,12 +1095,17 @@ namespace GAME
             {
                 ImageButton[,] Botones = BotonMulti();
                 Botones[4, 3].ImageUrl = "~/IMG/1.png";
-            }            
+                GAME();
+                random();
+            }
             if (UnaVez == false)
             {
                 SearchSus(4, 2);
+                GAME();
+                random();
             }
-            GAME();
+            
+            
             UnaVez = false;
 
         }//[4,2] BOTON 1
@@ -1057,6 +1127,7 @@ namespace GAME
           }
           SearchSus(5, 2);
           GAME();
+          random();
         }//[5,2]
         protected void BC7_Click(object sender, ImageClickEventArgs e)
         {
@@ -1076,6 +1147,7 @@ namespace GAME
           }
           SearchSus(6, 2);
           GAME();
+          random();
         }//[6,2]
         protected void BC8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1095,6 +1167,7 @@ namespace GAME
           }
           SearchSus(7, 2);
           GAME();
+          random();
         }//[7,2]
 
 
@@ -1116,6 +1189,7 @@ namespace GAME
           }
           SearchSus(0, 3);
           GAME();
+          random();
         }//[0,3]
         protected void BD2_Click(object sender, ImageClickEventArgs e)
         {
@@ -1135,6 +1209,7 @@ namespace GAME
           }
           SearchSus(1, 3);
           GAME();
+          random();
         }//[1,3]
         protected void BD3_Click(object sender, ImageClickEventArgs e)
         {
@@ -1154,6 +1229,7 @@ namespace GAME
           }
           SearchSus(2, 3);
           GAME();
+          random();
         }//[2,3]
         protected void BD4_Click(object sender, ImageClickEventArgs e)
         {
@@ -1173,6 +1249,7 @@ namespace GAME
           }
           SearchSus(3, 3);
           GAME();
+          random();
         }//[3,3]
         protected void BD5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1192,6 +1269,7 @@ namespace GAME
           }
           SearchSus(4, 3);
           GAME();
+          random();
         }//[4,3]
         protected void BD6_Click(object sender, ImageClickEventArgs e)
         {
@@ -1213,12 +1291,16 @@ namespace GAME
             {
                 ImageButton[,] Botones = BotonMulti();
                 Botones[4, 3].ImageUrl = "~/IMG/1.png";
+                GAME();
+            random();
             }
             if (UnaVez == false)
             {
                 SearchSus(5, 3);
+                GAME();
+            random();
             }
-            GAME();
+            
             UnaVez = false;
         }//[5,3] BOTON 2
         protected void BD7_Click(object sender, ImageClickEventArgs e)
@@ -1239,6 +1321,7 @@ namespace GAME
           }
           SearchSus(6, 3);
           GAME();
+          random();
         }//[6,3]
         protected void BD8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1258,7 +1341,8 @@ namespace GAME
           }
           SearchSus(7, 3);
           GAME();
-          
+          random();
+
         }//[7,3]
 
 
@@ -1280,6 +1364,7 @@ namespace GAME
           }
           SearchSus(0, 4);
           GAME();
+          random();
         }//[0,4]
         protected void BE2_Click(object sender, ImageClickEventArgs e)
         {
@@ -1299,6 +1384,7 @@ namespace GAME
           }
           SearchSus(1, 4);
           GAME();
+          random();
         }//[1,4]
         protected void BE3_Click(object sender, ImageClickEventArgs e)
         {
@@ -1316,16 +1402,21 @@ namespace GAME
                     player++;
                 }
             }
+            
             if (UnaVez == true)
             {
                 ImageButton[,] Botones = BotonMulti();
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
+                GAME();
+                random();
             }
             if (UnaVez == false)
             {
                 SearchSus(2, 4);
+                GAME();
+                random();
             }
-            GAME();
+            
             UnaVez = false;
         }//[2,4] BOTON 3
         protected void BE4_Click(object sender, ImageClickEventArgs e)
@@ -1346,6 +1437,7 @@ namespace GAME
           }
           SearchSus(3, 4);
           GAME();
+          random();
         }//[3,4]
         protected void BE5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1365,6 +1457,7 @@ namespace GAME
           }
           SearchSus(4, 4);
           GAME();
+          random();
         }//[4,4]
         protected void BE6_Click(object sender, ImageClickEventArgs e)
         {
@@ -1396,10 +1489,11 @@ namespace GAME
             }*/
             SearchSus(5, 4);
             GAME();
+            random();
             //ImageButton[,] Botones = BotonMulti();
             //TEXTO.Text = Botones[5,4].ID;
-            
-            //Consola();
+
+            //
         }//[5,4]
         protected void BE7_Click(object sender, ImageClickEventArgs e)
         {
@@ -1419,6 +1513,7 @@ namespace GAME
           }
           SearchSus(6, 4);
           GAME();
+          random();
         }//[6,4]
         protected void BE8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1438,6 +1533,7 @@ namespace GAME
           }
           SearchSus(7, 4);
           GAME();
+          random();
         }//[7,4]
 
 
@@ -1459,6 +1555,7 @@ namespace GAME
           }
           SearchSus(0, 5);
           GAME();
+          random();
         }//[0,5]
         protected void BF2_Click(object sender, ImageClickEventArgs e)
         {
@@ -1478,6 +1575,7 @@ namespace GAME
           }
           SearchSus(1, 5);
           GAME();
+          random();
         }//[1,5]
         protected void BF3_Click(object sender, ImageClickEventArgs e)
         {
@@ -1497,6 +1595,7 @@ namespace GAME
             }
             SearchSus(2, 5);
             GAME();
+            random();
         }//[2,5]
         protected void BF4_Click(object sender, ImageClickEventArgs e)
         {
@@ -1514,20 +1613,24 @@ namespace GAME
                     player++;
                 }
             }
-            ImageButton[,] Botones = BotonMulti();
+            
             if (UnaVez == true)
             {
-                
+                ImageButton[,] Botones = BotonMulti();
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
+                GAME();
+                random();
             }
-            else if (UnaVez == false)
+            if (UnaVez == false)
             {
-                SearchSus(4, 2);
+                SearchSus(3, 5);
+                GAME();
+                random();
             }
 
-            GAME();
+            
             UnaVez = false;
-            Consola();
+
         }//[3,5] BOTON 4
         protected void BF5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1547,6 +1650,7 @@ namespace GAME
           }
           SearchSus(4, 5);
           GAME();
+          random();
         }//[4,5]
         protected void BF6_Click(object sender, ImageClickEventArgs e)
         {
@@ -1566,6 +1670,7 @@ namespace GAME
           }
           SearchSus(5, 5);
           GAME();
+          random();
         }//[5,5]
         protected void BF7_Click(object sender, ImageClickEventArgs e)
         {
@@ -1585,6 +1690,7 @@ namespace GAME
           }
           SearchSus(6, 5);
           GAME();
+          random();
         }//[6,5]
         protected void BF8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1604,6 +1710,7 @@ namespace GAME
           }
           SearchSus(7, 5);
           GAME();
+          random();
         }//[7,5]
 
 
@@ -1625,6 +1732,7 @@ namespace GAME
           }
           SearchSus(0, 6);
           GAME();
+          random();
         }//[0,6]
         protected void BG2_Click(object sender, ImageClickEventArgs e)
         {
@@ -1644,6 +1752,7 @@ namespace GAME
           }
           SearchSus(1, 6);
           GAME();
+          random();
         }//[1,6]
         protected void BG3_Click(object sender, ImageClickEventArgs e)
         {
@@ -1663,6 +1772,7 @@ namespace GAME
           }
           SearchSus(2, 6);
           GAME();
+          random();
         }//[2,6]
         protected void BG4_Click(object sender, ImageClickEventArgs e)
         {
@@ -1682,6 +1792,7 @@ namespace GAME
           }
           SearchSus(3, 6);
           GAME();
+          random();
         }//[3,6]
         protected void BG5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1701,6 +1812,7 @@ namespace GAME
           }
           SearchSus(4, 6);
           GAME();
+          random();
         }//[4,6]
         protected void BG6_Click(object sender, ImageClickEventArgs e)
         {
@@ -1720,6 +1832,7 @@ namespace GAME
           }
           SearchSus(5, 6);
           GAME();
+          random();
         }//[5,6]
         protected void BG7_Click(object sender, ImageClickEventArgs e)
         {
@@ -1739,6 +1852,7 @@ namespace GAME
           }
           SearchSus(6, 6);
           GAME();
+          random();
         }//[6,6]
         protected void BG8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1758,6 +1872,7 @@ namespace GAME
           }
           SearchSus(7, 6);
           GAME();
+          random();
         }//[7,6]
 
 
@@ -1779,6 +1894,7 @@ namespace GAME
           }
           SearchSus(0, 7);
           GAME();
+          random();
         }//[0,7]
         protected void BH2_Click(object sender, ImageClickEventArgs e)
         {
@@ -1798,6 +1914,7 @@ namespace GAME
           }
           SearchSus(1, 7);
           GAME();
+          random();
         }//[1,7]
         protected void BH3_Click(object sender, ImageClickEventArgs e)
         {
@@ -1817,6 +1934,7 @@ namespace GAME
           }
           SearchSus(2, 7);
           GAME();
+          random();
         }//[2,7]
         protected void BH4_Click(object sender, ImageClickEventArgs e)
         {
@@ -1836,6 +1954,7 @@ namespace GAME
           }
           SearchSus(3, 7);
           GAME();
+          random();
         }//[3,7]
         protected void BH5_Click(object sender, ImageClickEventArgs e)
         {
@@ -1855,6 +1974,7 @@ namespace GAME
           }
           SearchSus(4, 7);
           GAME();
+          random();
         }//[4,7]
         protected void BH6_Click(object sender, ImageClickEventArgs e)
         {
@@ -1874,6 +1994,7 @@ namespace GAME
           }
           SearchSus(5, 7);
           GAME();
+          random();
         }//[5,7]
         protected void BH7_Click(object sender, ImageClickEventArgs e)
         {
@@ -1893,6 +2014,7 @@ namespace GAME
           }
           SearchSus(6, 7);
           GAME();
+          random();
         }//[6,7]
         protected void BH8_Click(object sender, ImageClickEventArgs e)
         {
@@ -1912,6 +2034,7 @@ namespace GAME
           }
           SearchSus(7, 7);
           GAME();
+          random();
         }//[7,7]
         /*String[] UrlB() {
             string[] BotonesTexto =TENER MATRIZ DE TODO EL TEXTO

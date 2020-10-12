@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Othelo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Othelo.aspx.cs" Inherits="GAME.Contact" %>
+﻿<%@ Page Title="Othelo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ocpu.aspx.cs" Inherits="GAME.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
@@ -152,7 +152,6 @@
             </div>
         </div>
     </div>
-    <asp:Label ID="TEXTO" runat="server" Text="CONSOLA 1" Height="500px" Width="50%" BackColor="#00CC00"></asp:Label >
-    <asp:Label ID="textos" runat="server" Text="consola 2" Height="500px" Width="50%" BackColor="#CC66FF"></asp:Label>
-    a
+    <!--asp:Label ID="TEXTO" runat="server" Text="CONSOLA 1" Height="500px" Width="50%" BackColor="#00CC00"></!--asp:Label>
+    <asp:Label ID="textos" runat="server" Text="consola 2" Height="500px" Width="50%" BackColor="#CC66FF"></asp:Label-->
 </asp:Content>

@@ -32,12 +32,12 @@ namespace GAME
             com.Parameters.AddWithValue("@Nombre_Usuario", usuario);
             com.Parameters.AddWithValue("@Contraseña", contraseña);
             SqlDataReader dr = com.ExecuteReader();
-            if (dr.Read())
+            if (dr.Read())//OBTIENE SI ES VERDADERO EL NOMBRE O NO
             {
                 int a = dr.GetInt32(0);
                 if (a == 1)
                 {
-                    Response.Redirect("Othelo.aspx");
+                    Response.Redirect("Get.aspx");
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('SESION')", true);
                 }
                 else
