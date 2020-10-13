@@ -1,7 +1,9 @@
 ﻿<%@ Page EnableEventValidation="false" Title="Iniciar Sesion" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Iniciar_Sesion.aspx.cs" Inherits="GAME.Iniciar_Sesion" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h1>INICIANDO SESION</h1>
-
+    <br />
+    <br />
+    <br />
         <form action="/" method="post">
             <div class="col-lg-12">
                 <span class="icon-user"></span>

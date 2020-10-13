@@ -152,6 +152,6 @@
             </div>
         </div>
     </div>
-    <!--asp:Label ID="TEXTO" runat="server" Text="CONSOLA 1" Height="500px" Width="50%" BackColor="#00CC00"></!--asp:Label>
-    <asp:Label ID="textos" runat="server" Text="consola 2" Height="500px" Width="50%" BackColor="#CC66FF"></asp:Label-->
+    <asp:Label ID="TEXTO" runat="server" Text="CONSOLA 1" Height="500px" Width="50%" BackColor="#00CC00"></asp:Label>
+    <asp:Label ID="textos" runat="server" Text="consola 2" Height="500px" Width="50%" BackColor="#CC66FF"></asp:Label>
 </asp:Content>

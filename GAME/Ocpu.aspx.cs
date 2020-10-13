@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -43,6 +44,7 @@ namespace GAME
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            
         }
         ImageButton[] BotonPro()
         {
@@ -633,7 +635,7 @@ namespace GAME
             }
             if (bb == 0)
             {
-                textos.Text = "C ACABO";
+                /*textos.Text = "C ACABO";*/
             }
             else
             {
@@ -1362,7 +1364,8 @@ namespace GAME
                   player++;
               }
           }
-          SearchSus(0, 4);
+            
+            SearchSus(0, 4);
           GAME();
           random();
         }//[0,4]
@@ -1407,6 +1410,7 @@ namespace GAME
             {
                 ImageButton[,] Botones = BotonMulti();
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
+                TEXTO.Text = Request.QueryString["id"].ToString()+" ME";
                 GAME();
                 random();
             }
