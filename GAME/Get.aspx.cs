@@ -28,5 +28,14 @@ namespace GAME
             tf = false;
             Response.Redirect("Ocpu.aspx?id="+tf);//PASA EL VALOR A LA OTRA PAGINA
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            int x = Int32.Parse(N.Text);//SI ES PAR
+            int y = Int32.Parse(M.Text);
+            if ( x%2== 0 && y % 2 == 0) {
+                Response.Redirect("Extreme.aspx?n=" + N.Text + "&m=" + M.Text);//ENVIAR TAMAÑO DE MATRIZ
+            }
+        }
     }
 }

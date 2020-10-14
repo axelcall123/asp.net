@@ -121,6 +121,7 @@
     <Content Include="Content\css.css" />
     <Content Include="Content\fonts\icomoon.svg" />
     <Content Include="Content\style.css" />
+    <Content Include="DOC.txt" />
     <Content Include="DynamicData\EntityTemplates\Default.ascx" />
     <Content Include="DynamicData\EntityTemplates\Default_Edit.ascx" />
     <Content Include="DynamicData\EntityTemplates\Default_Insert.ascx" />
@@ -144,10 +145,22 @@
     <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
+    <Content Include="Extreme.aspx" />
     <Content Include="Get.aspx" />
     <Content Include="IMG\2.png" />
     <Content Include="IMG\1.png" />
     <Content Include="IMG\3.jpg" />
+    <Content Include="IMG\EX\amarillo.png" />
+    <Content Include="IMG\EX\azul.png" />
+    <Content Include="IMG\EX\blanco.png" />
+    <Content Include="IMG\EX\cafe.png" />
+    <Content Include="IMG\EX\celeste.png" />
+    <Content Include="IMG\EX\naranja.png" />
+    <Content Include="IMG\EX\negro.png" />
+    <Content Include="IMG\EX\rojo.png" />
+    <Content Include="IMG\EX\rosado.png" />
+    <Content Include="IMG\EX\verde.png" />
+    <Content Include="IMG\EX\z.png" />
     <Content Include="Iniciar_Sesion.aspx" />
     <Content Include="Models\TextFile1.txt" />
     <Content Include="Ocpu.aspx" />
@@ -371,6 +384,13 @@
     <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.designer.cs">
       <DependentUpon>Url_Edit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Extreme.aspx.cs">
+      <DependentUpon>Extreme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Extreme.aspx.designer.cs">
+      <DependentUpon>Extreme.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Get.aspx.cs">
       <DependentUpon>Get.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -451,7 +471,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup Condition="$(VisualStudioVersion) == '16.0'">
     <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>

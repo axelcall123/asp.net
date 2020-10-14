@@ -37,8 +37,8 @@ namespace GAME
                 int a = dr.GetInt32(0);
                 if (a == 1)
                 {
-                    Response.Redirect("Get.aspx");
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('SESION')", true);
+                    Response.Redirect("Get.aspx");
                 }
                 else
                 {

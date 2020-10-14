@@ -50,9 +50,5 @@ namespace GAME
 
         }
 
-        protected void nombre_r_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

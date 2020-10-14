@@ -1,0 +1,178 @@
+temp[0] = new ImageButton();
+            temp[0].ImageUrl = "~/IMG/EX/z.png";
+            temp[0].Width = 100;
+            temp[0].Height = 100;
+            temp[0].ID = "A";
+            temp[0].Click += delegate {
+                temp[0].ImageUrl = "~/IMG/EX/rojo.png";
+            };
+            this.Panel1.Controls.Add(temp[0]);
+            //
+            temp[1] = new ImageButton();
+            temp[1].ImageUrl = "~/IMG/EX/z.png";
+            temp[1].Width = 100;
+            temp[1].Height = 100;
+            temp[1].ID = "K";
+            temp[1].Click += delegate {
+                temp[1].ImageUrl = "~/IMG/EX/rojo.png";
+            };
+            this.Panel1.Controls.Add(temp[1]);
+
+
+            /*ImageButton BOTON = new ImageButton();
+            BOTON.ImageUrl = "~/IMG/EX/z.png";
+            BOTON.Width = 100;
+            BOTON.Height = 100;
+            BOTON.ID = "B";
+            this.Panel1.Controls.Add(BOTON);*/
+
+            //Panel PANEL = new Panel();
+            //int id1 = 97;
+            //int id2 = 1;
+            /*int limitx = Int32.Parse(Request.QueryString["n"].ToString());//LIMITES
+            int limity = Int32.Parse(Request.QueryString["m"].ToString());*/
+            /*for (int x = 0; x < 2;x++) {
+                PANEL.CssClass = "hola";
+                this.Panel1.Controls.Add(PANEL);
+                for (int y = 0; y < 2; y++) {
+                    BOTON.ImageUrl = "~/IMG/EX/z.png";
+                    BOTON.Width = 100;
+                    BOTON.Height = 100;//LETRA DEL ALFABETO + NUMERO
+                    String idU = Char.ToString(Convert.ToChar(id1))+id2.ToString();
+                    BOTON.ID = idU;
+                    BOTON.Visible = true;
+                    BOTON.Click += delegate {
+                    BOTON.ImageUrl = "~/IMG/EX/rojo.png";
+                };
+                PANEL.Controls.Add(BOTON); 
+                /*texto = texto+" || "+Char.ToString(Convert.ToChar(id1)) + id2.ToString();
+                id1 += 1;*/
+            //}
+            //texto = texto + "||<br>";
+            //id1 = 97;
+            //id2 += 1;
+            //}
+            //TT.Text = texto;
+
+
+
+
+
+
+
+            for (int x = 0; x < (6 + 2); x++)
+            {
+                PANEL[x] = new Panel();
+                
+                for (int y = 0; y < (8 + 2); y++)
+                {//test[x, y];
+                    if (x == 0 || x == (6 + 2 - 1))//*|A|B|C|D|E|*
+                    {
+                        if (y == 0 || y == (8 + 2 - 1))//*|     |*
+                        {
+                            LETRAS[x, y] = new Button();//(2,8+2)
+                            if (y == 0)//*|
+                            {
+                                if (x == 0) {//PRIMERA POS EN X
+                                    LETRAS[0, y] = new Button();
+                                    LETRAS[0, y].Text = "*";
+                                    LETRAS[0, y].Enabled = false;
+                                    PANEL[x].Controls.Add(LETRAS[0, y]);
+                                } else if (x == (8+2-1)) { //ULTIMA EN POS X
+                                    LETRAS[1, y] = new Button();
+                                    LETRAS[1, y].Text = "*";
+                                    LETRAS[1, y].Enabled = false;
+                                    PANEL[x].Controls.Add(LETRAS[1, y]);
+                                }
+                            }
+                            else//|*
+                            {
+                                if (x == 0)
+                                {//PRIMERA POS EN X
+                                    LETRAS[0, y] = new Button();
+                                    LETRAS[0, y].Text = "*";
+                                    LETRAS[0, y].Enabled = false;
+                                    LETRAS[0, y].Width = 100;
+                                    LETRAS[0, y].Height = 100;
+                                    PANEL[x].Controls.Add(LETRAS[0, y]);
+                                }
+                                else if (x == (8 + 2 - 1))
+                                { //ULTIMA EN POS X
+                                    LETRAS[1, y] = new Button();
+                                    LETRAS[1, y].Text = "*";
+                                    LETRAS[1, y].Enabled = false;
+                                    LETRAS[1, y].Width = 100;
+                                    LETRAS[1, y].Height = 100;
+                                    PANEL[x].Controls.Add(LETRAS[1, y]);
+                                    continue;
+                                }
+                            }
+                        }
+                        else
+                        {// A|B|C|D|E
+                            if (x == 0)
+                            {//PRIMERA POS EN X
+                                LETRAS[0, y] = new Button();
+                                LETRAS[0, y].Text = Char.ToString(Convert.ToChar(id1)) + x.ToString();
+                                LETRAS[0, y].Enabled = false;
+                                LETRAS[0, y].Width = 100;
+                                LETRAS[0, y].Height = 100;
+                                PANEL[x].Controls.Add(LETRAS[0, y]);
+                            }
+                            else if (x == (8 + 2 - 1))
+                            {
+                                LETRAS[1, y] = new Button();
+                                LETRAS[1, y].Text = Char.ToString(Convert.ToChar(id1)) + x.ToString();
+                                LETRAS[1, y].Enabled = false;
+                                LETRAS[1, y].Width = 100;
+                                LETRAS[1, y].Height = 100;
+                                PANEL[x].Controls.Add(LETRAS[1, y]);
+                            }
+                            
+                            id1 += 1;
+                        }
+                    }
+                    else
+                    {
+                        //1|BA1|BB1|BC1|BD1|BE1|1
+                        //2|BA2|BB2|BC2|BD2|BE2|2
+                        //3|BA3|BB3|BC3|BD3|BE3|3
+                        if (y == 0 || y == (8 + 2 - 1))
+                        {//1|       |1
+                         //2|       |2
+                         //3|       |3
+                            if (y == 0)//1| 2| 3|
+                            {
+                                NUMEROS[x-1, 0] = new Button();
+                                NUMEROS[x-1, 0].Text = x.ToString();
+                                NUMEROS[x-1, 0].Enabled = false;
+                                NUMEROS[x-1, 0].Width = 100;
+                                NUMEROS[x-1, 0].Height = 100;
+                                PANEL[x].Controls.Add(NUMEROS[x-1, 0]);
+                            }
+                            else if(y==(8 + 2 - 1))
+                            {//|1 |2 |3
+                                NUMEROS[x-1, 1] = new Button();
+                                NUMEROS[x-1, 1].Text = x.ToString();
+                                NUMEROS[x-1, 1].Enabled = false;
+                                NUMEROS[x-1, 1].Width = 100;
+                                NUMEROS[x-1, 1].Height = 100;
+                                PANEL[x].Controls.Add(NUMEROS[x-1, 1]);
+                                continue;
+                            }
+                        }
+                        else
+                        {//BA1|BB1|BC1|BD1|BE1
+                         //BA2|BB2|BC2|BD2|BE2
+                         //BA3|BB3|BC3|BD3|BE3
+                            CUADROS[x - 1, y - 1] = new ImageButton();
+                            CUADROS[x-1,y-1].ImageUrl = "~/IMG/EX/z.png";
+                            CUADROS[x-1,y-1].Width = 100;
+                            CUADROS[x - 1, y - 1].Height = 100;
+                            PANEL[x].Controls.Add(CUADROS[x - 1, y - 1]);
+                        }
+                    }
+
+                }
+                id1 = 97;
+            }
