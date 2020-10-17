@@ -289,6 +289,7 @@ namespace GAME
                                     if (XmasM[a, b] == 'N')
                                     {
                                         Botones[a, b].ImageUrl = url2;
+                                        RellenarFichas(a,b);
                                     }
                                 }
                             }
@@ -334,7 +335,6 @@ namespace GAME
                 }
             }
         }/*2*/
-
         public void YmasR(int x, int y, String url,String url2)
         {
             ImageButton[,] Botones = BotonMulti();
@@ -568,7 +568,7 @@ namespace GAME
                 {
                     for (int y = 0; y < 8; y++)
                     {
-                        Console.WriteLine("siguiente");
+                        
                     if (player % 2 == 0)//NEGRO
                         {
                             //[X,Y]
@@ -584,7 +584,7 @@ namespace GAME
                                 YmenXmas(x+1, y-1, "~/IMG/2.png");
                                 YmasXmas(x+1, y+1, "~/IMG/2.png");
                                 //GUARDO MATRIZ DE MATRIZ POS
-                        }
+                            }
                         }
                         else {
                             if (Botones[x,y].ImageUrl.Equals("~/IMG/2.png")) {

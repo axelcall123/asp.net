@@ -42,8 +42,8 @@ temp[0] = new ImageButton();
                     BOTON.ID = idU;
                     BOTON.Visible = true;
                     BOTON.Click += delegate {
-                    BOTON.ImageUrl = "~/IMG/EX/rojo.png";
-                };
+                        BOTON.ImageUrl = "~/IMG/EX/rojo.png";
+                    };
                 PANEL.Controls.Add(BOTON); 
                 /*texto = texto+" || "+Char.ToString(Convert.ToChar(id1)) + id2.ToString();
                 id1 += 1;*/
