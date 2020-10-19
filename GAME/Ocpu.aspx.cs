@@ -289,7 +289,6 @@ namespace GAME
                                     if (XmasM[a, b] == 'N')
                                     {
                                         Botones[a, b].ImageUrl = url2;
-                                        RellenarFichas(a,b);
                                     }
                                 }
                             }
@@ -635,7 +634,7 @@ namespace GAME
             }
             if (bb == 0)
             {
-                /*textos.Text = "C ACABO";*/
+                textos.Text = "C ACABO";
             }
             else
             {

@@ -232,6 +232,9 @@
     <Content Include="Content\fonts\icomoon.ttf" />
     <Content Include="Content\fonts\icomoon.woff" />
     <Content Include="app.config" />
+    <Content Include="XML\archivo1.xml" />
+    <Content Include="XML\archivo2.xml" />
+    <Content Include="XML\archivo3.xml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -504,7 +507,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\XML\" />
     <Folder Include="Scripts\XML\" />
-    <Folder Include="XML\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

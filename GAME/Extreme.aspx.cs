@@ -27,9 +27,13 @@ namespace GAME
         static char[,] XmenM = new char[n, m]; //X-
         static char[,] YmasM = new char[n, m]; //Y+
         static char[,] YmenM = new char[n, m]; //Y-
+        ///////
+        static char[,] YmasXmenM = new char[8, 8];//Y+X-
+        static char[,] YmenXmenM = new char[8, 8];//Y-X-
+        static char[,] YmenXmasM = new char[8, 8];//Y-X+
+        static char[,] YmasXmasM = new char[8, 8];//Y+X+
         //TURNOS QUE PASAN
         static int turno = 0;//
-
         //GENERAR
         ImageButton[,] CUADROS = new ImageButton[n, m];//MATRIZ CUADROS
         ImageButton[,] MARCO = new ImageButton[n + 2, m + 2];//MATRIZ NUMERO LETRAS
@@ -174,6 +178,8 @@ namespace GAME
         public void PasarColor(int xPlayer, int yPlayer) {
             if (turno % 2 == 0)//PLAYER 1 BLANCO
             {
+                Player1.Enabled = true;
+                Player2.Enabled = false;
                 if (PU < 3)
                 {
                     CUADROS[xPlayer, yPlayer].ImageUrl = "~/IMG/EX/" + PlayerUno[PU] + ".png";
@@ -187,6 +193,8 @@ namespace GAME
                 }
             }
             else {//PLAYER 2 NEGRO
+                Player1.Enabled = false;
+                Player2.Enabled = true;
                 if (PD < 2)
                 {
                     CUADROS[xPlayer, yPlayer].ImageUrl = "~/IMG/EX/" + PlayerDos[PD] + ".png";
@@ -226,6 +234,8 @@ namespace GAME
             {
                 if (turno % 2 == 0)//PLAYER 1 BLANCO
                 {
+                    Player1.Enabled = true;
+                    Player2.Enabled = false;
                     if (PU < 3)
                     {
                         button.ImageUrl = "~/IMG/EX/" + PlayerUno[PU] + ".png";
@@ -245,6 +255,8 @@ namespace GAME
                 }
                 else
                 {//PLAYER 2 NEGRO
+                    Player1.Enabled = false;
+                    Player2.Enabled = true;
                     if (PD < 2)
                     {
                         button.ImageUrl = "~/IMG/EX/" + PlayerDos[PD] + ".png";
@@ -359,6 +371,7 @@ namespace GAME
                 }
             }
         }
+
         public void YmasXmas(int x, int y, Char nb)
         {
             if (x < n && y<m)
@@ -476,7 +489,247 @@ namespace GAME
                 }
             }
         }
-        public void EjecutarReglas()
+        public void YmasR(int x, int y, Char nb, Char BN)
+        {
+            if (y < m)
+            {
+                if (TAB[x, y].Equals(nb))
+                {//COLOR CONTRARIO AL QUE SE ESTA
+                    XmasM[x, y] = 'N';
+                    if (y + 1 < m)
+                    {
+                        if (TAB[x, y + 1].Equals(BN))
+                        {//
+                            for (int a = 0; a < 8; a++)
+                            {
+                                for (int b = 0; b < 8; b++)
+                                {
+                                    if (YmasM[a, b] == 'N')
+                                    {
+                                        String color = CUADROS[x, y + 1].ImageUrl;
+                                        TAB[a, b] = BN;//MATRIZ AYUDA
+                                        CUADROS[a, b].ImageUrl = color;//RELLNAR DEL MISMO COLOR
+                                    }
+                                }
+                            }
+                        }
+                        else if (TAB[x, y + 1].Equals(nb))//NEXT POSICION
+                        {
+                            YmasM[x, y + 1] = 'N';
+                            YmasR(x, y + 1, nb, BN);
+                        }
+                    }
+
+                }
+            }
+        }
+        public void XmenR(int x, int y, Char nb, Char BN)
+        {
+            if (x >= 0)
+            {
+                if (TAB[x, y].Equals(nb))
+                {//COLOR CONTRARIO AL QUE SE ESTA
+                    XmenM[x, y] = 'N';
+                    if (x - 1 >= 0)
+                    {
+                        if (TAB[x - 1, y].Equals(BN))
+                        {//
+                            for (int a = 0; a < 8; a++)
+                            {
+                                for (int b = 0; b < 8; b++)
+                                {
+                                    if (XmenM[a, b] == 'N')
+                                    {
+                                        String color = CUADROS[x - 1, y].ImageUrl;
+                                        TAB[a, b] = BN;//MATRIZ AYUDA
+                                        CUADROS[a, b].ImageUrl = color;//RELLNAR DEL MISMO COLOR
+                                    }
+                                }
+                            }
+                        }
+                        else if (TAB[x - 1, y].Equals(nb))//NEXT POSICION
+                        {
+                            XmenM[x - 1, y] = 'N';
+                            XmenR(x - 1, y, nb, BN);
+                        }
+                    }
+
+                }
+            }
+        }
+        public void YmenR(int x, int y, Char nb, Char BN)
+        {
+            if (y >= 0)
+            {
+                if (TAB[x, y].Equals(nb))
+                {//COLOR CONTRARIO AL QUE SE ESTA
+                    XmenM[x, y] = 'N';
+                    if (y - 1 >= 0)
+                    {
+                        if (TAB[x, y - 1].Equals(BN))
+                        {//
+                            for (int a = 0; a < 8; a++)
+                            {
+                                for (int b = 0; b < 8; b++)
+                                {
+                                    if (YmenM[a, b] == 'N')
+                                    {
+                                        String color = CUADROS[x, y - 1].ImageUrl;
+                                        TAB[a, b] = BN;//MATRIZ AYUDA
+                                        CUADROS[a, b].ImageUrl = color;//RELLNAR DEL MISMO COLOR
+                                    }
+                                }
+                            }
+                        }
+                        else if (TAB[x, y - 1].Equals(nb))//NEXT POSICION
+                        {
+                            YmenM[x, y - 1] = 'N';
+                            YmenR(x, y - 1, nb, BN);
+                        }
+                    }
+
+                }
+            }
+        }
+
+        public void YmasXmasR(int x, int y, Char nb, Char BN)
+        {
+            if (y < m && x<n)
+            {
+                if (TAB[x, y].Equals(nb))
+                {//COLOR CONTRARIO AL QUE SE ESTA
+                    YmasXmasM[x, y] = 'N';
+                    if (y + 1 < m && x +1< n)
+                    {
+                        if (TAB[x+1, y + 1].Equals(BN))
+                        {//
+                            for (int a = 0; a < 8; a++)
+                            {
+                                for (int b = 0; b < 8; b++)
+                                {
+                                    if (YmasXmasM[a, b] == 'N')
+                                    {
+                                        String color = CUADROS[x+1, y + 1].ImageUrl;
+                                        TAB[a, b] = BN;//MATRIZ AYUDA
+                                        CUADROS[a, b].ImageUrl = color;//RELLNAR DEL MISMO COLOR
+                                    }
+                                }
+                            }
+                        }
+                        else if (TAB[x+1, y + 1].Equals(nb))//NEXT POSICION
+                        {
+                            YmasXmasM[x+1, y + 1] = 'N';
+                            YmasXmasR(x+1, y + 1, nb, BN);
+                        }
+                    }
+
+                }
+            }
+        }
+        public void YmenXmenR(int x, int y, Char nb, Char BN)
+        {
+            if (y >= 0 && x>=0)
+            {
+                if (TAB[x, y].Equals(nb))
+                {//COLOR CONTRARIO AL QUE SE ESTA
+                    YmenXmenM[x, y] = 'N';
+                    if (y - 1 >= 0 && x -1>= 0)
+                    {
+                        if (TAB[x-1, y - 1].Equals(BN))
+                        {//
+                            for (int a = 0; a < 8; a++)
+                            {
+                                for (int b = 0; b < 8; b++)
+                                {
+                                    if (YmenXmenM[a, b] == 'N')
+                                    {
+                                        String color = CUADROS[x-1, y - 1].ImageUrl;
+                                        TAB[a, b] = BN;//MATRIZ AYUDA
+                                        CUADROS[a, b].ImageUrl = color;//RELLNAR DEL MISMO COLOR
+                                    }
+                                }
+                            }
+                        }
+                        else if (TAB[x-1, y - 1].Equals(nb))//NEXT POSICION
+                        {
+                            YmenXmenM[x-1, y - 1] = 'N';
+                            YmenXmenR(x-1, y - 1, nb, BN);
+                        }
+                    }
+
+                }
+            }
+        }
+        public void YmenXmasR(int x, int y, Char nb, Char BN)
+        {
+            if (y >= 0 && x < n)
+            {
+                if (TAB[x, y].Equals(nb))
+                {//COLOR CONTRARIO AL QUE SE ESTA
+                    YmenXmasM[x, y] = 'N';
+                    if (y-1 >= 0 && x + 1 < n)
+                    {
+                        if (TAB[x + 1, y - 1].Equals(BN))
+                        {//
+                            for (int a = 0; a < 8; a++)
+                            {
+                                for (int b = 0; b < 8; b++)
+                                {
+                                    if (YmenXmasM[a, b] == 'N')
+                                    {
+                                        String color = CUADROS[x + 1, y - 1].ImageUrl;
+                                        TAB[a, b] = BN;//MATRIZ AYUDA
+                                        CUADROS[a, b].ImageUrl = color;//RELLNAR DEL MISMO COLOR
+                                    }
+                                }
+                            }
+                        }
+                        else if (TAB[x + 1, y - 1].Equals(nb))//NEXT POSICION
+                        {
+                            YmenXmasM[x + 1, y - 1] = 'N';
+                            YmenXmasR(x + 1, y - 1, nb, BN);
+                        }
+                    }
+
+                }
+            }
+        }
+        public void YmasXmenR(int x, int y, Char nb, Char BN)
+        {
+            if (y < m && x >= 0)
+            {
+                if (TAB[x, y].Equals(nb))
+                {//COLOR CONTRARIO AL QUE SE ESTA
+                    YmasXmenM[x, y] = 'N';
+                    if (y + 1 < m && x -1>= 0)
+                    {
+                        if (TAB[x - 1, y + 1].Equals(BN))
+                        {//
+                            for (int a = 0; a < 8; a++)
+                            {
+                                for (int b = 0; b < 8; b++)
+                                {
+                                    if (YmasXmenM[a, b] == 'N')
+                                    {
+                                        String color = CUADROS[x - 1, y + 1].ImageUrl;
+                                        TAB[a, b] = BN;//MATRIZ AYUDA
+                                        CUADROS[a, b].ImageUrl = color;//RELLNAR DEL MISMO COLOR
+                                    }
+                                }
+                            }
+                        }
+                        else if (TAB[x - 1, y + 1].Equals(nb))//NEXT POSICION
+                        {
+                            YmasXmenM[x - 1, y + 1] = 'N';
+                            YmasXmenR(x - 1, y + 1, nb, BN);
+                        }
+                    }
+
+                }
+            }
+        }
+        //REGLAS
+        public void EjecutarReglas()//EJECUTA LOS BOTONES QUE SE PUEDEN ACTIVAR
         {
             for (int x = 0; x < n; x++)
             {
@@ -525,7 +778,63 @@ namespace GAME
             }
             TT.Text = texto;
         }
-
+        //ELIMINAR MATRICES DE APOYO
+        public void delete()
+        {
+            for (int x = 0; x < 8; x++)
+            {
+                for (int y = 0; y < 8; y++)
+                {
+                    XmasM[x, y] = ' ';
+                    XmenM[x, y] = ' ';
+                    YmasM[x, y] = ' ';
+                    YmenM[x, y] = ' ';
+                    YmasXmenM[x, y] = ' ';
+                    YmenXmenM[x, y] = ' ';
+                    YmenXmasM[x, y] = ' ';
+                    YmasXmasM[x, y] = ' ';
+                }
+            }
+        }
+        //RELOJ
+        int reloj = 0;
+        /*protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (reloj % 2 == 0)
+            {
+                Player1.Enabled = true;
+                Player2.Enabled = false;
+            }
+            else {
+                Player1.Enabled = false;
+                Player2.Enabled = true;
+            }
+            reloj ++;
+        }*/
+        protected void Player1_Tick(object sender, EventArgs e)
+        {
+            int segundos = int.Parse(P_1.Text);
+            if (segundos < 1000)
+            {
+                P_1.Text = (segundos + 1).ToString();
+            }
+            else
+            {
+                Player1.Enabled = false;
+            }
+        }
+        protected void Player2_Tick(object sender, EventArgs e)
+        {
+            int segundos = int.Parse(P_2.Text);
+            if (segundos < 1000)
+            {
+                P_2.Text = (segundos + 1).ToString();
+            }
+            else
+            {
+                Player2.Enabled = false;
+            }
+        }
         //INICIO DE TODO
         protected void Page_Load(object sender, EventArgs e)//m*n m iz yy n abajo
         {
@@ -651,5 +960,14 @@ namespace GAME
             }
         }
 
+        
+        /*protected void Timer1_Tick(object sender, EventArgs e)
+{
+int seconds = int.Parse(Label1.Text);
+if (seconds > 0)
+  Label1.Text = (seconds - 1).ToString();
+else
+  Timer1.Enabled = false;
+}*/
     }
 }

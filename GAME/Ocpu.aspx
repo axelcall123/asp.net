@@ -1,6 +1,15 @@
 ﻿<%@ Page Title="Othelo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ocpu.aspx.cs" Inherits="GAME.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <script>
+        var myVar = setInterval(myTimer, 1000);
+
+        function myTimer() {
+            var d = new Date();
+            document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+        }
+    </script>
+
     <div>
         <asp:Label ID="Pud" runat="server" Text="TURNO DE JUGADRO"></asp:Label>
     </div>
