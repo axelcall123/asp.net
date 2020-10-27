@@ -227,16 +227,56 @@ namespace GAME
                 }
             }
         }
-        public void Clik_First(object sender, ImageClickEventArgs e)
+        public void rellenar(int a, int b, char cambio,char aceptar) {//EJECUTA LAS REGLAS PARA RELLENAR
+            XmasR(a + 1, b, cambio, aceptar);
+            XmenR(a - 1, b, cambio, aceptar);
+            YmasR(a, b + 1, cambio, aceptar);
+            YmenR(a, b - 1, cambio, aceptar);
+
+            YmasXmenR(a - 1, b + 1, cambio, aceptar);
+            YmenXmenR(a - 1, b - 1, cambio, aceptar);
+            YmenXmasR(a + 1, b - 1, cambio, aceptar);
+            YmasXmasR(a + 1, b + 1, cambio, aceptar);
+        }
+        public void blancoNegro(int x,int y)
+        {
+            if (turno % 2 == 0) {
+                rellenar(x,y,'B','N');
+            }
+            else{
+                rellenar(x, y, 'N', 'B');
+            }
+        }
+        public void Clik_F(object sender, ImageClickEventArgs e) {
+            ImageButton button = (ImageButton)sender;
+            for (int x = 0; x < n; x++) {
+                for (int y = 0; y < m; y++)
+                {
+                    if (x== (n / 2)&& y==(m / 2) - 2) {
+                    
+                    }
+                    else if (x==(n / 2) - 2&& y== (m / 2)) { 
+                    
+                    }
+                    else if (x==(n / 2) - 1&& y== (m / 2) + 1) { 
+                    
+                    }
+                    else if (x==(n / 2) + 1&& y==(m / 2) - 1) { 
+                    
+                    }
+                }
+            }
+        }
+        public void Cliks(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "~/IMG/EX/z.png")
             {
                 if (turno % 2 == 0)//PLAYER 1 BLANCO
-                {
+                {//RELOJ
                     Player1.Enabled = true;
                     Player2.Enabled = false;
-                    if (PU < 3)
+                    if (PU < 3)//LIMITE DE LOS COLORES
                     {
                         button.ImageUrl = "~/IMG/EX/" + PlayerUno[PU] + ".png";
                         String id = button.ID;
@@ -245,7 +285,7 @@ namespace GAME
                         PU += 1;
                     }
                     else
-                    {
+                    {//REGRESAR PRINCIPIO MATRIZ DE LOS COLORES
                         PU = 0;
                         button.ImageUrl = "~/IMG/EX/" + PlayerUno[PU] + ".png";
                         String id = button.ID;
@@ -255,9 +295,10 @@ namespace GAME
                 }
                 else
                 {//PLAYER 2 NEGRO
+                    //RELOJ
                     Player1.Enabled = false;
                     Player2.Enabled = true;
-                    if (PD < 2)
+                    if (PD < 2)//LIMITE DE LOS COLORES
                     {
                         button.ImageUrl = "~/IMG/EX/" + PlayerDos[PD] + ".png";
                         PD += 1;
@@ -266,7 +307,7 @@ namespace GAME
                         //TAB[xPlayer, yPlayer] = 'N';
                     }
                     else
-                    {
+                    {//REGRESAR PRINCIPIO MATRIZ DE LOS COLORES
                         PD = 0;
                         button.ImageUrl = "~/IMG/EX/" + PlayerDos[PD] + ".png";
                         String id = button.ID;
@@ -274,19 +315,29 @@ namespace GAME
                         //TAB[xPlayer, yPlayer] = 'N';
                     }
                 }
-
-                for (int x = 0; x < n; x++)
-                {
-                    for (int y = 0; y < m; y++)
-                    {
-                        texto = texto + "|." + TAB[x, y] + ".|";
-                    }                    
-                    texto = texto + "<br>";
-                }
-                turno += 1;
             }
 
-            EjecutarReglas();
+            for (int x = 0; x < n; x++)
+            {
+                for (int y = 0; y < m; y++)
+                {
+                    if (CUADROS[x, y].ID== button.ID) {
+                        blancoNegro(x, y);//MANDA POSICIONES Y VE EL BLANCO Y NEGRO
+                        x = n;
+                        break;
+                    }
+                }
+            }
+            for (int x = 0; x < n; x++)
+            {
+                for (int y = 0; y < m; y++)
+                {
+                    texto = texto + "|." + TAB[x, y] + ".|";
+                }
+                texto = texto + "<br>";
+            }
+            EjecutarReglas();          
+            turno += 1;
         }
         //REGLAS DEL JUEGO SIGUIENTE POSICION VERDADERA
         public void Xmas(int x, int y, Char nb)
@@ -296,7 +347,7 @@ namespace GAME
                 if (TAB[x,y].Equals(nb))
                 {//SIG COLOR ES DIFERENTE
                     if (x + 1 < n) {
-                        if (TAB[x + 1, y].Equals('*')) {
+                        if (TAB[x + 1, y].Equals('*')) {//SI ESTA VACIO
                             texto = texto + CUADROS[x+1, y].ID + " Xmas T<br>";
                             CUADROS[x + 1, y].Enabled = true;
                         }
@@ -462,16 +513,16 @@ namespace GAME
             if (x < n)
             {
                 if (TAB[x, y].Equals(nb)) {//COLOR CONTRARIO AL QUE SE ESTA
-                    XmasM[x, y] = 'N';
+                    XmasM[x, y] = 'N';//MATRIZ QUE AYUDA A VER QUE CUAROS ESTAN PARA RELLENAR
                     if (x + 1 < n)
                     {
                         if (TAB[x + 1, y].Equals(BN))
                         {//
-                            for (int a = 0; a < 8; a++)
+                            for (int a = 0; a < n; a++)
                             {
-                                for (int b = 0; b < 8; b++)
+                                for (int b = 0; b < m; b++)
                                 {
-                                    if (XmasM[a, b] == 'N') {
+                                    if (XmasM[a, b] == 'N') {//SI ES PARA RELLENAR HAS ESTO
                                         String color = CUADROS[x + 1, y].ImageUrl;
                                         TAB[a, b] = BN;//MATRIZ AYUDA
                                         CUADROS[a, b].ImageUrl =color;//RELLNAR DEL MISMO COLOR
@@ -500,9 +551,9 @@ namespace GAME
                     {
                         if (TAB[x, y + 1].Equals(BN))
                         {//
-                            for (int a = 0; a < 8; a++)
+                            for (int a = 0; a < n; a++)
                             {
-                                for (int b = 0; b < 8; b++)
+                                for (int b = 0; b < m; b++)
                                 {
                                     if (YmasM[a, b] == 'N')
                                     {
@@ -534,9 +585,9 @@ namespace GAME
                     {
                         if (TAB[x - 1, y].Equals(BN))
                         {//
-                            for (int a = 0; a < 8; a++)
+                            for (int a = 0; a < n; a++)
                             {
-                                for (int b = 0; b < 8; b++)
+                                for (int b = 0; b < m; b++)
                                 {
                                     if (XmenM[a, b] == 'N')
                                     {
@@ -568,9 +619,9 @@ namespace GAME
                     {
                         if (TAB[x, y - 1].Equals(BN))
                         {//
-                            for (int a = 0; a < 8; a++)
+                            for (int a = 0; a < n; a++)
                             {
-                                for (int b = 0; b < 8; b++)
+                                for (int b = 0; b < m; b++)
                                 {
                                     if (YmenM[a, b] == 'N')
                                     {
@@ -603,9 +654,9 @@ namespace GAME
                     {
                         if (TAB[x+1, y + 1].Equals(BN))
                         {//
-                            for (int a = 0; a < 8; a++)
+                            for (int a = 0; a < n; a++)
                             {
-                                for (int b = 0; b < 8; b++)
+                                for (int b = 0; b < m; b++)
                                 {
                                     if (YmasXmasM[a, b] == 'N')
                                     {
@@ -637,9 +688,9 @@ namespace GAME
                     {
                         if (TAB[x-1, y - 1].Equals(BN))
                         {//
-                            for (int a = 0; a < 8; a++)
+                            for (int a = 0; a < n; a++)
                             {
-                                for (int b = 0; b < 8; b++)
+                                for (int b = 0; b < m; b++)
                                 {
                                     if (YmenXmenM[a, b] == 'N')
                                     {
@@ -671,9 +722,9 @@ namespace GAME
                     {
                         if (TAB[x + 1, y - 1].Equals(BN))
                         {//
-                            for (int a = 0; a < 8; a++)
+                            for (int a = 0; a < n; a++)
                             {
-                                for (int b = 0; b < 8; b++)
+                                for (int b = 0; b < m; b++)
                                 {
                                     if (YmenXmasM[a, b] == 'N')
                                     {
@@ -705,9 +756,9 @@ namespace GAME
                     {
                         if (TAB[x - 1, y + 1].Equals(BN))
                         {//
-                            for (int a = 0; a < 8; a++)
+                            for (int a = 0; a < n; a++)
                             {
-                                for (int b = 0; b < 8; b++)
+                                for (int b = 0; b < 8; m++)
                                 {
                                     if (YmasXmenM[a, b] == 'N')
                                     {
@@ -943,10 +994,10 @@ namespace GAME
             }//PONER 4 FICHAS PRIMERAS
             else if (turno == 4)
             {//PONER EL INICIO DE LAS FICHAS Y REGLAS
-                CUADROS[(n / 2), (m / 2) - 2].Click += new ImageClickEventHandler(this.Clik_First);
-                CUADROS[(n / 2) - 2, (m / 2)].Click += new ImageClickEventHandler(this.Clik_First);
-                CUADROS[(n / 2) - 1, (m / 2) + 1].Click += new ImageClickEventHandler(this.Clik_First);
-                CUADROS[(n / 2) + 1, (m / 2) - 1].Click += new ImageClickEventHandler(this.Clik_First);
+                CUADROS[(n / 2), (m / 2) - 2].Click += new ImageClickEventHandler(this.Clik_F);
+                CUADROS[(n / 2) - 2, (m / 2)].Click += new ImageClickEventHandler(this.Clik_F);
+                CUADROS[(n / 2) - 1, (m / 2) + 1].Click += new ImageClickEventHandler(this.Clik_F);
+                CUADROS[(n / 2) + 1, (m / 2) - 1].Click += new ImageClickEventHandler(this.Clik_F);
             }
             else
             {
@@ -954,20 +1005,18 @@ namespace GAME
                 {
                     for (int y = 0; y < m; y++)
                     {
-                        CUADROS[x,y].Click += new ImageClickEventHandler(this.Clik_First);
+                        CUADROS[x,y].Click += new ImageClickEventHandler(this.Cliks);
                     }
                 }
             }
         }
-
-        
         /*protected void Timer1_Tick(object sender, EventArgs e)
-{
-int seconds = int.Parse(Label1.Text);
-if (seconds > 0)
-  Label1.Text = (seconds - 1).ToString();
-else
-  Timer1.Enabled = false;
-}*/
+        {
+            int seconds = int.Parse(Label1.Text);
+            if (seconds > 0)
+              Label1.Text = (seconds - 1).ToString();
+            else
+              Timer1.Enabled = false;
+        }*/
     }
 }

@@ -1,17 +1,11 @@
 ﻿<%@ Page Title="Othelo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ocpu.aspx.cs" Inherits="GAME.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <script>
-        var myVar = setInterval(myTimer, 1000);
-
-        function myTimer() {
-            var d = new Date();
-            document.getElementById("demo").innerHTML = d.toLocaleTimeString();
-        }
-    </script>
-
     <div>
-        <asp:Label ID="Pud" runat="server" Text="TURNO DE JUGADRO"></asp:Label>
+        <asp:Label ID="Pud" runat="server" Text="OTHELLO"></asp:Label>
+
+        <asp:Button ID="Normal" runat="server" Text="Normal" OnClick="Normal_Click" />
+        <asp:Button ID="Inverso" runat="server" Text="Inverso" OnClick="Inverso_Click" />
     </div>
 <section id="juego">
     <div class="fila">
@@ -161,6 +155,7 @@
             </div>
         </div>
     </div>
+
     <asp:Label ID="TEXTO" runat="server" Text="CONSOLA 1" Height="500px" Width="50%" BackColor="#00CC00"></asp:Label>
     <asp:Label ID="textos" runat="server" Text="consola 2" Height="500px" Width="50%" BackColor="#CC66FF"></asp:Label>
 </asp:Content>

@@ -18,6 +18,10 @@ namespace GAME
         static Boolean UnaVez=true;
         static string tt = "";//TEXTO AYUDA PARA LOS LABEL
         static string TT = "";//TEXTO AYUDA PARA LOS LABEL
+        //COLORES
+        static int blanco = 0;
+        static int negro = 0;
+        //
         static char[,] XmasM= new char[8,8]; //X+
         static char[,] XmenM= new char[8,8]; //X-
         static char[,] YmasM= new char[8,8]; //Y+
@@ -537,8 +541,7 @@ namespace GAME
             else {
                 Convetir(posx,posy,"~/IMG/2.png","~/IMG/1.png");
             }
-
-        }
+        }//
         public void Convetir(int a,int b,String cambio,String aceptar) {
             XmasR(a+1,b,cambio,aceptar);
             XmenR(a-1, b, cambio, aceptar);
@@ -602,6 +605,7 @@ namespace GAME
                         }
                     }
                 }
+            WinLost();
         }
         public void Consola() {
             /*TT = "";
@@ -618,8 +622,42 @@ namespace GAME
             textos.Text = tt + "<br>" + player + " ;; " + UnaVez;*/
         }
 
-        public void random() {
+        protected void Normal_Click(object sender, EventArgs e)
+        {
+            TT = TT + "C ACABO<br>";
+            if (blanco < negro)
+            {
+                TT = TT + "GANO JUGADOR 1, POR MAYOR PUNTUACION<br>";
+            }
+            else if (blanco > negro)
+            {
+                TT = TT + "GANO JUGADOR 2, POR MAYOR PUNTUACION<br>";
+            }
+            else if (blanco == negro)
+            {
+                TT = TT + "EMPATEZ<br>";
+            }
+            TEXTO.Text = TT;
+        }
+        protected void Inverso_Click(object sender, EventArgs e)
+        {
+            tt = tt + "C ACABO<br>";
+            if (blanco < negro)
+            {
+                tt = tt + "GANO JUGADOR 2, POR MENOR PUNTUACION<br>";
+            }
+            else if (blanco > negro)
+            {
+                tt = tt + "GANO JUGADOR 1, POR MENOR PUNTUACION<br>";
+            }
+            else if (blanco == negro)
+            {
+                tt = tt + "EMPATEZ<br>";
+            }
+            TEXTO.Text = tt;
+        }
 
+        public void WinLost() {
             int bb = 0;
             ImageButton[,] Botones = BotonMulti();
             for (int x = 0; x < 8; x++)
@@ -634,8 +672,42 @@ namespace GAME
             }
             if (bb == 0)
             {
-                textos.Text = "C ACABO";
+                ///PARA VER QUIEN GANO
+                TEXTO.Text = "C ACABO<br>";
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        if (Botones[x, y].ImageUrl.Equals("~/IMG/1.png")) {
+                            negro += 1;
+                        } else if (Botones[x, y].ImageUrl.Equals("~/IMG/2.png")) {
+                            blanco += 1;
+                        }
+                    }
+                }
+                
             }
+        }
+        public void random() {
+
+            int bb = 0;
+            ImageButton[,] Botones = BotonMulti();
+            for (int x = 0; x < 8; x++)
+            {
+                for (int y = 0; y < 8; y++)
+                {
+                    if (Botones[x, y].Enabled == true)//CUENTA CUANTOS BOTONES SON ACTIVADOS VERDADEROS
+                    {
+                        bb = bb + 1;
+                    }
+                }
+            }
+
+            if (bb == 0)
+            {
+
+                //TEXTO.Text = "C ACABO";
+           }
             else
             {
 
@@ -686,6 +758,7 @@ namespace GAME
             }
             SearchSus(0, 0);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -708,6 +781,7 @@ namespace GAME
             }
             SearchSus(1, 0);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -730,6 +804,7 @@ namespace GAME
             }
             SearchSus(2, 0);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -752,6 +827,7 @@ namespace GAME
             }
             SearchSus(3, 0);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -774,6 +850,7 @@ namespace GAME
             }
             SearchSus(4, 0);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -796,6 +873,7 @@ namespace GAME
             }
             SearchSus(5, 0);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -818,6 +896,7 @@ namespace GAME
             }
             SearchSus(6, 0);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -840,11 +919,11 @@ namespace GAME
             }
             SearchSus(7, 0);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
         }//[7,0]
-
 
         protected void BB1_Click(object sender, ImageClickEventArgs e)
         {
@@ -864,6 +943,7 @@ namespace GAME
             }
             SearchSus(0, 1);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -886,6 +966,7 @@ namespace GAME
             }
             SearchSus(1, 1);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -908,6 +989,7 @@ namespace GAME
             }
             SearchSus(2, 1);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -930,6 +1012,7 @@ namespace GAME
             }
             SearchSus(3, 1);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -952,6 +1035,7 @@ namespace GAME
             }
             SearchSus(4, 1);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -974,6 +1058,7 @@ namespace GAME
             }
             SearchSus(5, 1);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -996,6 +1081,7 @@ namespace GAME
             }
             SearchSus(6, 1);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -1018,11 +1104,11 @@ namespace GAME
             }
             SearchSus(7, 1);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
         }//[7,1]
-
 
         protected void BC1_Click(object sender, ImageClickEventArgs e)
         {
@@ -1042,6 +1128,7 @@ namespace GAME
             }
               SearchSus(0, 2);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -1065,6 +1152,7 @@ namespace GAME
             }
               SearchSus(1, 2);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -1088,6 +1176,7 @@ namespace GAME
           }
             SearchSus(2, 2);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1111,6 +1200,7 @@ namespace GAME
           }
           SearchSus(3, 2);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1137,6 +1227,7 @@ namespace GAME
                 ImageButton[,] Botones = BotonMulti();
                 Botones[4, 3].ImageUrl = "~/IMG/1.png";
                 GAME();
+                //WinLost();
                 if(Request.QueryString["id"].ToString()=="True"){
                     random();
                 }
@@ -1145,6 +1236,7 @@ namespace GAME
             {
                 SearchSus(4, 2);
                 GAME();
+                //WinLost();
                 if(Request.QueryString["id"].ToString()=="True"){
                     random();
                 }
@@ -1172,6 +1264,7 @@ namespace GAME
           }
           SearchSus(5, 2);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1194,6 +1287,7 @@ namespace GAME
           }
           SearchSus(6, 2);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1216,11 +1310,11 @@ namespace GAME
           }
           SearchSus(7, 2);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
         }//[7,2]
-
 
         protected void BD1_Click(object sender, ImageClickEventArgs e)
         {
@@ -1240,6 +1334,7 @@ namespace GAME
           }
           SearchSus(0, 3);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1262,6 +1357,7 @@ namespace GAME
           }
           SearchSus(1, 3);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1284,6 +1380,7 @@ namespace GAME
           }
           SearchSus(2, 3);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1306,6 +1403,7 @@ namespace GAME
           }
           SearchSus(3, 3);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1328,6 +1426,7 @@ namespace GAME
           }
           SearchSus(4, 3);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1354,6 +1453,7 @@ namespace GAME
                 ImageButton[,] Botones = BotonMulti();
                 Botones[4, 3].ImageUrl = "~/IMG/1.png";
                 GAME();
+                //WinLost();
                 if(Request.QueryString["id"].ToString()=="True"){
                     random();
                 }
@@ -1362,6 +1462,7 @@ namespace GAME
             {
                 SearchSus(5, 3);
                 GAME();
+                //WinLost();
                 if(Request.QueryString["id"].ToString()=="True"){
                     random();
                 }
@@ -1387,6 +1488,7 @@ namespace GAME
           }
           SearchSus(6, 3);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1409,12 +1511,12 @@ namespace GAME
           }
           SearchSus(7, 3);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
 
         }//[7,3]
-
 
         protected void BE1_Click(object sender, ImageClickEventArgs e)
         {
@@ -1435,6 +1537,7 @@ namespace GAME
 
             SearchSus(0, 4);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1457,6 +1560,7 @@ namespace GAME
           }
           SearchSus(1, 4);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1484,6 +1588,7 @@ namespace GAME
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
                 //TEXTO.Text = Request.QueryString["id"].ToString()+" ME";
                 GAME();
+                //WinLost();
                 if(Request.QueryString["id"].ToString()=="True"){
                     random();
                 }
@@ -1492,6 +1597,7 @@ namespace GAME
             {
                 SearchSus(2, 4);
                 GAME();
+                //WinLost();
                 if(Request.QueryString["id"].ToString()=="True"){
                     random();
                 }
@@ -1517,6 +1623,7 @@ namespace GAME
           }
           SearchSus(3, 4);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1539,6 +1646,7 @@ namespace GAME
           }
           SearchSus(4, 4);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1573,6 +1681,7 @@ namespace GAME
             }*/
             SearchSus(5, 4);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -1599,6 +1708,7 @@ namespace GAME
           }
           SearchSus(6, 4);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1621,11 +1731,11 @@ namespace GAME
           }
           SearchSus(7, 4);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
         }//[7,4]
-
 
         protected void BF1_Click(object sender, ImageClickEventArgs e)
         {
@@ -1645,6 +1755,7 @@ namespace GAME
           }
           SearchSus(0, 5);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1667,6 +1778,7 @@ namespace GAME
           }
           SearchSus(1, 5);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1689,6 +1801,7 @@ namespace GAME
             }
             SearchSus(2, 5);
             GAME();
+            //WinLost();
             if(Request.QueryString["id"].ToString()=="True"){
                 random();
             }
@@ -1715,6 +1828,7 @@ namespace GAME
                 ImageButton[,] Botones = BotonMulti();
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
                 GAME();
+                //WinLost();
                 if(Request.QueryString["id"].ToString()=="True"){
                     random();
                 }
@@ -1723,6 +1837,7 @@ namespace GAME
             {
                 SearchSus(3, 5);
                 GAME();
+                //WinLost();
                 if(Request.QueryString["id"].ToString()=="True"){
                     random();
                 }
@@ -1750,6 +1865,7 @@ namespace GAME
           }
           SearchSus(4, 5);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1772,6 +1888,7 @@ namespace GAME
           }
           SearchSus(5, 5);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1794,6 +1911,7 @@ namespace GAME
           }
           SearchSus(6, 5);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1816,11 +1934,11 @@ namespace GAME
           }
           SearchSus(7, 5);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
         }//[7,5]
-
 
         protected void BG1_Click(object sender, ImageClickEventArgs e)
         {
@@ -1840,6 +1958,7 @@ namespace GAME
           }
           SearchSus(0, 6);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1862,6 +1981,7 @@ namespace GAME
           }
           SearchSus(1, 6);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1884,6 +2004,7 @@ namespace GAME
           }
           SearchSus(2, 6);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1906,6 +2027,7 @@ namespace GAME
           }
           SearchSus(3, 6);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1928,6 +2050,7 @@ namespace GAME
           }
           SearchSus(4, 6);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1950,6 +2073,7 @@ namespace GAME
           }
           SearchSus(5, 6);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1972,6 +2096,7 @@ namespace GAME
           }
           SearchSus(6, 6);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -1994,11 +2119,11 @@ namespace GAME
           }
           SearchSus(7, 6);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
         }//[7,6]
-
 
         protected void BH1_Click(object sender, ImageClickEventArgs e)
         {
@@ -2018,6 +2143,7 @@ namespace GAME
           }
           SearchSus(0, 7);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -2040,6 +2166,7 @@ namespace GAME
           }
           SearchSus(1, 7);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -2062,6 +2189,7 @@ namespace GAME
           }
           SearchSus(2, 7);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -2084,6 +2212,7 @@ namespace GAME
           }
           SearchSus(3, 7);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -2106,6 +2235,7 @@ namespace GAME
           }
           SearchSus(4, 7);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -2128,6 +2258,7 @@ namespace GAME
           }
           SearchSus(5, 7);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -2150,6 +2281,7 @@ namespace GAME
           }
           SearchSus(6, 7);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -2172,6 +2304,7 @@ namespace GAME
           }
           SearchSus(7, 7);
           GAME();
+          //WinLost();
           if(Request.QueryString["id"].ToString()=="True"){
               random();
           }
@@ -2258,7 +2391,6 @@ namespace GAME
               {BA8||BB8||BC8||BD8||BE8||BF8||BG8||BH8}
               */
         }
-
         protected void Cargar_Click(object sender, EventArgs e)
         {
             if (FileUpload1.HasFile)
@@ -2305,7 +2437,6 @@ namespace GAME
                 }*/
 
             }
-
         protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
         {
             ImageButton button = (ImageButton)sender;
@@ -2323,5 +2454,6 @@ namespace GAME
                 }
             }
         }
+
     }
 }

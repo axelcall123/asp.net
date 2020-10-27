@@ -24,6 +24,24 @@ namespace GAME
         protected global::System.Web.UI.WebControls.Label Pud;
 
         /// <summary>
+        /// Control Normal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Normal;
+
+        /// <summary>
+        /// Control Inverso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Inverso;
+
+        /// <summary>
         /// Control f1.
         /// </summary>
         /// <remarks>

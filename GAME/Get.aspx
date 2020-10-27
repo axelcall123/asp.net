@@ -12,7 +12,6 @@
     <h5>Los colores son de 1 hasta 5 maximo predefinidos</h5>
     <form action="/" method="post">
         <asp:TextBox ID="N" placeholder="n" runat="server" required></asp:TextBox>    <asp:TextBox ID="M" placeholder="m" runat="server" required></asp:TextBox>
-
         <asp:Button ID="Button3" runat="server" Text="Extreme" OnClick="Button3_Click" />
     </form>
 </asp:Content>
