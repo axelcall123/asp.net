@@ -11,7 +11,7 @@
     <div class="col-lg-12">
         <span class="icon-user"></span>
         <!--input type="text" placeholder="NOMBRE" required name="nombre"-->
-        <asp:TextBox  type="text" placeholder="NOMBRE" ID="nombre_r" runat="server" required OnTextChanged="nombre_r_TextChanged"></asp:TextBox>
+        <asp:TextBox  type="text" placeholder="NOMBRE" ID="nombre_r" runat="server" required ></asp:TextBox>
      </div>
     <div class="col-lg-12">
         <span class="icon-user-tie"></span>

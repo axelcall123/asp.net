@@ -10,7 +10,6 @@ namespace GAME
     
     public partial class Get : System.Web.UI.Page
     {
-        public String hola = "je";
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -31,10 +30,15 @@ namespace GAME
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            int x = Int32.Parse(N.Text);//SI ES PAR
-            int y = Int32.Parse(M.Text);
+            int x = int.Parse(N.Text);//SI ES PAR
+            int y = int.Parse(M.Text);
             if ( x%2== 0 && y % 2 == 0) {
-                Response.Redirect("Extreme.aspx?n=" + N.Text + "&m=" + M.Text);//ENVIAR TAMAÑO DE MATRIZ
+                Session["N"] = N.Text;
+                Session["M"] = M.Text;
+                Response.Redirect("Extreme.aspx?N=" + N.Text + "&M=" + M.Text);//ENVIAR TAMAÑO DE MATRIZ
+                
+                /*help.SetX(x);//N
+                help.SetY(y);//M*/
             }
         }
     }

@@ -4,11 +4,11 @@
     <br />
     <br />
     <br />
-
+    
     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
         <ContentTemplate> 
-            <asp:Label ID="P_1" runat="server">0</asp:Label>
-            <asp:Label ID="P_2" runat="server">0</asp:Label>
+            <asp:Label ID="P_1" runat="server" Enabled="False">0</asp:Label>
+            <asp:Label ID="P_2" runat="server" Enabled="False">0</asp:Label>
             <asp:Timer ID="Player1" runat="server" Interval="1000" Enabled="False" OnTick="Player1_Tick"></asp:Timer>
             <asp:Timer ID="Player2" runat="server" Interval="1000" Enabled="True" OnTick="Player2_Tick"></asp:Timer>
         </ContentTemplate>
