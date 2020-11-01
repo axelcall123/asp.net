@@ -17,7 +17,7 @@ body {
 }
 
 section { /*seccion donde guarda todo el contenido*/
-    width: 100%;
+    width: 80%;
     display: inline-block;
 }
 
@@ -62,7 +62,6 @@ section { /*seccion donde guarda todo el contenido*/
 
 input {
     margin-bottom: 15px;
-    height: 26px;
 }
 
 #Extreme {
@@ -73,11 +72,4 @@ input {
     width: 12.5%;
     display: table;
     float: left;
-    height: 325px;
-}
-.Ronda_I {
-    width: 12.5%;
-    display: table;
-    float: right;
-    height: 325px;
 }

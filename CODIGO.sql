@@ -87,3 +87,20 @@ BEGIN
 	WHERE Nombre_Usuario=@Nombre_Usuario and Contraseña=@Contraseña
 END
 GO
+------------------------
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE verId 
+	@Nombre_Usuario VARCHAR (50)
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+	SELECT Id_Usuario 
+	FROM Usuario
+	WHERE Nombre=@Nombre_Usuario;
+END  
+GO

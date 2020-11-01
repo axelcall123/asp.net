@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <asp:Label ID="Pud" runat="server" Text="OTHELLO"></asp:Label>
-
+        <asp:Button ID="Ver" runat="server" Text="Button" OnClick="Ver_Click" />
         <asp:Button ID="Normal" runat="server" Text="Normal" OnClick="Normal_Click" />
         <asp:Button ID="Inverso" runat="server" Text="Inverso" OnClick="Inverso_Click" />
     </div>

@@ -4,9 +4,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Registrandose</h1>
-   <br />
-    <br />
-    <br />
+    <br/>
+    <br/>
+    <br/>
 <form action="~/Default" method="post">
     <div class="col-lg-12">
         <span class="icon-user"></span>

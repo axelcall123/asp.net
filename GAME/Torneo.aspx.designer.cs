@@ -11,745 +11,592 @@ namespace GAME
 {
 
 
-    public partial class Contact
+    public partial class Torneo
     {
 
         /// <summary>
-        /// Control Pud.
+        /// Control Verdad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Pud;
+        protected global::System.Web.UI.WebControls.Button Verdad;
 
         /// <summary>
-        /// Control Ver.
+        /// Control Verdad_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Ver;
+        protected global::System.Web.UI.WebControls.Button Verdad_2;
 
         /// <summary>
-        /// Control Normal.
+        /// Control All.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Normal;
+        protected global::System.Web.UI.UpdatePanel All;
 
         /// <summary>
-        /// Control Inverso.
+        /// Control Ocho_U.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Inverso;
+        protected global::System.Web.UI.UpdatePanel Ocho_U;
 
         /// <summary>
-        /// Control f1.
+        /// Control D_Uno_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl f1;
+        protected global::System.Web.UI.WebControls.Button D_Uno_1;
 
         /// <summary>
-        /// Control BA1.
+        /// Control D_GanarT1_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BA1;
+        protected global::System.Web.UI.WebControls.Button D_GanarT1_1;
 
         /// <summary>
-        /// Control BB1.
+        /// Control D_Dos_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BB1;
+        protected global::System.Web.UI.WebControls.Button D_Dos_1;
 
         /// <summary>
-        /// Control BC1.
+        /// Control D_GanarT1_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BC1;
+        protected global::System.Web.UI.WebControls.Button D_GanarT1_2;
 
         /// <summary>
-        /// Control BD1.
+        /// Control D_Tres_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BD1;
+        protected global::System.Web.UI.WebControls.Button D_Tres_1;
 
         /// <summary>
-        /// Control BE1.
+        /// Control D_GanarT1_3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BE1;
+        protected global::System.Web.UI.WebControls.Button D_GanarT1_3;
 
         /// <summary>
-        /// Control BF1.
+        /// Control D_Cuatro_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BF1;
+        protected global::System.Web.UI.WebControls.Button D_Cuatro_1;
 
         /// <summary>
-        /// Control BG1.
+        /// Control D_GanarT1_4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BG1;
+        protected global::System.Web.UI.WebControls.Button D_GanarT1_4;
 
         /// <summary>
-        /// Control BH1.
+        /// Control D_Cinco_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BH1;
+        protected global::System.Web.UI.WebControls.Button D_Cinco_1;
 
         /// <summary>
-        /// Control f2.
+        /// Control D_GanarT1_5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl f2;
+        protected global::System.Web.UI.WebControls.Button D_GanarT1_5;
 
         /// <summary>
-        /// Control BA2.
+        /// Control D_Seis_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BA2;
+        protected global::System.Web.UI.WebControls.Button D_Seis_1;
 
         /// <summary>
-        /// Control BB2.
+        /// Control D_GanarT1_6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BB2;
+        protected global::System.Web.UI.WebControls.Button D_GanarT1_6;
 
         /// <summary>
-        /// Control BC2.
+        /// Control D_Siete_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BC2;
+        protected global::System.Web.UI.WebControls.Button D_Siete_1;
 
         /// <summary>
-        /// Control BD2.
+        /// Control D_GanarT1_7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BD2;
+        protected global::System.Web.UI.WebControls.Button D_GanarT1_7;
 
         /// <summary>
-        /// Control BE2.
+        /// Control D_Ocho_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BE2;
+        protected global::System.Web.UI.WebControls.Button D_Ocho_1;
 
         /// <summary>
-        /// Control BF2.
+        /// Control D_GanarT1_8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BF2;
+        protected global::System.Web.UI.WebControls.Button D_GanarT1_8;
 
         /// <summary>
-        /// Control BG2.
+        /// Control D_Uno_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BG2;
+        protected global::System.Web.UI.WebControls.Button D_Uno_2;
 
         /// <summary>
-        /// Control BH2.
+        /// Control D_GanarT2_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BH2;
+        protected global::System.Web.UI.WebControls.Button D_GanarT2_1;
 
         /// <summary>
-        /// Control f3.
+        /// Control D_Dos_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl f3;
+        protected global::System.Web.UI.WebControls.Button D_Dos_2;
 
         /// <summary>
-        /// Control BA3.
+        /// Control D_GanarT2_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BA3;
+        protected global::System.Web.UI.WebControls.Button D_GanarT2_2;
 
         /// <summary>
-        /// Control BB3.
+        /// Control D_Tres_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BB3;
+        protected global::System.Web.UI.WebControls.Button D_Tres_2;
 
         /// <summary>
-        /// Control BC3.
+        /// Control D_GanarT2_3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BC3;
+        protected global::System.Web.UI.WebControls.Button D_GanarT2_3;
 
         /// <summary>
-        /// Control BD3.
+        /// Control D_Cuatro_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BD3;
+        protected global::System.Web.UI.WebControls.Button D_Cuatro_2;
 
         /// <summary>
-        /// Control BE3.
+        /// Control D_GanarT2_4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BE3;
+        protected global::System.Web.UI.WebControls.Button D_GanarT2_4;
 
         /// <summary>
-        /// Control BF3.
+        /// Control D_Uno_3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BF3;
+        protected global::System.Web.UI.WebControls.Button D_Uno_3;
 
         /// <summary>
-        /// Control BG3.
+        /// Control D_GanarT3_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BG3;
+        protected global::System.Web.UI.WebControls.Button D_GanarT3_1;
 
         /// <summary>
-        /// Control BH3.
+        /// Control D_Dos_3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BH3;
+        protected global::System.Web.UI.WebControls.Button D_Dos_3;
 
         /// <summary>
-        /// Control f4.
+        /// Control D_GanarT3_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl f4;
+        protected global::System.Web.UI.WebControls.Button D_GanarT3_2;
 
         /// <summary>
-        /// Control BA4.
+        /// Control D_Uno_4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BA4;
+        protected global::System.Web.UI.WebControls.Button D_Uno_4;
 
         /// <summary>
-        /// Control BB4.
+        /// Control D_GanarT4_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BB4;
+        protected global::System.Web.UI.WebControls.Button D_GanarT4_1;
 
         /// <summary>
-        /// Control BC4.
+        /// Control I_GanarT4_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BC4;
+        protected global::System.Web.UI.WebControls.Button I_GanarT4_1;
 
         /// <summary>
-        /// Control BD4.
+        /// Control I_Uno_4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BD4;
+        protected global::System.Web.UI.WebControls.Button I_Uno_4;
 
         /// <summary>
-        /// Control BE4.
+        /// Control I_GanarT3_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BE4;
+        protected global::System.Web.UI.WebControls.Button I_GanarT3_1;
 
         /// <summary>
-        /// Control BF4.
+        /// Control I_Uno_3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BF4;
+        protected global::System.Web.UI.WebControls.Button I_Uno_3;
 
         /// <summary>
-        /// Control BG4.
+        /// Control I_GanarT3_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BG4;
+        protected global::System.Web.UI.WebControls.Button I_GanarT3_2;
 
         /// <summary>
-        /// Control BH4.
+        /// Control I_Dos_3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BH4;
+        protected global::System.Web.UI.WebControls.Button I_Dos_3;
 
         /// <summary>
-        /// Control f5.
+        /// Control I_GanarT2_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl f5;
+        protected global::System.Web.UI.WebControls.Button I_GanarT2_1;
 
         /// <summary>
-        /// Control BA5.
+        /// Control I_Uno_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BA5;
+        protected global::System.Web.UI.WebControls.Button I_Uno_2;
 
         /// <summary>
-        /// Control BB5.
+        /// Control I_GanarT2_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BB5;
+        protected global::System.Web.UI.WebControls.Button I_GanarT2_2;
 
         /// <summary>
-        /// Control BC5.
+        /// Control I_Dos_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BC5;
+        protected global::System.Web.UI.WebControls.Button I_Dos_2;
 
         /// <summary>
-        /// Control BD5.
+        /// Control I_GanarT2_3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BD5;
+        protected global::System.Web.UI.WebControls.Button I_GanarT2_3;
 
         /// <summary>
-        /// Control BE5.
+        /// Control I_Tres_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BE5;
+        protected global::System.Web.UI.WebControls.Button I_Tres_2;
 
         /// <summary>
-        /// Control BF5.
+        /// Control I_GanarT2_4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BF5;
+        protected global::System.Web.UI.WebControls.Button I_GanarT2_4;
 
         /// <summary>
-        /// Control BG5.
+        /// Control I_Cuatro_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BG5;
+        protected global::System.Web.UI.WebControls.Button I_Cuatro_2;
 
         /// <summary>
-        /// Control BH5.
+        /// Control Ocho_D.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BH5;
+        protected global::System.Web.UI.UpdatePanel Ocho_D;
 
         /// <summary>
-        /// Control f6.
+        /// Control I_GanarT1_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl f6;
+        protected global::System.Web.UI.WebControls.Button I_GanarT1_1;
 
         /// <summary>
-        /// Control BA6.
+        /// Control I_Uno_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BA6;
+        protected global::System.Web.UI.WebControls.Button I_Uno_1;
 
         /// <summary>
-        /// Control BB6.
+        /// Control I_GanarT1_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BB6;
+        protected global::System.Web.UI.WebControls.Button I_GanarT1_2;
 
         /// <summary>
-        /// Control BC6.
+        /// Control I_Dos_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BC6;
+        protected global::System.Web.UI.WebControls.Button I_Dos_1;
 
         /// <summary>
-        /// Control BD6.
+        /// Control I_GanarT1_3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BD6;
+        protected global::System.Web.UI.WebControls.Button I_GanarT1_3;
 
         /// <summary>
-        /// Control BE6.
+        /// Control I_Tres_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BE6;
+        protected global::System.Web.UI.WebControls.Button I_Tres_1;
 
         /// <summary>
-        /// Control BF6.
+        /// Control I_GanarT1_4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BF6;
+        protected global::System.Web.UI.WebControls.Button I_GanarT1_4;
 
         /// <summary>
-        /// Control BG6.
+        /// Control I_Cuatro_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BG6;
+        protected global::System.Web.UI.WebControls.Button I_Cuatro_1;
 
         /// <summary>
-        /// Control BH6.
+        /// Control I_GanarT1_5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BH6;
+        protected global::System.Web.UI.WebControls.Button I_GanarT1_5;
 
         /// <summary>
-        /// Control f7.
+        /// Control I_Cinco_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl f7;
+        protected global::System.Web.UI.WebControls.Button I_Cinco_1;
 
         /// <summary>
-        /// Control BA7.
+        /// Control I_GanarT1_6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BA7;
+        protected global::System.Web.UI.WebControls.Button I_GanarT1_6;
 
         /// <summary>
-        /// Control BB7.
+        /// Control I_Seis_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BB7;
+        protected global::System.Web.UI.WebControls.Button I_Seis_1;
 
         /// <summary>
-        /// Control BC7.
+        /// Control I_GanarT1_7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BC7;
+        protected global::System.Web.UI.WebControls.Button I_GanarT1_7;
 
         /// <summary>
-        /// Control BD7.
+        /// Control I_Siete_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BD7;
+        protected global::System.Web.UI.WebControls.Button I_Siete_1;
 
         /// <summary>
-        /// Control BE7.
+        /// Control I_GanarT1_8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BE7;
+        protected global::System.Web.UI.WebControls.Button I_GanarT1_8;
 
         /// <summary>
-        /// Control BF7.
+        /// Control I_Ocho_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BF7;
-
-        /// <summary>
-        /// Control BG7.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BG7;
-
-        /// <summary>
-        /// Control BH7.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BH7;
-
-        /// <summary>
-        /// Control f8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl f8;
-
-        /// <summary>
-        /// Control BA8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BA8;
-
-        /// <summary>
-        /// Control BB8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BB8;
-
-        /// <summary>
-        /// Control BC8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BC8;
-
-        /// <summary>
-        /// Control BD8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BD8;
-
-        /// <summary>
-        /// Control BE8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BE8;
-
-        /// <summary>
-        /// Control BF8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BF8;
-
-        /// <summary>
-        /// Control BG8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BG8;
-
-        /// <summary>
-        /// Control BH8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BH8;
-
-        /// <summary>
-        /// Control Guardar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Guardar;
-
-        /// <summary>
-        /// Control NombreSalvar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NombreSalvar;
-
-        /// <summary>
-        /// Control Cargar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Cargar;
-
-        /// <summary>
-        /// Control FileUpload1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-
-        /// <summary>
-        /// Control TEXTO.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TEXTO;
-
-        /// <summary>
-        /// Control textos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label textos;
+        protected global::System.Web.UI.WebControls.Button I_Ocho_1;
     }
 }

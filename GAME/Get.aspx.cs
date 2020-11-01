@@ -41,5 +41,10 @@ namespace GAME
                 help.SetY(y);//M*/
             }
         }
+
+        protected void Torneo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Torneo.aspx");
+        }
     }
 }

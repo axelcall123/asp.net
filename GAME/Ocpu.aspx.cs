@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -2409,7 +2411,7 @@ namespace GAME
                     for (int i = 0; i < 64; i++)
                     {
                         if (ID.Equals(boton[i].ID))
-                        {/*If ID ES IGUAL ID BOTON*/
+                        {//If ID ES IGUAL ID BOTON
                             if (Color.Equals("negro"))
                             {
                                 boton[i].ImageUrl = "~/IMG/2.png";
@@ -2455,5 +2457,26 @@ namespace GAME
             }
         }
 
+        protected void Ver_Click(object sender, EventArgs e)
+        {
+            String connectionString = ConfigurationManager.ConnectionStrings["JuegoConnectionString"].ConnectionString;
+            String usuario = "Maquina";
+
+            SqlConnection sql = new SqlConnection(connectionString);
+            sql.Open();/*ABRIENDO BASE DE DATOS*/
+            SqlCommand com = new SqlCommand();
+            com.Connection = sql;
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "verId";
+            com.Parameters.AddWithValue("@Nombre_Usuario", usuario);
+            SqlDataReader dr = com.ExecuteReader();
+            if (dr.Read())//OBTIENE SI ES VERDADERO EL NOMBRE O NO
+            {
+                String a = dr.GetInt32(0).ToString();
+                TEXTO.Text = a + " Nombre Usuario";
+            }
+
+            dr.Close();
+        }
     }
 }
