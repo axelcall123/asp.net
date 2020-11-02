@@ -74,10 +74,17 @@ input {
     display: table;
     float: left;
     height: 325px;
+    text-align: center;
 }
-.Ronda_I {
-    width: 12.5%;
-    display: table;
-    float: right;
-    height: 325px;
+.Linea {
+    width: 100%;
+    text-align: center;
+}
+.Opciones {
+    width: 33.33%;
+    height:10px;
+    font-size:3px;
+}
+.VS {
+    border: .5px solid black;
 }

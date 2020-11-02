@@ -36,6 +36,7 @@ namespace GAME
             I_Seis_1.Text = "--Team14--";
             I_Siete_1.Text = "--Team15--";
             I_Ocho_1.Text = "--Team16--";
+            Verdad_2.Enabled = false;
         }
         protected void Verdad_2_Click(object sender, EventArgs e)
         {
@@ -49,6 +50,7 @@ namespace GAME
             I_Dos_2.Text = "--Team6--";
             I_Tres_2.Text = "--Team7--";
             I_Cuatro_2.Text = "--Team8--";
+            Verdad.Enabled = false;
         }
         //OCHO
         protected void D_GanarT1_1_Click(object sender, EventArgs e)
@@ -225,6 +227,23 @@ namespace GAME
         protected void D_GanarT4_1_Click(object sender, EventArgs e)
         {
 
+        }
+        //OTROS
+        protected void D_UB_1_2_Click(object sender, EventArgs e)
+        {
+            D_UB_1_1.Enabled = false;
+        }
+
+        protected void D_UB_1_1_Click1(object sender, EventArgs e)
+        {
+            D_UB_1_2.Enabled = false;
+            Boolean tf = false;
+            /*Page.ClientScript.RegisterStartupScript(
+            this.GetType(), "OpenWindow", "window.open('https://localhost:44330/Ocpu?id=False','_newtab');", true
+            );*/
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "OpenWindow", "window.open('Ocpu?id=False', '_blank');", true);
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "name", "alert('Successfully Updated');", true);
+            ScriptManager.RegisterStartupScript(this,this.GetType(), "OpenWindow", "window.open('Ocpu?id=False', '_blank');", true);
         }
     }
 }

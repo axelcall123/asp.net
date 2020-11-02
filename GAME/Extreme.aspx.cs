@@ -11,7 +11,7 @@ namespace GAME
 {
      class Help : System.Web.UI.Page
     {
-        static string X;
+        /*static string X;
         static string Y;
 
         public String GetX()
@@ -26,7 +26,7 @@ namespace GAME
             Y = (String)(Context.Session["M"]);
             //return Request.QueryString["M"].ToString();
             return Y;
-        }
+        }*/
     }
 
     public partial class Extreme : System.Web.UI.Page
@@ -38,13 +38,6 @@ namespace GAME
         static String[] PlayerDos = new String[5];//COLORES P2
         static int PU = 0;
         static int PD = 0;
-
-        static Boolean UnaVez = true;//PRIMER PASO DEPUES DE LOS 4 PASOS
-        
-        static Help h = new Help();
-        String pY = h.Gety();
-        static String pX = h.GetX();
-
         static int Tn=8 ;
         static int Tm=6 ;
         
@@ -938,11 +931,9 @@ namespace GAME
             }
         }
         //INICIO DE TODO
-        static Boolean uno = true;
         protected void Page_Load(object sender, EventArgs e)//m*n m iz yy n abajo
         {
             
-            TT.Text = "TEXTO: " + pY + " ; " + pX+" xd";
             /*Help h = new Help();
             TT.Text = "TEXTO: " + h.Gety() + " ; " + h.GetX();*/
             /*Tn = int.Parse(h.Gety());

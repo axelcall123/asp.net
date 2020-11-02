@@ -104,3 +104,27 @@ BEGIN
 	WHERE Nombre=@Nombre_Usuario;
 END  
 GO
+-------------
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE ActualizarTorneo 
+	@PartidaUno int,
+	@PartidaDos int,
+	@PartidaTres int,
+	@PartidaCuatro int,
+	@Team varchar(50)
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+	UPDATE Torneo_Partidas
+	SET PartidaUno=@PartidaUno,
+		PartidaDos=@PartidaDos,
+		PartidaTres=@PartidaTres,
+		PartidaCuatro=@PartidaCuatro
+		WHERE Team=@Team
+END
+GO
