@@ -38,14 +38,15 @@ namespace GAME
                 if (a == 1)
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('SESION')", true);
+                    Session["Sesion"] = usuario;
                     Response.Redirect("Get.aspx");
+                    
                 }
                 else
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('NO SESION')", true);
                 }
             }
-
             dr.Close();
             /*int count = Convert.ToInt32(com.ExecuteScalar());
             com.ExecuteNonQuery();

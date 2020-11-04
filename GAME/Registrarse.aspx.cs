@@ -12,6 +12,7 @@ namespace GAME
         {
 
         }
+        static int idUsuario = 0;
         /*String connectionString = ConfigurationManager.ConnectionStrings["JuegoConnectionString"].ConnectionString;*/
         /*String connectionString = @"Data Source=DESKTOP-FTJQFOD; Initial catalog=Partida; Integrated Security=True;";*/
         protected void Enviar_r_Click(object sender, EventArgs e)
@@ -24,10 +25,10 @@ namespace GAME
             String fecha = fecha_r.Text;
             String pais = pais_r.Text;
             String correo = email_r.Text;
-            
+
             /*using (SqlConnection sql = new SqlConnection(connectionString))
             {*/
-         
+                
                 SqlConnection sql = new SqlConnection(connectionString);
                 sql.Open();/*ABRIENDO BASE DE DATOS*/
                 SqlCommand com = new SqlCommand();
@@ -44,7 +45,38 @@ namespace GAME
                 com.Parameters.Add("@Pais", SqlDbType.VarChar).Value = pais;
                 com.Parameters.Add("@Correo", SqlDbType.VarChar).Value = correo;              
                 com.ExecuteNonQuery();
-                Response.Redirect("Default.aspx");
+                
+                sql.Close();
+            //OBTENER ID USUSARIO
+                SqlConnection sql1 = new SqlConnection(connectionString);
+                sql1.Open();/*ABRIENDO BASE DE DATOS*/
+                SqlCommand com1 = new SqlCommand();
+                com1.Connection = sql1;
+                com1.CommandType = CommandType.StoredProcedure;
+                com1.CommandText = "getId_Usuario";
+                com1.Parameters.AddWithValue("@Nombre_Usuario", usuario);
+                SqlDataReader dr1 = com1.ExecuteReader();
+                if (dr1.Read())//OBTIENE SI ES VERDADERO EL NOMBRE O NO
+                {
+                    idUsuario = dr1.GetInt32(0);
+                    Label1.Text = "id: " + idUsuario.ToString();
+                }
+                dr1.Close();
+                sql1.Close();
+
+            //CREAR JUGADOR
+                /*String player = "PLAYER";
+                SqlConnection sql2 = new SqlConnection(connectionString);
+                sql2.Open();
+                SqlCommand com2 = new SqlCommand();
+                com2.Connection = sql2;
+                com2.CommandType = CommandType.StoredProcedure;
+                com2.CommandText = "spInsertJugador";
+                com2.Parameters.AddWithValue("@Tipo_Jugador", player);
+                com2.Parameters.AddWithValue("@Id_Usuario", idUsuario);
+                com2.ExecuteNonQuery();
+                sql2.Close();
+                Response.Redirect("Default.aspx");*/
             /*}*/
 
 

@@ -44,11 +44,12 @@
         <asp:TextBox type="email" placeholder="EMAIL" ID="email_r" runat="server" required></asp:TextBox>
     </div>
     <div class="col-lg-12">
-        <!--input type="submit" value="enviar" name="Enviar"-->
+        <!--input type="su  bmit" value="enviar" name="Enviar"-->
         <span class="icon-radio-checked"></span>
         <asp:Button ID="Enviar_r" runat="server" Text="Enviar" OnClick="Enviar_r_Click" />
         <br />
     </div>
 </form>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     
 </asp:Content>

@@ -761,7 +761,7 @@ namespace GAME
             SearchSus(0, 0);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[0,0]
@@ -784,7 +784,7 @@ namespace GAME
             SearchSus(1, 0);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[1,0]
@@ -807,7 +807,7 @@ namespace GAME
             SearchSus(2, 0);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[2,0]
@@ -830,7 +830,7 @@ namespace GAME
             SearchSus(3, 0);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[3,0]
@@ -853,7 +853,7 @@ namespace GAME
             SearchSus(4, 0);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[4,0]
@@ -876,7 +876,7 @@ namespace GAME
             SearchSus(5, 0);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[5,0]
@@ -899,7 +899,7 @@ namespace GAME
             SearchSus(6, 0);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[6,0]
@@ -922,7 +922,7 @@ namespace GAME
             SearchSus(7, 0);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[7,0]
@@ -946,7 +946,7 @@ namespace GAME
             SearchSus(0, 1);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[0,1]
@@ -969,7 +969,7 @@ namespace GAME
             SearchSus(1, 1);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[1,1]
@@ -992,7 +992,7 @@ namespace GAME
             SearchSus(2, 1);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[2,1]
@@ -1015,7 +1015,7 @@ namespace GAME
             SearchSus(3, 1);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[3,1]
@@ -1038,7 +1038,7 @@ namespace GAME
             SearchSus(4, 1);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[4,1]
@@ -1061,7 +1061,7 @@ namespace GAME
             SearchSus(5, 1);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[5,1]
@@ -1084,7 +1084,7 @@ namespace GAME
             SearchSus(6, 1);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[6,1]
@@ -1107,7 +1107,7 @@ namespace GAME
             SearchSus(7, 1);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[7,1]
@@ -1131,7 +1131,7 @@ namespace GAME
               SearchSus(0, 2);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
 
@@ -1155,7 +1155,7 @@ namespace GAME
               SearchSus(1, 2);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
 
@@ -1179,7 +1179,7 @@ namespace GAME
             SearchSus(2, 2);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
 
@@ -1203,7 +1203,7 @@ namespace GAME
           SearchSus(3, 2);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
 
@@ -1230,7 +1230,7 @@ namespace GAME
                 Botones[4, 3].ImageUrl = "~/IMG/1.png";
                 GAME();
                 //WinLost();
-                if(Request.QueryString["id"].ToString()=="True"){
+                if(Request.QueryString["CpuVs"].ToString()=="True"){
                     random();
                 }
             }
@@ -1239,7 +1239,7 @@ namespace GAME
                 SearchSus(4, 2);
                 GAME();
                 //WinLost();
-                if(Request.QueryString["id"].ToString()=="True"){
+                if(Request.QueryString["CpuVs"].ToString()=="True"){
                     random();
                 }
             }
@@ -1267,7 +1267,7 @@ namespace GAME
           SearchSus(5, 2);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[5,2]
@@ -1290,7 +1290,7 @@ namespace GAME
           SearchSus(6, 2);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[6,2]
@@ -1313,7 +1313,7 @@ namespace GAME
           SearchSus(7, 2);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[7,2]
@@ -1337,7 +1337,7 @@ namespace GAME
           SearchSus(0, 3);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[0,3]
@@ -1360,7 +1360,7 @@ namespace GAME
           SearchSus(1, 3);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[1,3]
@@ -1383,7 +1383,7 @@ namespace GAME
           SearchSus(2, 3);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[2,3]
@@ -1406,7 +1406,7 @@ namespace GAME
           SearchSus(3, 3);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[3,3]
@@ -1429,13 +1429,13 @@ namespace GAME
           SearchSus(4, 3);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[4,3]
         protected void BD6_Click(object sender, ImageClickEventArgs e)
         {
-            TEXTO.Text = Request.QueryString["id"].ToString();
+            TEXTO.Text = Request.QueryString["CpuVs"].ToString();
             ImageButton button = (ImageButton)sender;
             if (button.ImageUrl == "")
             {
@@ -1456,7 +1456,7 @@ namespace GAME
                 Botones[4, 3].ImageUrl = "~/IMG/1.png";
                 GAME();
                 //WinLost();
-                if(Request.QueryString["id"].ToString()=="True"){
+                if(Request.QueryString["CpuVs"].ToString()=="True"){
                     random();
                 }
             }
@@ -1465,7 +1465,7 @@ namespace GAME
                 SearchSus(5, 3);
                 GAME();
                 //WinLost();
-                if(Request.QueryString["id"].ToString()=="True"){
+                if(Request.QueryString["CpuVs"].ToString()=="True"){
                     random();
                 }
             }
@@ -1491,7 +1491,7 @@ namespace GAME
           SearchSus(6, 3);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[6,3]
@@ -1514,7 +1514,7 @@ namespace GAME
           SearchSus(7, 3);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
 
@@ -1540,7 +1540,7 @@ namespace GAME
             SearchSus(0, 4);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[0,4]
@@ -1563,7 +1563,7 @@ namespace GAME
           SearchSus(1, 4);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[1,4]
@@ -1588,10 +1588,10 @@ namespace GAME
             {
                 ImageButton[,] Botones = BotonMulti();
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
-                //TEXTO.Text = Request.QueryString["id"].ToString()+" ME";
+                //TEXTO.Text = Request.QueryString["CpuVs"].ToString()+" ME";
                 GAME();
                 //WinLost();
-                if(Request.QueryString["id"].ToString()=="True"){
+                if(Request.QueryString["CpuVs"].ToString()=="True"){
                     random();
                 }
             }
@@ -1600,7 +1600,7 @@ namespace GAME
                 SearchSus(2, 4);
                 GAME();
                 //WinLost();
-                if(Request.QueryString["id"].ToString()=="True"){
+                if(Request.QueryString["CpuVs"].ToString()=="True"){
                     random();
                 }
             }
@@ -1626,7 +1626,7 @@ namespace GAME
           SearchSus(3, 4);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[3,4]
@@ -1649,7 +1649,7 @@ namespace GAME
           SearchSus(4, 4);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[4,4]
@@ -1684,7 +1684,7 @@ namespace GAME
             SearchSus(5, 4);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
             //ImageButton[,] Botones = BotonMulti();
@@ -1711,7 +1711,7 @@ namespace GAME
           SearchSus(6, 4);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[6,4]
@@ -1734,7 +1734,7 @@ namespace GAME
           SearchSus(7, 4);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[7,4]
@@ -1758,7 +1758,7 @@ namespace GAME
           SearchSus(0, 5);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[0,5]
@@ -1781,7 +1781,7 @@ namespace GAME
           SearchSus(1, 5);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[1,5]
@@ -1804,7 +1804,7 @@ namespace GAME
             SearchSus(2, 5);
             GAME();
             //WinLost();
-            if(Request.QueryString["id"].ToString()=="True"){
+            if(Request.QueryString["CpuVs"].ToString()=="True"){
                 random();
             }
         }//[2,5]
@@ -1831,7 +1831,7 @@ namespace GAME
                 Botones[3, 4].ImageUrl = "~/IMG/1.png";
                 GAME();
                 //WinLost();
-                if(Request.QueryString["id"].ToString()=="True"){
+                if(Request.QueryString["CpuVs"].ToString()=="True"){
                     random();
                 }
             }
@@ -1840,7 +1840,7 @@ namespace GAME
                 SearchSus(3, 5);
                 GAME();
                 //WinLost();
-                if(Request.QueryString["id"].ToString()=="True"){
+                if(Request.QueryString["CpuVs"].ToString()=="True"){
                     random();
                 }
             }
@@ -1868,7 +1868,7 @@ namespace GAME
           SearchSus(4, 5);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[4,5]
@@ -1891,7 +1891,7 @@ namespace GAME
           SearchSus(5, 5);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[5,5]
@@ -1914,7 +1914,7 @@ namespace GAME
           SearchSus(6, 5);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[6,5]
@@ -1937,7 +1937,7 @@ namespace GAME
           SearchSus(7, 5);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[7,5]
@@ -1961,7 +1961,7 @@ namespace GAME
           SearchSus(0, 6);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[0,6]
@@ -1984,7 +1984,7 @@ namespace GAME
           SearchSus(1, 6);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[1,6]
@@ -2007,7 +2007,7 @@ namespace GAME
           SearchSus(2, 6);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[2,6]
@@ -2030,7 +2030,7 @@ namespace GAME
           SearchSus(3, 6);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[3,6]
@@ -2053,7 +2053,7 @@ namespace GAME
           SearchSus(4, 6);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[4,6]
@@ -2076,7 +2076,7 @@ namespace GAME
           SearchSus(5, 6);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[5,6]
@@ -2099,7 +2099,7 @@ namespace GAME
           SearchSus(6, 6);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[6,6]
@@ -2122,7 +2122,7 @@ namespace GAME
           SearchSus(7, 6);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[7,6]
@@ -2146,7 +2146,7 @@ namespace GAME
           SearchSus(0, 7);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[0,7]
@@ -2169,7 +2169,7 @@ namespace GAME
           SearchSus(1, 7);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[1,7]
@@ -2192,7 +2192,7 @@ namespace GAME
           SearchSus(2, 7);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[2,7]
@@ -2215,7 +2215,7 @@ namespace GAME
           SearchSus(3, 7);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[3,7]
@@ -2238,7 +2238,7 @@ namespace GAME
           SearchSus(4, 7);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[4,7]
@@ -2261,7 +2261,7 @@ namespace GAME
           SearchSus(5, 7);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[5,7]
@@ -2284,7 +2284,7 @@ namespace GAME
           SearchSus(6, 7);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[6,7]
@@ -2307,7 +2307,7 @@ namespace GAME
           SearchSus(7, 7);
           GAME();
           //WinLost();
-          if(Request.QueryString["id"].ToString()=="True"){
+          if(Request.QueryString["CpuVs"].ToString()=="True"){
               random();
           }
         }//[7,7]

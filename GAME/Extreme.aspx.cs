@@ -41,9 +41,6 @@ namespace GAME
         static int Tn=8 ;
         static int Tm=6 ;
         
-
-        /*static int Tn = help.GetX();
-        static int Tm = help.GetY();*/
         //MATRIZ POSICIONES PARA RELLENAR
         static char[,] XmasM = new char[Tn, Tm]; //X+
         static char[,] XmenM = new char[Tn, Tm]; //X-
@@ -60,7 +57,7 @@ namespace GAME
         ImageButton[,] CUADROS = new ImageButton[Tn, Tm];//MATRIZ CUADROS
         ImageButton[,] MARCO = new ImageButton[Tn + 2, Tm + 2];//MATRIZ NUMERO LETRAS
         static Char[,] TAB = new char[Tn, Tm];//MATRIZ DE AYUDA PARA LAS REGLAS DE OTHELLO
-        Panel[] PANEL = new Panel[(Tm + 2)];//DIVS
+        Panel[] PANEL = new Panel[(Tn + 2)];//DIVS
         //BORRAR
         public void borrar()
         {

@@ -19,37 +19,37 @@ namespace GAME
             All.Visible = true;
             Ocho_U.Visible = true;
             Ocho_D.Visible = true;
-            D_Uno_1.Text = "--Team1--";
-            D_Dos_1.Text = "--Team2--";
-            D_Tres_1.Text= "--Team3--";
-            D_Cuatro_1.Text= "--Team4--";
-            D_Cinco_1.Text= "--Team5--";
-            D_Seis_1.Text= "--Team6--";
-            D_Siete_1.Text= "--Team7--";
-            D_Ocho_1.Text= "--Team8--";
+            D_Uno_1.Text = "Team1";
+            D_Dos_1.Text = "Team2";
+            D_Tres_1.Text= "Team3";
+            D_Cuatro_1.Text= "Team4";
+            D_Cinco_1.Text= "Team5";
+            D_Seis_1.Text= "Team6";
+            D_Siete_1.Text= "Team7";
+            D_Ocho_1.Text= "Team8";
 
-            I_Uno_1.Text = "--Team9--";
-            I_Dos_1.Text = "--Team10--";
-            I_Tres_1.Text = "--Team11--";
-            I_Cuatro_1.Text = "--Team12--";
-            I_Cinco_1.Text = "--Team13--";
-            I_Seis_1.Text = "--Team14--";
-            I_Siete_1.Text = "--Team15--";
-            I_Ocho_1.Text = "--Team16--";
+            I_Uno_1.Text = "Team9";
+            I_Dos_1.Text = "Team10";
+            I_Tres_1.Text = "Team11";
+            I_Cuatro_1.Text = "Team12";
+            I_Cinco_1.Text = "Team13";
+            I_Seis_1.Text = "Team14";
+            I_Siete_1.Text = "Team15";
+            I_Ocho_1.Text = "Team16";
             Verdad_2.Enabled = false;
         }
         protected void Verdad_2_Click(object sender, EventArgs e)
         {
             All.Visible = true;
-            D_Uno_2.Text = "--Team1--";
-            D_Dos_2.Text = "--Team2--";
-            D_Tres_2.Text = "--Team3--";
-            D_Cuatro_2.Text = "--Team4--";
+            D_Uno_2.Text = "Team1";
+            D_Dos_2.Text = "Team2";
+            D_Tres_2.Text = "Team3";
+            D_Cuatro_2.Text = "Team4";
 
-            I_Uno_2.Text = "--Team5--";
-            I_Dos_2.Text = "--Team6--";
-            I_Tres_2.Text = "--Team7--";
-            I_Cuatro_2.Text = "--Team8--";
+            I_Uno_2.Text = "Team5";
+            I_Dos_2.Text = "Team6";
+            I_Tres_2.Text = "Team7";
+            I_Cuatro_2.Text = "Team8";
             Verdad.Enabled = false;
         }
         //OCHO
@@ -228,22 +228,22 @@ namespace GAME
         {
 
         }
-        //OTROS
-        protected void D_UB_1_2_Click(object sender, EventArgs e)
-        {
-            D_UB_1_1.Enabled = false;
-        }
+        static int contUno = 0;
 
-        protected void D_UB_1_1_Click1(object sender, EventArgs e)
-        {
-            D_UB_1_2.Enabled = false;
-            Boolean tf = false;
-            /*Page.ClientScript.RegisterStartupScript(
-            this.GetType(), "OpenWindow", "window.open('https://localhost:44330/Ocpu?id=False','_newtab');", true
-            );*/
-            //Page.ClientScript.RegisterStartupScript(this.GetType(), "OpenWindow", "window.open('Ocpu?id=False', '_blank');", true);
-            //ScriptManager.RegisterStartupScript(this, this.GetType(), "name", "alert('Successfully Updated');", true);
-            ScriptManager.RegisterStartupScript(this,this.GetType(), "OpenWindow", "window.open('Ocpu?id=False', '_blank');", true);
+        protected void D_UB_1_1_Click(object sender, EventArgs e)
+        {   //EQUIPO|| CPU O JUGADOR|| SI ES TORNEO|| 
+
+            String equipo1 =D_Uno_1.Text;
+            String equipo2 = D_Dos_1.Text;
+            Boolean cpu = false;
+            Boolean torneo = true;
+
+            String u = "?id="+cpu;
+            String d = "&Tu="+ equipo1;
+            String t = "&Td="+ equipo2;
+            String c = "&Torneo="+ torneo;
+            String url = "window.open('Ocpu"+u+d+t+c + "', '_blank');";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "OpenWindow", url, true);
         }
     }
 }

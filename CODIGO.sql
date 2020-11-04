@@ -93,7 +93,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE verId 
+CREATE PROCEDURE getId_Usuario
 	@Nombre_Usuario VARCHAR (50)
 AS
 BEGIN
@@ -126,5 +126,44 @@ BEGIN
 		PartidaTres=@PartidaTres,
 		PartidaCuatro=@PartidaCuatro
 		WHERE Team=@Team
+END
+GO
+--------------------
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE spInsertJugador
+	@Tipo_Jugador VARCHAR(30),
+	@Id_Usuario int
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+	INSERT INTO Jugador(Tipo_Jugador,Id_Usuario)
+	VALUES (@Tipo_Jugador,@Id_Usuario)
+END
+GO
+--------------
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE getIdJugador
+	@Nombre_Usuario VARCHAR(50)
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+	DECLARE @id INT
+	SET @id=(SELECT Id_Usuario 
+	FROM Usuario 
+	WHERE Nombre_Usuario=@Nombre_Usuario)
+	--------------
+	SELECT Id_Jugador 
+	FROM Jugador 
+	WHERE Id_Usuario=@id
 END
 GO
