@@ -12,7 +12,6 @@ namespace GAME
         {
 
         }
-        static int idUsuario = 0;
         /*String connectionString = ConfigurationManager.ConnectionStrings["JuegoConnectionString"].ConnectionString;*/
         /*String connectionString = @"Data Source=DESKTOP-FTJQFOD; Initial catalog=Partida; Integrated Security=True;";*/
         protected void Enviar_r_Click(object sender, EventArgs e)
@@ -25,11 +24,11 @@ namespace GAME
             String fecha = fecha_r.Text;
             String pais = pais_r.Text;
             String correo = email_r.Text;
-
+            int idUsuario = 0;
             /*using (SqlConnection sql = new SqlConnection(connectionString))
             {*/
-                
-                SqlConnection sql = new SqlConnection(connectionString);
+
+            SqlConnection sql = new SqlConnection(connectionString);
                 sql.Open();/*ABRIENDO BASE DE DATOS*/
                 SqlCommand com = new SqlCommand();
                 com.Connection = sql;
@@ -53,7 +52,7 @@ namespace GAME
                 SqlCommand com1 = new SqlCommand();
                 com1.Connection = sql1;
                 com1.CommandType = CommandType.StoredProcedure;
-                com1.CommandText = "getId_Usuario";
+                com1.CommandText = "getIdUsuario";
                 com1.Parameters.AddWithValue("@Nombre_Usuario", usuario);
                 SqlDataReader dr1 = com1.ExecuteReader();
                 if (dr1.Read())//OBTIENE SI ES VERDADERO EL NOMBRE O NO
@@ -65,7 +64,7 @@ namespace GAME
                 sql1.Close();
 
             //CREAR JUGADOR
-                /*String player = "PLAYER";
+                String player = "PLAYER";
                 SqlConnection sql2 = new SqlConnection(connectionString);
                 sql2.Open();
                 SqlCommand com2 = new SqlCommand();
@@ -76,7 +75,7 @@ namespace GAME
                 com2.Parameters.AddWithValue("@Id_Usuario", idUsuario);
                 com2.ExecuteNonQuery();
                 sql2.Close();
-                Response.Redirect("Default.aspx");*/
+                Response.Redirect("Default.aspx");
             /*}*/
 
 

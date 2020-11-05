@@ -38,8 +38,8 @@ namespace GAME
         static String[] PlayerDos = new String[5];//COLORES P2
         static int PU = 0;
         static int PD = 0;
-        static int Tn=8 ;
-        static int Tm=6 ;
+        static int Tn=20 ;
+        static int Tm=20;
         
         //MATRIZ POSICIONES PARA RELLENAR
         static char[,] XmasM = new char[Tn, Tm]; //X+
@@ -930,14 +930,10 @@ namespace GAME
         //INICIO DE TODO
         protected void Page_Load(object sender, EventArgs e)//m*n m iz yy n abajo
         {
-            
-            /*Help h = new Help();
-            TT.Text = "TEXTO: " + h.Gety() + " ; " + h.GetX();*/
-            /*Tn = int.Parse(h.Gety());
-            Tm = int.Parse(h.GetX());*/
-            /*texto = texto + Request.QueryString["N"]+" Numero1<br>";
-            texto = texto + Request.QueryString["M"] + " Numero2<br>";
-            TT.Text = texto;*/
+        
+            Tn = 8;
+            Tm = 8;
+            TT.Text=Tn+" ; "+Tm;
             int id1 = 97;
             for (int x = 0; x < (Tn + 2); x++)
             {

@@ -93,7 +93,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE getId_Usuario
+CREATE PROCEDURE getIdUsuario
 	@Nombre_Usuario VARCHAR (50)
 AS
 BEGIN
@@ -101,7 +101,7 @@ BEGIN
 	SET NOCOUNT ON;
 	SELECT Id_Usuario 
 	FROM Usuario
-	WHERE Nombre=@Nombre_Usuario;
+	WHERE Nombre_Usuario=@Nombre_Usuario;
 END  
 GO
 -------------
@@ -161,9 +161,25 @@ BEGIN
 	SET @id=(SELECT Id_Usuario 
 	FROM Usuario 
 	WHERE Nombre_Usuario=@Nombre_Usuario)
-	--------------
+	--*--
 	SELECT Id_Jugador 
 	FROM Jugador 
 	WHERE Id_Usuario=@id
+END
+GO
+----------------
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE spInsertPartida 
+	@Id_Jugador1 INT,
+	@Id_Jugador2 int
+AS
+BEGIN
+	SET NOCOUNT ON;
+	INSERT INTO Partida(Id_Jugador1,Id_Jugador2)
+	VALUES (@Id_Jugador1,@Id_Jugador2)
 END
 GO

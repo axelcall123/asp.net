@@ -1,0 +1,32 @@
+<campeonato>
+    <nombre>Camp uno</nombre>
+    <equipo>
+      <nombreEquipo>Uno</nombreEquipo>
+      <jugador>A</jugador>
+      <jugador>B</jugador>
+      <jugador>C</jugador>
+    </equipo>
+    
+    <equipo>
+      <nombreEquipo>Dos</nombreEquipo>
+      <jugador>D</jugador>
+      <jugador>E</jugador>
+      <jugador>F</jugador>
+    </equipo>
+    
+    <equipo>
+      <nombreEquipo>Tres</nombreEquipo>
+      <jugador>G</jugador>
+      <jugador>H</jugador>
+      <jugador>I</jugador>
+    </equipo>
+    
+    <equipo>
+      <nombreEquipo>Cuatro</nombreEquipo>
+      <jugador>J</jugador>
+      <jugador>K</jugador>
+      <jugador>L</jugador>
+    </equipo>
+    
+</campeonato>
+

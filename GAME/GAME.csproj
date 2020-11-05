@@ -232,10 +232,15 @@
     <Content Include="Content\fonts\icomoon.ttf" />
     <Content Include="Content\fonts\icomoon.woff" />
     <Content Include="app.config" />
+    <Content Include="Test\WebForm1.aspx" />
     <Content Include="Torneo.aspx" />
+    <Content Include="XML\1.xml" />
     <Content Include="XML\archivo1.xml" />
-    <Content Include="XML\archivo2.xml" />
-    <Content Include="XML\archivo3.xml" />
+    <Content Include="XML\completo.xml" />
+    <Content Include="XML\Data.xml" />
+    <Content Include="XML\doc.xml" />
+    <Content Include="XML\mine.xml" />
+    <Content Include="XML\xd.xml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -496,6 +501,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Test\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Torneo.aspx.cs">
       <DependentUpon>Torneo.aspx</DependentUpon>

@@ -60,5 +60,40 @@ namespace GAME
             }*/
 
         }
+        static int contador = 0;
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            String connectionString = ConfigurationManager.ConnectionStrings["JuegoConnectionString"].ConnectionString;
+            String texto = "";
+            SqlConnection sql = new SqlConnection(connectionString);
+            sql.Open();/*ABRIENDO BASE DE DATOS*/
+            SqlCommand com = new SqlCommand();
+            com.Connection = sql;
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "MMM";
+            com.Parameters.AddWithValue("@PartidaUno", -1);
+            SqlDataReader dr = com.ExecuteReader();
+            /*while (dr.Read())
+            {
+                contador++;
+            }
+            dr.Close();
+            dr = com.ExecuteReader();
+            if (dr.HasRows)//OBTENER DATOS DE SQL SERVER VARIOS
+            {
+                while (dr.Read())
+                {
+                    texto = texto + dr.GetInt32(0).ToString() +"<br>";//dr.GetInt32(1) OTRA COLUMNA
+                }
+            }
+            else
+            {
+                texto = texto + "Nop";
+            }
+            texto = texto+" numero cont: " + contador;
+            Label1.Text = texto;
+            dr.Close();*/
+
+        }
     }
 }
