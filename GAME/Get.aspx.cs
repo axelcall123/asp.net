@@ -2,7 +2,9 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
-
+using System.Xml.Linq;
+using System.Collections.Generic;
+using System.Web;
 
 namespace GAME
 {
@@ -56,8 +58,7 @@ namespace GAME
             }
             else {
                 usuario = (string)(Session["Sesion"]);
-            }    
-
+            }
         }
         
         protected void Button1_Click(object sender, EventArgs e)
@@ -75,20 +76,82 @@ namespace GAME
             tf = false;
             Response.Redirect("Ocpu.aspx?CpuVs=" + tf);//PASA EL VALOR A LA OTRA PAGINA
         }
-
+        static string d = "";
         protected void Button3_Click(object sender, EventArgs e)
         {
-            int x = int.Parse(N.Text);//SI ES PAR
-            int y = int.Parse(M.Text);
-            if ( x%2== 0 && y % 2 == 0) {
-                /* Session["N"] = N.Text;
-                 Session["M"] = M.Text;*/
-                //insertPartida(2);
-                Response.Redirect("Extreme.aspx?N=" + N.Text + "&M=" + M.Text);//ENVIAR TAMAÑO DE MATRIZ
+            String coloresP1 = "";
+            String coloresP2 = "";
+            String modalidad = "";
+            String fila = "";
+            String columna = "";
+            int tamañoColor1 = 0;
+            int tamañoColor2 = 0;
+            if (FileUpload1.HasFile)
+            { //VER ARHCIVO
+                String dos = System.IO.Path.GetFileName(FileUpload1.FileName);
+                XDocument xml = XDocument.Load(HttpContext.Current.Server.MapPath("/XML/" + dos));//OBTIENE LOS ELMENTOS DE CIERTO NODO
+                IEnumerable<XElement> employees = xml.Descendants("Jugador1").Descendants("color");
+                //d = d + "P1<br>";
+                foreach (var employee in employees)
+                {
+                    //d = d + employee.Value+"<br>";//SOLO UNO
+                    // d = d + employee.Value + "<br>";
+                    coloresP1 = coloresP1 + employee.Value + ";";
+                    tamañoColor1++;
+                }
+                //d = d + "P2<br>";
+
+                employees = xml.Descendants("Jugador2").Descendants("color");
+                foreach (var employee in employees)
+                {
+                    //d = d + employee.Value + "<br>";
+                    coloresP2= coloresP2+ employee.Value + ";";
+                    tamañoColor2++;
+                }
+                //d = d + "modalidad: " + xml.Root.Element("Modalidad").Value + "<br>";
+                modalidad = xml.Root.Element("Modalidad").Value;
+                //d = d + "Fila: " + xml.Root.Element("Filas").Value + "<br>";
+                fila = xml.Root.Element("Filas").Value;
+                //d = d + "Columnas: " + xml.Root.Element("Columnas").Value + "<br>";
+                columna = xml.Root.Element("Columnas").Value;
+                /*d = coloresP1 + "<br>"+
+                    coloresP2+ "<br>"+
+                    modalidad+ "<br>"+
+                    fila+ "<br>"+
+                    columna+"<br>"+
+                    tamañoColor1+" ; "+ tamañoColor2
+                    ;*/
+
+                /*char[] p1 = coloresP1.ToCharArray();
+                String union = "";
+                for (int x = 0; x < p1.Length; x++) {
+                    if (p1[x].Equals(';'))
+                    {
+                        d =d+ union + "|<br>";
+                        union = "";
+                    }
+                    else {
+                        union = union + p1[x].ToString();
+                    }
+                }*/
+                //Tamaño p1;p2|| Colores p1,p2|| Tipo|| Columa;Fila
+
                 
-                /*help.SetX(x);//N
-                help.SetY(y);//M*/
             }
+            else
+            {
+                Response.Write("SELECCIONE ARCHIVO");
+            }
+            Response.Redirect("Extreme.aspx"
+                    + "?Tap1=" + tamañoColor1//NUMERO COLORES P1 *
+                    + "&Tap2=" + tamañoColor2//NUMERO COLORE P2 *
+                    + "&Cop1=" + coloresP1//COLORE P1 *
+                    + "&Cop2=" + coloresP2//COLORES P2 *
+                    + "&Mod=" + modalidad//MODALIDAD 
+                    + "&Col=" + columna//COLUMNAS *
+                    + "&Fil=" + fila//FILAS *
+                    );
+            Text.Text = d;
         }
 
         protected void Torneo_Click(object sender, EventArgs e)

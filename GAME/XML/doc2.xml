@@ -1,14 +1,14 @@
 ﻿<extreme>
 	<Jugador1>
-		<color>Blanco</color>
-		<color>Rojo</color>
+		<color>azul</color>
+		<color>rojo</color>
+		<color>amarillo</color>
 	</Jugador1>
 	<Jugador2>
-		<color>Negro</color>
-		<color>Verde</color>
-		<color>Azul</color>
+		<color>cafe</color>
+		<color>celeste</color>
 	</Jugador2>
 	<Modalidad>Normal|Inversa</Modalidad>
-	<Filas>10</Filas>
-	<Columnas>12</Columnas>
+	<Filas>8</Filas>
+	<Columnas>6</Columnas>
 </extreme>

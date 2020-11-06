@@ -239,6 +239,7 @@
     <Content Include="XML\completo.xml" />
     <Content Include="XML\Data.xml" />
     <Content Include="XML\doc.xml" />
+    <Content Include="XML\doc2.xml" />
     <Content Include="XML\mine.xml" />
     <Content Include="XML\xd.xml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />

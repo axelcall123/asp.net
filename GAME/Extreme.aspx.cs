@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Metadata.Edm;
-using System.Drawing;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -34,13 +29,15 @@ namespace GAME
         
         String texto = "";//CONSOLA
         ///VARIABLES/////
-        static String[] PlayerUno = new String[5];//COLROES P1
-        static String[] PlayerDos = new String[5];//COLORES P2
-        static int PU = 0;
-        static int PD = 0;
-        static int Tn=20 ;
-        static int Tm=20;
-        
+        static int tPU = 5;//Tamaño Colores player 1
+        static int tPD = 5;//Tamaño Colores player 2
+        static String[] PlayerUno = new String[tPU];//COLROES P1
+        static String[] PlayerDos = new String[tPD];//COLORES P2
+        static int PU = 0;//CONTADOR JUGADOR 1
+        static int PD = 0;//CONTADR JUGADOR 2
+
+        static int Tn=20 ;//x 
+        static int Tm = 20;//y
         //MATRIZ POSICIONES PARA RELLENAR
         static char[,] XmasM = new char[Tn, Tm]; //X+
         static char[,] XmenM = new char[Tn, Tm]; //X-
@@ -158,13 +155,6 @@ namespace GAME
             }*/
         } //CODIGO MUERTO
         public void PCuaPasos() {//PRIMERO CUATRO PASOS RELLENAR CUATRO BOTONES
-            PlayerUno[0] = "azul";
-            PlayerUno[1] = "rojo";
-            PlayerUno[2] = "amarillo";
-            //////
-            PlayerDos[0] = "cafe";
-            PlayerDos[1] = "celeste";
-            /////
             //CUADROS[(n / 2), (m / 2)].Enabled = true;
 
             if (turno == 0)
@@ -217,7 +207,7 @@ namespace GAME
             {
                 Player1.Enabled = true;
                 Player2.Enabled = false;
-                if (PU < 3)
+                if (PU < PlayerUno.Length)
                 {
                     CUADROS[xPlayer, yPlayer].ImageUrl = "~/IMG/EX/" + PlayerUno[PU] + ".png";
                     TAB[xPlayer, yPlayer] = 'B';
@@ -232,7 +222,7 @@ namespace GAME
             else {//PLAYER 2 NEGRO
                 Player1.Enabled = false;
                 Player2.Enabled = true;
-                if (PD < 2)
+                if (PD < PlayerDos.Length)
                 {
                     CUADROS[xPlayer, yPlayer].ImageUrl = "~/IMG/EX/" + PlayerDos[PD] + ".png";
                     PD += 1;
@@ -338,7 +328,7 @@ namespace GAME
                 {//RELOJ
                     Player1.Enabled = true;
                     Player2.Enabled = false;
-                    if (PU < 3)//LIMITE DE LOS COLORES
+                    if (PU < PlayerUno.Length)//LIMITE DE LOS COLORES
                     {
                         button.ImageUrl = "~/IMG/EX/" + PlayerUno[PU] + ".png";
                         String id = button.ID;
@@ -360,7 +350,7 @@ namespace GAME
                     //RELOJ
                     Player1.Enabled = false;
                     Player2.Enabled = true;
-                    if (PD < 2)//LIMITE DE LOS COLORES
+                    if (PD < PlayerDos.Length)//LIMITE DE LOS COLORES
                     {
                         button.ImageUrl = "~/IMG/EX/" + PlayerDos[PD] + ".png";
                         PD += 1;
@@ -384,12 +374,13 @@ namespace GAME
                 for (int y = 0; y < Tm; y++)
                 {
                     if (CUADROS[x, y].ID== button.ID) {
-                        blancoNegro(x, y);//MANDA POSICIONES Y VE EL BLANCO Y NEGRO
+                        blancoNegro(x, y);//MANDA POSICIONES Y EL ID ,VE EL BLANCO Y NEGRO
                         x = Tn;
                         break;
                     }
                 }
             }
+
             for (int x = 0; x < Tn; x++)
             {
                 for (int y = 0; y < Tm; y++)
@@ -928,13 +919,65 @@ namespace GAME
             }
         }
         //INICIO DE TODO
+
+        public void valoresIniciales() {
+            String colorP1 = Request.QueryString["Cop1"];//COLORE P1 *
+            String colorP2 = Request.QueryString["Cop2"];//COLORES P2 *
+            int Tap1=int.Parse(Request.QueryString["Tap1"]);//NUMERO COLORES P1 *
+            int Tap2=int.Parse(Request.QueryString["Tap2"]);//NUMERO COLORE P2 *
+            String modalidad=Request.QueryString["TMod"];//MODALIDAD
+            int columna=int.Parse(Request.QueryString["Col"]);//COLUMNAS *
+            int fila=int.Parse(Request.QueryString["Fil"]);//FILAS *
+            //VARIABLES IGUALAR STATIC
+            Tn = fila;
+            Tm = columna;
+            tPD = Tap2;
+            tPU = Tap1;
+            //VARIABLES FUNCIONALES
+            String union = "";
+            int cont = 0;
+            //COLORES P1
+            char[] p2 = colorP2.ToCharArray();
+            for (int x = 0; x < p2.Length; x++)
+            {
+                if (p2[x].Equals(';'))
+                {
+                    //d = d + union + "|<br>";
+                    PlayerDos[cont] = union;
+                    union = "";
+                    cont++;
+                }
+                else
+                {
+                    union = union + p2[x].ToString();
+                }
+            }
+            //VARIABLES FUNCIONALES
+            union = "";
+            cont = 0;
+            //COLORES P2
+            char[] p1 = colorP1.ToCharArray();
+            for (int x = 0; x < p1.Length; x++)
+            {
+                if (p1[x].Equals(';'))
+                {
+                    //d = d + union + "|<br>";
+                    PlayerUno[cont] = union;
+                    union = "";
+                    cont++;
+                }
+                else
+                {
+                    union = union + p1[x].ToString();
+                }
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)//m*n m iz yy n abajo
         {
-        
-            Tn = 8;
-            Tm = 8;
-            TT.Text=Tn+" ; "+Tm;
+            valoresIniciales();
+            Player2.Enabled = true;
             int id1 = 97;
+            TT.Text = Tn + " ; " + Tm;
             for (int x = 0; x < (Tn + 2); x++)
             {
                 PANEL[x] = new Panel();
@@ -1022,11 +1065,14 @@ namespace GAME
                 Panel1.Controls.Add(PANEL[x]);
                 id1 = 97;
             }//RELLENA TODO
-
             if (turno < 4)
             {
-                if (turno == 0)
+                if (turno == 0)//INICIALIZAR TODO
                 {
+                    //////COLORES
+                    //PlayerUno[0] = "azul"; PlayerUno[1] = "rojo"; PlayerUno[2] = "amarillo";
+                    //////
+                   //PlayerDos[0] = "cafe"; PlayerDos[1] = "celeste";
                     for (int x = 0; x < Tn; x++)
                     {
                         for (int y = 0; y < Tm; y++)
@@ -1050,18 +1096,10 @@ namespace GAME
                 {
                     for (int y = 0; y < Tm; y++)
                     {
-                        CUADROS[x,y].Click += new ImageClickEventHandler(this.Cliks);
+                        CUADROS[x, y].Click += new ImageClickEventHandler(this.Cliks);
                     }
                 }
             }
         }
-        /*protected void Timer1_Tick(object sender, EventArgs e)
-        {
-            int seconds = int.Parse(Label1.Text);
-            if (seconds > 0)
-              Label1.Text = (seconds - 1).ToString();
-            else
-              Timer1.Enabled = false;
-        }*/
     }
 }

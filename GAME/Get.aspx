@@ -9,11 +9,13 @@
     <asp:Button ID="Torneo" runat="server" Text="Torneo" OnClick="Torneo_Click" />
 
     <h3>Si eleig Extreme ponga:</h3>
-    <h4>Ponga de que tamaño quiere el tablero y los colores ha seleccionar</h4>
+    <h4>Ponga de que tamaño quiere el tablero y los colores ha seleccionar en un archivo xml</h4>
     <h5>Los colores son de 1 hasta 5 maximo predefinidos</h5>
-    <form action="/" method="post">
-        <asp:TextBox ID="N" placeholder="n" runat="server" required></asp:TextBox>    <asp:TextBox ID="M" placeholder="m" runat="server" required></asp:TextBox>
-        <asp:Button ID="Button3" runat="server" Text="Extreme" OnClick="Button3_Click" />
-    </form>
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
+    <asp:Button ID="Button3" runat="server" Text="Extreme" OnClick="Button3_Click" />  
+    <asp:FileUpload ID="FileUpload1" runat="server" />
+    <div class="col-xl-12">
+        <asp:Label ID="Text" runat="server" Text="Label"></asp:Label>
+    </div>
+    
 </asp:Content>
