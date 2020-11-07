@@ -10,15 +10,71 @@ namespace GAME
     public partial class Torneo : System.Web.UI.Page
     {
         static int contador = 0;
+        static int tamaño = 16;
+        static String[] equipos =new String[tamaño];
+        static String[,]  AllJugadores= new String[tamaño,3];
         protected void Page_Load(object sender, EventArgs e)
         {
+            String nombreTorneo = Request.QueryString["Torn"];//NOMBRES DEL TORNEO
+            String nombreEquipos = Request.QueryString["nEq"];//NOMBRE DE TODOS LOS EQUIPOS
+            String jugadores = Request.QueryString["pla"];//JUGADORES
+            tamaño = int.Parse(Request.QueryString["Tam"]);//Tamaño
 
+            char[] nT = nombreEquipos.ToCharArray();
+            char[] P = jugadores.ToCharArray();
+            String union = "";
+            int cont = 0;
+            int cont2 = 0;
+            //NOMBRE EQUIPOS
+            for (int x = 0; x < nT.Length; x++)
+            {
+                if (nT[x].Equals(';'))
+                {
+                    equipos[cont] = union;
+                    union = "";
+                    cont++;
+                }
+                else
+                {
+                    union = union + nT[x].ToString();
+                }
+            }
+            //JUGADORES
+            union = "";
+            cont = 0;
+            cont2 = 0;
+            for (int x = 0; x < P.Length; x++)
+            {
+                if (P[x].Equals(';'))
+                {
+                    if ((x + 1) % 3 == 0)
+                    {
+                        AllJugadores[cont2, cont] = union;
+                        cont2++;
+                        cont = 0;
+                        union = "";
+                    }
+                    else
+                    {
+                        AllJugadores[cont2, cont] = union;
+                        union = "";
+                        cont++;
+                    }
+                }
+                else
+                {
+                    union = union + P[x].ToString();
+                }
+            }
         }
+        //NUMERO 16
         protected void Verdad_Click(object sender, EventArgs e)
         {
             All.Visible = true;
             Ocho_U.Visible = true;
             Ocho_D.Visible = true;
+            Cuatro_D.Visible = true;
+            Cuatro_U.Visible = true;
             D_Uno_1.Text = "Team1";
             D_Dos_1.Text = "Team2";
             D_Tres_1.Text= "Team3";
@@ -38,9 +94,14 @@ namespace GAME
             I_Ocho_1.Text = "Team16";
             Verdad_2.Enabled = false;
         }
+        //NUMERO OCHO
         protected void Verdad_2_Click(object sender, EventArgs e)
         {
             All.Visible = true;
+            Verdad.Enabled = false;
+            Cuatro_D.Visible = true;
+            Cuatro_U.Visible = true;
+
             D_Uno_2.Text = "Team1";
             D_Dos_2.Text = "Team2";
             D_Tres_2.Text = "Team3";
@@ -49,10 +110,18 @@ namespace GAME
             I_Uno_2.Text = "Team5";
             I_Dos_2.Text = "Team6";
             I_Tres_2.Text = "Team7";
-            I_Cuatro_2.Text = "Team8";
-            Verdad.Enabled = false;
+            I_Cuatro_2.Text = "Team8";            
         }
-        //OCHO
+        //NUMERO CUATRO
+        protected void Verdad_3_Click(object sender, EventArgs e)
+        {
+            All.Visible = true;
+            D_Uno_3.Text = "Team1";
+            D_Dos_3.Text = "Team2";
+
+            I_Uno_3.Text = "Team3";
+            I_Dos_3.Text = "Team4";
+        }
         protected void D_GanarT1_1_Click(object sender, EventArgs e)
         {
             D_GanarT1_2.Enabled = false;
@@ -226,10 +295,8 @@ namespace GAME
         }
         protected void D_GanarT4_1_Click(object sender, EventArgs e)
         {
-
         }
         static int contUno = 0;
-
         protected void D_UB_1_1_Click(object sender, EventArgs e)
         {   //EQUIPO|| CPU O JUGADOR|| SI ES TORNEO|| 
 
@@ -244,6 +311,21 @@ namespace GAME
             String c = "&Torneo="+ torneo;
             String url = "window.open('Ocpu"+u+d+t+c + "', '_blank');";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OpenWindow", url, true);
+        }
+        static String d = "";
+        protected void Cod_Click(object sender, EventArgs e)
+        {
+            for (int x = 0; x < equipos.Length; x++) {
+                d = d + equipos[x] + "<br>";
+            }
+            for (int x = 0; x < tamaño; x++) {
+                for (int y = 0; y < 3; y++) {
+                    d = d + AllJugadores[x, y] + "|";
+                }
+                d = d + "<br>";
+            }
+            d = d + "fin";
+            T.Text = d;
         }
     }
 }

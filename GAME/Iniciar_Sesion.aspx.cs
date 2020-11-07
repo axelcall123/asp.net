@@ -60,7 +60,6 @@ namespace GAME
             }*/
 
         }
-        static int contador = 0;
         protected void Button1_Click(object sender, EventArgs e)
         {
             String connectionString = ConfigurationManager.ConnectionStrings["JuegoConnectionString"].ConnectionString;

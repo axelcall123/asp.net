@@ -5,6 +5,9 @@ using System.Configuration;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Web;
+using System.Xml;
+using System.Xml.XPath;
+using System.Linq;
 
 namespace GAME
 {
@@ -60,7 +63,6 @@ namespace GAME
                 usuario = (string)(Session["Sesion"]);
             }
         }
-        
         protected void Button1_Click(object sender, EventArgs e)
         {
             insertPartida(1);
@@ -68,7 +70,6 @@ namespace GAME
             tf = true;
             Response.Redirect("Ocpu.aspx?CpuVs=" + tf);//PASA EL VALOR A LA OTRA PAGINA
         }
-
         protected void Button2_Click(object sender, EventArgs e)
         {
             insertPartida(2);
@@ -91,7 +92,6 @@ namespace GAME
                 String dos = System.IO.Path.GetFileName(FileUpload1.FileName);
                 XDocument xml = XDocument.Load(HttpContext.Current.Server.MapPath("/XML/" + dos));//OBTIENE LOS ELMENTOS DE CIERTO NODO
                 IEnumerable<XElement> employees = xml.Descendants("Jugador1").Descendants("color");
-                //d = d + "P1<br>";
                 foreach (var employee in employees)
                 {
                     //d = d + employee.Value+"<br>";//SOLO UNO
@@ -99,7 +99,6 @@ namespace GAME
                     coloresP1 = coloresP1 + employee.Value + ";";
                     tamañoColor1++;
                 }
-                //d = d + "P2<br>";
 
                 employees = xml.Descendants("Jugador2").Descendants("color");
                 foreach (var employee in employees)
@@ -108,11 +107,8 @@ namespace GAME
                     coloresP2= coloresP2+ employee.Value + ";";
                     tamañoColor2++;
                 }
-                //d = d + "modalidad: " + xml.Root.Element("Modalidad").Value + "<br>";
                 modalidad = xml.Root.Element("Modalidad").Value;
-                //d = d + "Fila: " + xml.Root.Element("Filas").Value + "<br>";
                 fila = xml.Root.Element("Filas").Value;
-                //d = d + "Columnas: " + xml.Root.Element("Columnas").Value + "<br>";
                 columna = xml.Root.Element("Columnas").Value;
                 /*d = coloresP1 + "<br>"+
                     coloresP2+ "<br>"+
@@ -135,14 +131,7 @@ namespace GAME
                     }
                 }*/
                 //Tamaño p1;p2|| Colores p1,p2|| Tipo|| Columa;Fila
-
-                
-            }
-            else
-            {
-                Response.Write("SELECCIONE ARCHIVO");
-            }
-            Response.Redirect("Extreme.aspx"
+                Response.Redirect("Extreme.aspx"
                     + "?Tap1=" + tamañoColor1//NUMERO COLORES P1 *
                     + "&Tap2=" + tamañoColor2//NUMERO COLORE P2 *
                     + "&Cop1=" + coloresP1//COLORE P1 *
@@ -151,12 +140,59 @@ namespace GAME
                     + "&Col=" + columna//COLUMNAS *
                     + "&Fil=" + fila//FILAS *
                     );
+            }
+            else
+            {
+                Response.Write("SELECCIONE ARCHIVO");
+            }
+            
             Text.Text = d;
         }
-
         protected void Torneo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Torneo.aspx");
+            String nombreTorneo = "";
+            String nombreEquipos = "";
+            String jugadores = "";
+            if (FileUpload1.HasFile)
+            { //VER ARHCIVO
+                String dos = System.IO.Path.GetFileName(FileUpload1.FileName);
+                XmlDocument doc = new XmlDocument();
+                doc.Load(HttpContext.Current.Server.MapPath("/XML/" + dos));
+                XDocument xml = XDocument.Load(HttpContext.Current.Server.MapPath("/XML/" + dos));//OBTIENE LOS ELMENTOS DE CIERTO NODO
+                //NOMBRE DE LOS INTEGRANTES
+                XmlElement root = doc.DocumentElement;
+                XmlNodeList elemList = root.GetElementsByTagName("jugador");
+
+                nombreTorneo= xml.Root.Element("nombre").Value;
+                for (int i = 0; i < elemList.Count; i++)
+                {
+                    jugadores = jugadores + elemList[i].InnerXml+ ";";
+                }
+                //NOMBRE DEL TEAM
+                elemList = root.GetElementsByTagName("nombreEquipo");
+                for (int i = 0; i < elemList.Count; i++)
+                {
+                    nombreEquipos = nombreEquipos + elemList[i].InnerXml+";";
+                }
+                var cuenta = XDocument.Load(HttpContext.Current.Server.MapPath("/XML/" + dos)).XPathSelectElements("//equipo").Count();//CUENTA CUATNOS EQUIPOS HAY
+                //TORNEO| NOMBRE EQUIPO|JUGADORES
+                //d = d +"torneo: "+ nombreTorneo + "<br>";
+                //d = d +"equipos: "+ nombreEquipos + "<br>";
+                //d = d +"jugadores: "+ jugadores + "<br>";
+                Response.Redirect("Torneo.aspx?"
+                    + "Torn=" + nombreTorneo
+                    + "&nEq=" + nombreEquipos
+                    + "&pla=" + jugadores
+                    + "&Tam=" + cuenta
+                    );
+                //https://localhost:44330/Torneo?Torn=Camp+uno&nEq=Uno%3bDos%3bTres%3bCuatro%3b&pla=A%3bB%3bC%3bD%3bE%3bF%3bG%3bH%3bI%3bJ%3bK%3bL%3b&Tam=4
+            }
+            else
+            {
+                Response.Write("SELECCIONE ARCHIVO");
+            }
+            Text.Text = d;
+            int[] hola = { 1, 2, 3 };
         }
     }
 }

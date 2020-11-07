@@ -33,6 +33,24 @@ namespace GAME
         protected global::System.Web.UI.WebControls.Button Verdad_2;
 
         /// <summary>
+        /// Control Verdad_3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Verdad_3;
+
+        /// <summary>
+        /// Control Cod.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cod;
+
+        /// <summary>
         /// Control All.
         /// </summary>
         /// <remarks>
@@ -229,6 +247,15 @@ namespace GAME
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button D_GanarT1_8;
+
+        /// <summary>
+        /// Control Cuatro_U.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel Cuatro_U;
 
         /// <summary>
         /// Control D_Uno_2.
@@ -463,6 +490,15 @@ namespace GAME
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button I_Dos_3;
+
+        /// <summary>
+        /// Control Cuatro_D.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel Cuatro_D;
 
         /// <summary>
         /// Control I_GanarT2_1.
@@ -742,5 +778,14 @@ namespace GAME
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button I_Ocho_1;
+
+        /// <summary>
+        /// Control T.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label T;
     }
 }

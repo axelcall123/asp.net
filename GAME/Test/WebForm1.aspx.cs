@@ -19,17 +19,16 @@ namespace GAME.Test
         protected void B_LUno_Click(object sender, EventArgs e)
         {
             if (FileUpload1.HasFile)
-            { /*VER ARHCIVO*/
+            { //VER ARHCIVO
                 String dos = System.IO.Path.GetFileName(FileUpload1.FileName);
-
-                var cuenta = XDocument.Load(HttpContext.Current.Server.MapPath("../XML/" + dos)).XPathSelectElements("//equipo").Count();//CUENTA CUATNOS EQUIPOS HAY
-
+                
                 XmlDocument doc = new XmlDocument();
                 doc.Load(HttpContext.Current.Server.MapPath("../XML/" + dos));
                 XDocument xml = XDocument.Load(HttpContext.Current.Server.MapPath("../XML/" + dos));//OBTIENE LOS ELMENTOS DE CIERTO NODO
-
+                //NOMBRE DE LOS INTEGRANTES
                 XmlElement root = doc.DocumentElement;
                 XmlNodeList elemList = root.GetElementsByTagName("jugador");
+                t = t + xml.Root.Element("nombre").Value + "<br>";
                 for (int i = 0; i < elemList.Count; i++)
                 {   
                     t=t+elemList[i].InnerXml+"<br>";
@@ -37,7 +36,17 @@ namespace GAME.Test
                         t = t + "--<br>";
                     }
                 }
-                
+                t = t + "<br>";
+                //NOMBRE DEL TEAM
+                elemList = root.GetElementsByTagName("nombreEquipo");
+                for (int i = 0; i < elemList.Count; i++)
+                {
+                    t = t + elemList[i].InnerXml + "<br>";
+                        t = t + "--<br>";
+                }
+
+                var cuenta = XDocument.Load(HttpContext.Current.Server.MapPath("../XML/" + dos)).XPathSelectElements("//equipo").Count();//CUENTA CUATNOS EQUIPOS HAY
+
             }
             else
             {

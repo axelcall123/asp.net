@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="Torneo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  CodeBehind="Torneo.aspx.cs" Inherits="GAME.Torneo" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Button ID="Verdad" runat="server" Text="8X8" OnClick="Verdad_Click" />
-    <asp:Button ID="Verdad_2" runat="server" Text="4X4" OnClick="Verdad_2_Click" />
+    <asp:Button ID="Verdad" runat="server" Text="8X2" OnClick="Verdad_Click" />
+    <asp:Button ID="Verdad_2" runat="server" Text="4X2" OnClick="Verdad_2_Click" />
+    <asp:Button ID="Verdad_3" runat="server" Text="2X2" OnClick="Verdad_3_Click"/>
+    <asp:Button ID="Cod" runat="server" Text="Ver Codigo" OnClick="Cod_Click" />
     <br />
     <br />
     <asp:UpdatePanel ID="All" runat="server" Visible="False">
@@ -68,31 +70,35 @@
             <!--NUMERO 4-->
             <div class="Ronda">
                 <br />
-                <div class="VS">
-                <div><!--UNO-->
-                    <asp:Button ID="D_Uno_2" runat="server" Text="----" Enabled="False" />
-                    <asp:Button ID="D_GanarT2_1" runat="server" Text="W" OnClick="D_GanarT2_1_Click" />
-                    <div class="Linea"></div>
-                    <asp:Button ID="D_DB_1_1" runat="server" Text="1" class="Opciones"/>
-                </div>
-                <div><!--DOS-->
-                    <asp:Button ID="D_Dos_2" runat="server" Text="----" Enabled="False" />
-                    <asp:Button ID="D_GanarT2_2" runat="server" Text="W" OnClick="D_GanarT2_2_Click" />
-                </div>
-                </div>
-                <!--vs-->
-                <div class="VS">
-                <div><!--TRES-->
-                    <asp:Button ID="D_Tres_2" runat="server" Text="----" Enabled="False" />
-                    <asp:Button ID="D_GanarT2_3" runat="server" Text="W" OnClick="D_GanarT2_3_Click" />
-                    <div class="Linea"></div>
-                    <asp:Button ID="D_DB_3_1" runat="server" Text="1" class="Opciones"/>
-                </div>
-                <div><!--CUATRO-->
-                    <asp:Button ID="D_Cuatro_2" runat="server" Text="----" Enabled="False" />
-                    <asp:Button ID="D_GanarT2_4" runat="server" Text="W" OnClick="D_GanarT2_4_Click" />
-                </div>
-                </div>
+                <asp:UpdatePanel ID="Cuatro_U" runat="server" Visible="False">
+                    <ContentTemplate>
+                        <div class="VS">
+                        <div><!--UNO-->
+                            <asp:Button ID="D_Uno_2" runat="server" Text="----" Enabled="False" />
+                            <asp:Button ID="D_GanarT2_1" runat="server" Text="W" OnClick="D_GanarT2_1_Click" />
+                            <div class="Linea"></div>
+                            <asp:Button ID="D_DB_1_1" runat="server" Text="1" class="Opciones"/>
+                        </div>
+                        <div><!--DOS-->
+                            <asp:Button ID="D_Dos_2" runat="server" Text="----" Enabled="False" />
+                            <asp:Button ID="D_GanarT2_2" runat="server" Text="W" OnClick="D_GanarT2_2_Click" />
+                        </div>
+                        </div>
+                        <!--vs-->
+                        <div class="VS">
+                        <div><!--TRES-->
+                            <asp:Button ID="D_Tres_2" runat="server" Text="----" Enabled="False" />
+                            <asp:Button ID="D_GanarT2_3" runat="server" Text="W" OnClick="D_GanarT2_3_Click" />
+                            <div class="Linea"></div>
+                            <asp:Button ID="D_DB_3_1" runat="server" Text="1" class="Opciones"/>
+                        </div>
+                        <div><!--CUATRO-->
+                            <asp:Button ID="D_Cuatro_2" runat="server" Text="----" Enabled="False" />
+                            <asp:Button ID="D_GanarT2_4" runat="server" Text="W" OnClick="D_GanarT2_4_Click" />
+                        </div>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
             <!--NUMERO 2-->
             <div class="Ronda">
@@ -124,12 +130,14 @@
             <!--/
             /--->
             <div class="Ronda" >
-              <br> 
+              <br>
+               <div class="VS">
               <div><!--UNO-->
                   <asp:Button ID="I_GanarT4_1" runat="server" Text="W"  />
                   <asp:Button ID="I_Uno_4" runat="server" Text="----" Enabled="False" OnClick="I_Uno_4_Click" />
                   <div class="Linea"></div>
                   <asp:Button ID="I_CB_1_1" runat="server" Text="1" class="Opciones"/>
+              </div>
               </div>
             </div>
             <!--NUMERO DOS-->
@@ -150,32 +158,36 @@
             <!--NUMERO 4-->
             <div class="Ronda" > 
               <br />
-              <div class="VS">
-              <div><!--UNO-->
-                  <asp:Button ID="I_GanarT2_1" runat="server" Text="W" OnClick="I_GanarT2_1_Click"  />
-                  <asp:Button ID="I_Uno_2" runat="server" Text="----" Enabled="False" />
-                  <div class="Linea"></div>
-                    <asp:Button ID="I_DB_1_1" runat="server" Text="1" class="Opciones"/>
-              </div>
-              <div><!--DOS-->
-                  <asp:Button ID="I_GanarT2_2" runat="server" Text="W" OnClick="I_GanarT2_2_Click"  />
-                  <asp:Button ID="I_Dos_2" runat="server" Text="----" Enabled="False" />
-              </div>
-              </div>
-              <!--vs-->
-              <div class="VS">
-              <div><!--TRES-->
-                  <asp:Button ID="I_GanarT2_3" runat="server" Text="W" OnClick="I_GanarT2_3_Click"  />
-                  <asp:Button ID="I_Tres_2" runat="server" Text="----" Enabled="False" />
-                  <div class="Linea"></div>
-                  <asp:Button ID="I_DB_3_1" runat="server" Text="1" class="Opciones"/>
-              </div>
-              <div><!--CUATRO-->
-                  <asp:Button ID="I_GanarT2_4" runat="server" Text="W" OnClick="I_GanarT2_4_Click"  />
-                  <asp:Button ID="I_Cuatro_2" runat="server" Text="----" Enabled="False" /> 
-              </div>
-              </div>
-              </div>
+                <asp:UpdatePanel ID="Cuatro_D" runat="server" Visible="False">
+                    <ContentTemplate>
+                      <div class="VS">
+                      <div><!--UNO-->
+                          <asp:Button ID="I_GanarT2_1" runat="server" Text="W" OnClick="I_GanarT2_1_Click"  />
+                          <asp:Button ID="I_Uno_2" runat="server" Text="----" Enabled="False" />
+                          <div class="Linea"></div>
+                            <asp:Button ID="I_DB_1_1" runat="server" Text="1" class="Opciones"/>
+                      </div>
+                      <div><!--DOS-->
+                          <asp:Button ID="I_GanarT2_2" runat="server" Text="W" OnClick="I_GanarT2_2_Click"  />
+                          <asp:Button ID="I_Dos_2" runat="server" Text="----" Enabled="False" />
+                      </div>
+                      </div>
+                      <!--vs-->
+                      <div class="VS">
+                      <div><!--TRES-->
+                          <asp:Button ID="I_GanarT2_3" runat="server" Text="W" OnClick="I_GanarT2_3_Click"  />
+                          <asp:Button ID="I_Tres_2" runat="server" Text="----" Enabled="False" />
+                          <div class="Linea"></div>
+                          <asp:Button ID="I_DB_3_1" runat="server" Text="1" class="Opciones"/>
+                      </div>
+                      <div><!--CUATRO-->
+                          <asp:Button ID="I_GanarT2_4" runat="server" Text="W" OnClick="I_GanarT2_4_Click"  />
+                          <asp:Button ID="I_Cuatro_2" runat="server" Text="----" Enabled="False" /> 
+                      </div>
+                      </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
             <!--NUMERO 8-->
             <div class="Ronda" >
                 <asp:UpdatePanel ID="Ocho_D" runat="server" Visible="False">
@@ -198,7 +210,7 @@
                               <asp:Button ID="I_GanarT1_3" runat="server" Text="W" OnClick="I_GanarT1_3_Click" />
                               <asp:Button ID="I_Tres_1" runat="server" Text="----" Enabled="False" />
                               <div class="Linea"></div>
-                              <asp:Button ID="I_UB_3_1" runat="server" Text="1" class="Opciones"/>>
+                              <asp:Button ID="I_UB_3_1" runat="server" Text="1" class="Opciones"/>
                           </div>
                           <div><!--CUATRO-->
                               <asp:Button ID="I_GanarT1_4" runat="server" Text="W" OnClick="I_GanarT1_4_Click"  />
@@ -234,8 +246,9 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
-            
         </ContentTemplate>
     </asp:UpdatePanel>
+
+    <asp:Label ID="T" runat="server" Text="Label"></asp:Label>
 </asp:Content>
 
