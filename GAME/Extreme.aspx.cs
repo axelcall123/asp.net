@@ -29,15 +29,17 @@ namespace GAME
         
         String texto = "";//CONSOLA
         ///VARIABLES/////
-        static int tPU = 5;//Tamaño Colores player 1
-        static int tPD = 5;//Tamaño Colores player 2
+        static int tPU = 3;//Tamaño Colores player 1
+        static int tPD = 2;//Tamaño Colores player 2
+        static int blanco = 0;
+        static int negro = 0;
         static String[] PlayerUno = new String[tPU];//COLROES P1
         static String[] PlayerDos = new String[tPD];//COLORES P2
         static int PU = 0;//CONTADOR JUGADOR 1
         static int PD = 0;//CONTADR JUGADOR 2
-
-        static int Tn=20 ;//x 
-        static int Tm = 20;//y
+        static String modalidad = "";
+        static int Tn=8 ;//x 
+        static int Tm = 6;//y
         //MATRIZ POSICIONES PARA RELLENAR
         static char[,] XmasM = new char[Tn, Tm]; //X+
         static char[,] XmenM = new char[Tn, Tm]; //X-
@@ -400,7 +402,7 @@ namespace GAME
                 {//SIG COLOR ES DIFERENTE
                     if (x + 1 < Tn) {
                         if (TAB[x + 1, y].Equals('*')) {//SI ESTA VACIO
-                            texto = texto + CUADROS[x+1, y].ID + " Xmas T<br>";
+                            //texto = texto + CUADROS[x+1, y].ID + " Xmas T<br>";
                             CUADROS[x + 1, y].Enabled = true;
                         }
                         else if (TAB[x + 1, y].Equals(nb)){
@@ -421,7 +423,7 @@ namespace GAME
                     {                       
                         if (TAB[x, y+1].Equals('*'))
                         {
-                            texto = texto + CUADROS[x, y+1].ID + " Ymas T<br>";
+                            //texto = texto + CUADROS[x, y+1].ID + " Ymas T<br>";
                             CUADROS[x, y+1].Enabled = true;
                         }
                         else if (TAB[x, y+1].Equals(nb))
@@ -442,7 +444,7 @@ namespace GAME
                     {
                         if (TAB[x - 1, y].Equals('*'))
                         {
-                            texto = texto + CUADROS[x-1,y].ID +" Xmen T<br>";
+                           // texto = texto + CUADROS[x-1,y].ID +" Xmen T<br>";
                             CUADROS[x - 1, y].Enabled = true;
                         }
                         else if (TAB[x - 1, y].Equals(nb))
@@ -463,7 +465,7 @@ namespace GAME
                     {
                         if (TAB[x, y - 1].Equals('*'))
                         {
-                            texto = texto + CUADROS[x, y-1].ID + " Ymen T<br>";
+                            //texto = texto + CUADROS[x, y-1].ID + " Ymen T<br>";
                             CUADROS[x, y - 1].Enabled = true;
                         }
                         else if (TAB[x, y - 1].Equals(nb))
@@ -485,7 +487,7 @@ namespace GAME
                     {
                         if (TAB[x + 1, y+1].Equals('*'))
                         {
-                            texto = texto + CUADROS[x + 1, y+1].ID + " Xmas T<br>";
+                            //texto = texto + CUADROS[x + 1, y+1].ID + " Xmas T<br>";
                             CUADROS[x + 1, y+1].Enabled = true;
                         }
                         else if (TAB[x + 1, y+1].Equals(nb))
@@ -506,7 +508,7 @@ namespace GAME
                     {
                         if (TAB[x - 1, y - 1].Equals('*'))
                         {
-                            texto = texto + CUADROS[x - 1, y - 1].ID + " Xmas T<br>";
+                            //texto = texto + CUADROS[x - 1, y - 1].ID + " Xmas T<br>";
                             CUADROS[x - 1, y - 1].Enabled = true;
                         }
                         else if (TAB[x - 1, y - 1].Equals(nb))
@@ -527,7 +529,7 @@ namespace GAME
                     {
                         if (TAB[x + 1, y - 1].Equals('*'))
                         {
-                            texto = texto + CUADROS[x + 1, y - 1].ID + " Xmas T<br>";
+                            //texto = texto + CUADROS[x + 1, y - 1].ID + " Xmas T<br>";
                             CUADROS[x + 1, y - 1].Enabled = true;
                         }
                         else if (TAB[x + 1, y - 1].Equals(nb))
@@ -548,7 +550,7 @@ namespace GAME
                     {
                         if (TAB[x - 1, y + 1].Equals('*'))
                         {
-                            texto = texto + CUADROS[x - 1, y + 1].ID + " Xmas T<br>";
+                            //texto = texto + CUADROS[x - 1, y + 1].ID + " Xmas T<br>";
                             CUADROS[x - 1, y + 1].Enabled = true;
                         }
                         else if (TAB[x - 1, y + 1].Equals(nb))
@@ -880,6 +882,38 @@ namespace GAME
                 }
             }
             TT.Text = texto;
+            WinLost();
+        }
+        public void WinLost()
+        {
+            int bb = 0;
+            for (int x = 0; x < Tn; x++)
+            {
+                for (int y = 0; y < Tm; y++)
+                {
+                    if (CUADROS[x, y].Enabled == true)
+                    {
+                        bb = bb + 1;
+                    }
+                }
+            }
+            if (bb == 0)
+            {
+                for (int x = 0; x < Tn; x++)
+                {
+                    for (int y = 0; y < Tm; y++)
+                    {
+                        if (TAB[x,y].Equals('B')) {
+                            blanco++;
+                        } else if (TAB[x, y].Equals('N'))
+                        {//Normal|Inversa
+                            negro++;
+                        }
+                    }
+                }
+
+                TT.Text = "CE ACABO";
+            }
         }
         /*protected void Button1_Click(object sender, EventArgs e)
         {
@@ -906,6 +940,7 @@ namespace GAME
                 Player1.Enabled = false;
             }
         }
+        static String d = "";
         protected void Player2_Tick(object sender, EventArgs e)
         {
             int segundos = int.Parse(P_2.Text);
@@ -925,7 +960,7 @@ namespace GAME
             String colorP2 = Request.QueryString["Cop2"];//COLORES P2 *
             int Tap1=int.Parse(Request.QueryString["Tap1"]);//NUMERO COLORES P1 *
             int Tap2=int.Parse(Request.QueryString["Tap2"]);//NUMERO COLORE P2 *
-            String modalidad=Request.QueryString["TMod"];//MODALIDAD
+            modalidad=Request.QueryString["TMod"];//MODALIDAD
             int columna=int.Parse(Request.QueryString["Col"]);//COLUMNAS *
             int fila=int.Parse(Request.QueryString["Fil"]);//FILAS *
             //VARIABLES IGUALAR STATIC
@@ -942,7 +977,6 @@ namespace GAME
             {
                 if (p2[x].Equals(';'))
                 {
-                    //d = d + union + "|<br>";
                     PlayerDos[cont] = union;
                     union = "";
                     cont++;
@@ -961,7 +995,6 @@ namespace GAME
             {
                 if (p1[x].Equals(';'))
                 {
-                    //d = d + union + "|<br>";
                     PlayerUno[cont] = union;
                     union = "";
                     cont++;
@@ -974,10 +1007,9 @@ namespace GAME
         }
         protected void Page_Load(object sender, EventArgs e)//m*n m iz yy n abajo
         {
-            valoresIniciales();
+            //valoresIniciales();
             Player2.Enabled = true;
             int id1 = 97;
-            TT.Text = Tn + " ; " + Tm;
             for (int x = 0; x < (Tn + 2); x++)
             {
                 PANEL[x] = new Panel();
@@ -1065,14 +1097,20 @@ namespace GAME
                 Panel1.Controls.Add(PANEL[x]);
                 id1 = 97;
             }//RELLENA TODO
+
+            /*for (int x = 0; x < 8; x++)
+            {
+                for (int y = 0; y < 6; y++)
+                {
+                    d = d + CUADROS[x, y].ID + "|";
+
+                }
+                d = d + "<br>";
+            }*/
             if (turno < 4)
             {
                 if (turno == 0)//INICIALIZAR TODO
                 {
-                    //////COLORES
-                    //PlayerUno[0] = "azul"; PlayerUno[1] = "rojo"; PlayerUno[2] = "amarillo";
-                    //////
-                   //PlayerDos[0] = "cafe"; PlayerDos[1] = "celeste";
                     for (int x = 0; x < Tn; x++)
                     {
                         for (int y = 0; y < Tm; y++)
@@ -1080,6 +1118,10 @@ namespace GAME
                             TAB[x, y] = '*';
                         }
                     }//RELLENO MATRIZ
+                     //////COLORES
+                     PlayerUno[0] = "azul"; PlayerUno[1] = "rojo"; PlayerUno[2] = "amarillo";
+                     //////
+                     PlayerDos[0] = "cafe"; PlayerDos[1] = "celeste";
                 }   //SOLO PARA QUE RELLENE LOS ESPACIOS VACIOS
                 PCuaPasos();
             }//PONER 4 FICHAS PRIMERAS

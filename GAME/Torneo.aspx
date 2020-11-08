@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Button ID="Verdad" runat="server" Text="8X2" OnClick="Verdad_Click" />
-    <asp:Button ID="Verdad_2" runat="server" Text="4X2" OnClick="Verdad_2_Click" />
+    <asp:Button ID="Verdad_2" runat="server" Text="4X2" OnClick="Verdad_2_Click" Width="38px" />
     <asp:Button ID="Verdad_3" runat="server" Text="2X2" OnClick="Verdad_3_Click"/>
     <asp:Button ID="Cod" runat="server" Text="Ver Codigo" OnClick="Cod_Click" />
     <br />

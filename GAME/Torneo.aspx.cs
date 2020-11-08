@@ -66,6 +66,62 @@ namespace GAME
                     union = union + P[x].ToString();
                 }
             }
+
+            if (tamaño == 16) {
+                All.Visible = true;
+                Verdad_2.Enabled = false;
+                Verdad_3.Enabled = false;
+
+                Ocho_U.Visible = true;
+                Ocho_D.Visible = true;
+                Cuatro_D.Visible = true;
+                Cuatro_U.Visible = true;
+                D_Uno_1.Text = equipos[0];
+                D_Dos_1.Text = equipos[1];
+                D_Tres_1.Text = equipos[2];
+                D_Cuatro_1.Text = equipos[3];
+                D_Cinco_1.Text = equipos[4];
+                D_Seis_1.Text = equipos[5];
+                D_Siete_1.Text = equipos[6];
+                D_Ocho_1.Text = equipos[7];
+
+                I_Uno_1.Text = equipos[8];
+                I_Dos_1.Text = equipos[9];
+                I_Tres_1.Text = equipos[10];
+                I_Cuatro_1.Text = equipos[11];
+                I_Cinco_1.Text = equipos[12];
+                I_Seis_1.Text = equipos[13];
+                I_Siete_1.Text = equipos[14];
+                I_Ocho_1.Text = equipos[15];
+                Verdad_2.Enabled = false;
+            } else if (tamaño == 8) {
+                All.Visible = true;
+                Verdad.Enabled = false;
+                Verdad_3.Enabled = false;
+                Cuatro_D.Visible = true;
+                Cuatro_U.Visible = true;
+
+                D_Uno_2.Text = equipos[0];
+                D_Dos_2.Text = equipos[1];
+                D_Tres_2.Text = equipos[2];
+                D_Cuatro_2.Text = equipos[3];
+
+                I_Uno_2.Text = equipos[4];
+                I_Dos_2.Text = equipos[5];
+                I_Tres_2.Text = equipos[6];
+                I_Cuatro_2.Text = equipos[7];
+            }
+            else if (tamaño == 4){
+                All.Visible = true;
+                Verdad.Enabled = false;
+                Verdad_2.Enabled = false;
+
+                D_Uno_3.Text = equipos[0];
+                D_Dos_3.Text = equipos[1];
+
+                I_Uno_3.Text = equipos[2];
+                I_Dos_3.Text = equipos[3];
+            }
         }
         //NUMERO 16
         protected void Verdad_Click(object sender, EventArgs e)
@@ -296,7 +352,38 @@ namespace GAME
         protected void D_GanarT4_1_Click(object sender, EventArgs e)
         {
         }
-        static int contUno = 0;
+        protected void Cod_Click(object sender, EventArgs e)
+        {
+            for (int x = 0; x < equipos.Length; x++)
+            {
+                d = d + equipos[x] + "<br>";
+            }
+            for (int x = 0; x < tamaño; x++)
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                    d = d + AllJugadores[x, y] + "|";
+                }
+                d = d + "<br>";
+            }
+            d = d + "fin";
+            T.Text = d;
+        }
+
+        static int cont1 = 0;
+        static int cont2 = 0;
+        static int cont3 = 0;
+        static int cont4 = 0;
+        static int cont5 = 0;
+        static int cont6 = 0;
+        static int cont7 = 0;
+        static int cont8 = 0;
+        static int cont9 = 0;
+        static int cont10 = 0;
+        static int cont11 = 0;
+        static int cont12 = 0;
+        static int contT13 = 0;
+        static String d = "";
         protected void D_UB_1_1_Click(object sender, EventArgs e)
         {   //EQUIPO|| CPU O JUGADOR|| SI ES TORNEO|| 
 
@@ -312,20 +399,73 @@ namespace GAME
             String url = "window.open('Ocpu"+u+d+t+c + "', '_blank');";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OpenWindow", url, true);
         }
-        static String d = "";
-        protected void Cod_Click(object sender, EventArgs e)
+        
+        protected void D_UB_3_1_Click(object sender, EventArgs e)
         {
-            for (int x = 0; x < equipos.Length; x++) {
-                d = d + equipos[x] + "<br>";
-            }
-            for (int x = 0; x < tamaño; x++) {
-                for (int y = 0; y < 3; y++) {
-                    d = d + AllJugadores[x, y] + "|";
-                }
-                d = d + "<br>";
-            }
-            d = d + "fin";
-            T.Text = d;
+            String equipo1 = D_Tres_1.Text;
+            String equipo2 = D_Cuatro_1.Text;
+            Boolean cpu = false;
+            Boolean torneo = true;
+
+            String u = "?id=" + cpu;
+            String d = "&Tu=" + equipo1;
+            String t = "&Td=" + equipo2;
+            String c = "&Torneo=" + torneo;
+            String url = "window.open('Ocpu" + u + d + t + c + "', '_blank');";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "OpenWindow", url, true);
+        }
+        protected void D_UB_5_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void D_UB_7_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //
+        protected void D_DB_1_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void D_DB_3_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //
+        protected void D_TB_1_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        ///////
+        protected void I_UB_1_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void I_UB_3_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void I_UB_5_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void I_UB_7_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //
+        protected void I_DB_1_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void I_DB_3_1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //
+        protected void I_TB_1_1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
