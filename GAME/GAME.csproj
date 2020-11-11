@@ -236,11 +236,15 @@
     <Content Include="Torneo.aspx" />
     <Content Include="XML\1.xml" />
     <Content Include="XML\archivo1.xml" />
+    <Content Include="XML\archivo3c.xml" />
+    <Content Include="XML\campeonato.xml" />
     <Content Include="XML\completo.xml" />
     <Content Include="XML\Data.xml" />
     <Content Include="XML\1EjTorneo.xml" />
     <Content Include="XML\1EjExtreme.xml" />
     <Content Include="XML\mine.xml" />
+    <Content Include="XML\partida1n.xml" />
+    <Content Include="XML\partida2i.xml" />
     <Content Include="XML\xd.xml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

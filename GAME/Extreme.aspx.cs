@@ -38,8 +38,8 @@ namespace GAME
         static int PU = 0;//CONTADOR JUGADOR 1
         static int PD = 0;//CONTADR JUGADOR 2
         static String modalidad = "";
-        static int Tn=8 ;//x 
-        static int Tm = 6;//y
+        static int Tn=20 ;//x 
+        static int Tm = 20;//y
         //MATRIZ POSICIONES PARA RELLENAR
         static char[,] XmasM = new char[Tn, Tm]; //X+
         static char[,] XmenM = new char[Tn, Tm]; //X-
@@ -1007,7 +1007,7 @@ namespace GAME
         }
         protected void Page_Load(object sender, EventArgs e)//m*n m iz yy n abajo
         {
-            //valoresIniciales();
+            valoresIniciales();
             Player2.Enabled = true;
             int id1 = 97;
             for (int x = 0; x < (Tn + 2); x++)
@@ -1119,9 +1119,9 @@ namespace GAME
                         }
                     }//RELLENO MATRIZ
                      //////COLORES
-                     PlayerUno[0] = "azul"; PlayerUno[1] = "rojo"; PlayerUno[2] = "amarillo";
+                     //PlayerUno[0] = "azul"; PlayerUno[1] = "rojo"; PlayerUno[2] = "amarillo";
                      //////
-                     PlayerDos[0] = "cafe"; PlayerDos[1] = "celeste";
+                     //PlayerDos[0] = "cafe"; PlayerDos[1] = "celeste";
                 }   //SOLO PARA QUE RELLENE LOS ESPACIOS VACIOS
                 PCuaPasos();
             }//PONER 4 FICHAS PRIMERAS

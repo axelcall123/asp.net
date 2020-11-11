@@ -127,8 +127,7 @@
                 </div>
                 </div>
             </div>
-            <!--/
-            /--->
+            <!--//--->
             <div class="Ronda" >
               <br>
                <div class="VS">
@@ -248,7 +247,6 @@
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
-
     <asp:Label ID="T" runat="server" Text="Label"></asp:Label>
 </asp:Content>
 
